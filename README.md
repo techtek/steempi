@@ -1,8 +1,10 @@
 Tutotial is unfinished at this moment
 
-
+<br>
 # STEEMPI V1.0
 Steemit LED light notifications and Web interface for Raspberry Pi (and other pi clones that uses the Wirringpi library)
+
+<br>
 
 Operating system
 
@@ -30,6 +32,6 @@ Webinterface
 
 8. Install Apache and PHP5, "sudo apt-get update"   "sudo apt-get install apache2 php5 libapache2-mod-php5" test it by opening a browser and type in the IP of your Pi, it should show a "it works" page. delete the index file from /var/www/html/
 
-9. Copy and replace the Steempi interface files into the /var/www/html/ folder
+9. Copy and replace the Steempi interface files from this Github into the /var/www/html/ folder
 
-10. Open the IP of your PI in a browser and you should see the SteemPi webinterface
+10. Done!, Open the IP of your PI in a browser and you should see the SteemPi webinterface
