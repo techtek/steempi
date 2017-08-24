@@ -10,7 +10,7 @@ Operating system
 
 2 Boot up the system and connect to your network and the internet (wifi or cable)
 
-
+<br>
 
 Steemit LED light notifications 
 
@@ -24,7 +24,7 @@ Steemit LED light notifications
 
 7 if it worked, you can change "@techtek" the script, to watch your account for updates: "cd /home/pi/Desktop"   "sudo nano ledscript.sh"
 
-
+<br>
 
 Webinterface
 
