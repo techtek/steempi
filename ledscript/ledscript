@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# monitor.sh - Monitors a web page for changes
+# sends an email notification if the file change
+# Monitor a web page for changes
+# Turn on a LED when change is detected 
+
+#Website to monitor
+    URL="https://streemian.com/rss/@techtek/replies"
+
+
+	
+for (( ; ; )); do
+    mv new.html old.html 2> /dev/null	
+    curl $URL -L --compressed  -s > new.html 
+sleep 1
+	sed -i 's/[0-9]//g' new.html
+sleep 1
+    DIFF_OUTPUT="$(diff new.html old.html)"
+    if [ "0" != "${#DIFF_OUTPUT}" ]; then
+
+		
+	
+
+# Echo that there is a change detected when comparing old.html with new.html
+        echo notification LED On, change detected! 
+# Make GPIO 0 an output port 
+	gpio mode 0 out
+
+# Turn the LED ON
+        gpio write 0 1
+sleep 2
+        gpio write 0 0
+sleep 2
+
+    fi
+done
+
+
+sed -i 's/[0-9]//g' old.html 
+
