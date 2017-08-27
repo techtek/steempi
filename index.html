@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 
+
+<!-- SteemPi webinterface V1.0 -->
+<!-- SteemPi webinterface is build with profoundgrid, made by Profound Creative Studio LLC -->
+<!-- SteemPi is made by @techtek -->
+
+<!-- Please see the below comments if you want to make changes to the web interface -->
+
+
+
 <html lang="en">
 
 	<head>
@@ -36,75 +45,66 @@
 		<![endif]-->
 
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script>
-  var locations = ["http://steemitpond.com/", "http://steem.loadsup.net/sonar/", "http://steemstream.com/", "http://steemitboard.com/board.html?user=techtek", "https://steem.makerwannabe.com/index.php?username=techtek&period=4", "http://steem.supply/@techtek", "spacepi.php", "aquarium.php"];
-  var currentIndex = 0;
-  var len = locations.length;
-  $(document).ready(function(){
-    $(':button').click(function() {
-        currentIndex = this.value == ">" ? 
-                currentIndex < len - 1 ? ++currentIndex : len - 1 : 
-                currentIndex > 0 ? --currentIndex : 0;
-        $('#frame').attr('src', locations[currentIndex]);
-    });
-  });
-</script>
 
 
+<!-- SteemPi webinterface has switchable headers, this is where you can add or remove headers -->
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script>
+  		var locations = ["http://steemitpond.com/", "http://steem.loadsup.net/sonar/", "http://steemstream.com/", "http://steemitboard.com/board.html?user=techtek", "https://steem.makerwannabe.com/index.php?username=techtek&period=4", "http://steem.supply/@techtek", "/headers/spacepi.php", "/headers/aquarium.php"];
+  		var currentIndex = 0;
+  		var len = locations.length;
+  			$(document).ready(function(){
+    				$(':button').click(function() {
+        				currentIndex = this.value == ">" ? 
+                		currentIndex < len - 1 ? ++currentIndex : len - 1 : 
+                		currentIndex > 0 ? --currentIndex : 0;
+        			$('#frame').attr('src', locations[currentIndex]);
+    			});
+  		});
+	</script>
 
 
-
-
-	</head>
+</head>
 
 	<body>
-
 		<header>
 
-
-
-<section>
-	<ul style="
-    height: 28px;
-">
-						  
-					
-					
-
-										
-					<li>
-						<p></p>
-					</li>
-					<li>
-						
-						<h1><a href="http://www.profoundgrid.com/"><span>STEEM</span>PI</a></h1>  
-					</li>
-					<li>
-						
-					</li>
-					
-
-				</ul>
-			</section>
- 
+			<center>
+						<a href="https://steemit.com/@techtek">
+						<img border="0" alt="SteemPi" src="/img/logosteempi.png">
+						</a>
+			</center>
 			
-			<div class="seperator"></div>			
+
+<!-- SteemPi logo -->
+
+		
 						
 
+<!-- Script to hide the switchable header -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $("abc").hide();
-    });
-    $("#show").click(function(){
-        $("abc").show();
-    });
-});
-</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+   		 $("#hide").click(function(){
+       		 $("abc").hide();
+    			});
+   		 $("#show").click(function(){
+       		 $("abc").show();
+   			 });
+			});
+	</script>
+
 </head>
+
+
+
+
+
+
+
+<!-- Switchable header iframe with as default Steemitpond -->
 <body>
 
 	<abc><iframe id="frame" iframe height="230px" width="100%" src="http://steemitpond.com/"></iframe></abc>
@@ -112,27 +112,21 @@ $(document).ready(function(){
 
 
 
+<!-- Switchable header buttons -->
+
+	<left> <input type = "button" value = "<" />&nbsp;<input type = "button" value = ">" />  <button id="hide">Hide</button>  <button id="show">Show</button></left>
 
 
-						<left> <input type = "button" value = "<" />&nbsp;<input type = "button" value = ">" />  <button id="hide">Hide</button>  <button id="show">Show</button></left>	 
+
+<!-- Big app drawer: Google Trends -->	 
 
 			<section>
 				
 				<ul>
 					<li>
 						<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"steemit","geo":"","time":"today 12-m"},{"keyword":"steem","geo":"","time":"today 12-m"},{"keyword":"myspace","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=steemit,steem,myspace&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
-
-
-
-
-<php
-    echo exec("uptime");
-?>
-
-
 					</li>
-					<li>
-						
+					<li>						
 						<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"bitcoin","geo":"","time":"today 12-m"},{"keyword":"ethereum","geo":"","time":"today 12-m"},{"keyword":"litecoin","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=bitcoin,ethereum,litecoin&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
 					</li>
 					<li>
@@ -150,6 +144,12 @@ $(document).ready(function(){
 				</ul>
 			</section>
 		</header>
+
+
+
+
+
+<!-- Small app drawer: Cointickers, RSS feed scroller, and Live video feeds from the ISS and Aquarium. (to make a feed scroller: http://www.surfing-waves.com/feed.htm -->
 
 		<!-- Features -->	
 		
@@ -175,100 +175,104 @@ $(document).ready(function(){
 				</li>
 				<li>
 					<!-- start sw-rss-feed code --> 
-<script type="text/javascript"> 
-<!-- 
-rssfeed_url = new Array(); 
-rssfeed_url[0]="https://streemian.com/rss/steemdev";  
-rssfeed_frame_width="251"; 
-rssfeed_frame_height="150"; 
-rssfeed_scroll="on"; 
-rssfeed_scroll_step="6"; 
-rssfeed_scroll_bar="off"; 
-rssfeed_target="_blank"; 
-rssfeed_font_size="12"; 
-rssfeed_font_face=""; 
-rssfeed_border="on"; 
-rssfeed_css_url=""; 
-rssfeed_title="on"; 
-rssfeed_title_name="#STEEMDEV"; 
-rssfeed_title_bgcolor="#55a0ff"; 
-rssfeed_title_color="#fff"; 
-rssfeed_title_bgimage=""; 
-rssfeed_footer="off"; 
-rssfeed_footer_name="rss feed"; 
-rssfeed_footer_bgcolor="#fff"; 
-rssfeed_footer_color="#333"; 
-rssfeed_footer_bgimage=""; 
-rssfeed_item_title_length="50"; 
-rssfeed_item_title_color="#000"; 
-rssfeed_item_bgcolor="#fff"; 
-rssfeed_item_bgimage=""; 
-rssfeed_item_border_bottom="on"; 
-rssfeed_item_source_icon="off"; 
-rssfeed_item_date="off"; 
-rssfeed_item_description="on"; 
-rssfeed_item_description_length="120"; 
-rssfeed_item_description_color="#666"; 
-rssfeed_item_description_link_color="#333"; 
-rssfeed_item_description_tag="off"; 
-rssfeed_no_items="0"; 
-rssfeed_cache = "3609ce984b21b4371b78f174e81b0be6"; 
-//--> 
-</script> 
-<script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
-<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
-<div style="text-align:right; width:230px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">feedwidget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">Surfing Waves</a></div> 
-<!-- end sw-rss-feed code -->
+					<script type="text/javascript"> 
+					<!-- 
+					rssfeed_url = new Array(); 
+					rssfeed_url[0]="https://streemian.com/rss/steemdev";  
+					rssfeed_frame_width="251"; 
+					rssfeed_frame_height="150"; 
+					rssfeed_scroll="on"; 
+					rssfeed_scroll_step="6"; 
+					rssfeed_scroll_bar="off"; 
+					rssfeed_target="_blank"; 
+					rssfeed_font_size="12"; 
+					rssfeed_font_face=""; 
+					rssfeed_border="on"; 
+					rssfeed_css_url=""; 
+					rssfeed_title="on"; 
+					rssfeed_title_name="#STEEMDEV"; 
+					rssfeed_title_bgcolor="#55a0ff"; 
+					rssfeed_title_color="#fff"; 
+					rssfeed_title_bgimage=""; 
+					rssfeed_footer="off"; 
+					rssfeed_footer_name="rss feed"; 
+					rssfeed_footer_bgcolor="#fff"; 
+					rssfeed_footer_color="#333"; 
+					rssfeed_footer_bgimage=""; 
+					rssfeed_item_title_length="50"; 
+					rssfeed_item_title_color="#000"; 
+					rssfeed_item_bgcolor="#fff"; 
+					rssfeed_item_bgimage=""; 
+					rssfeed_item_border_bottom="on"; 
+					rssfeed_item_source_icon="off"; 
+					rssfeed_item_date="off"; 
+					rssfeed_item_description="on"; 
+					rssfeed_item_description_length="120"; 
+					rssfeed_item_description_color="#666"; 
+					rssfeed_item_description_link_color="#333"; 
+					rssfeed_item_description_tag="off"; 
+					rssfeed_no_items="0"; 
+					rssfeed_cache = "3609ce984b21b4371b78f174e81b0be6"; 
+					//--> 
+					</script> 
+					<script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
+					<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
+					<div style="text-align:right; width:230px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">feedwidget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">Surfing Waves</a></div> 
+					<!-- end sw-rss-feed code -->
 
 				</li>
 				<li>
-<!-- start sw-rss-feed code --> 
-<script type="text/javascript"> 
-<!-- 
-rssfeed_url = new Array(); 
-rssfeed_url[0]="https://streemian.com/rss/@techtek";  
-rssfeed_frame_width="251"; 
-rssfeed_frame_height="150"; 
-rssfeed_scroll="on"; 
-rssfeed_scroll_step="6"; 
-rssfeed_scroll_bar="off"; 
-rssfeed_target="_blank"; 
-rssfeed_font_size="12"; 
-rssfeed_font_face=""; 
-rssfeed_border="on"; 
-rssfeed_css_url=""; 
-rssfeed_title="on"; 
-rssfeed_title_name="BLOG @techtek"; 
-rssfeed_title_bgcolor="#55a0ff"; 
-rssfeed_title_color="#fff"; 
-rssfeed_title_bgimage=""; 
-rssfeed_footer="off"; 
-rssfeed_footer_name="rss feed"; 
-rssfeed_footer_bgcolor="#fff"; 
-rssfeed_footer_color="#333"; 
-rssfeed_footer_bgimage=""; 
-rssfeed_item_title_length="50"; 
-rssfeed_item_title_color="#000"; 
-rssfeed_item_bgcolor="#fff"; 
-rssfeed_item_bgimage=""; 
-rssfeed_item_border_bottom="on"; 
-rssfeed_item_source_icon="off"; 
-rssfeed_item_date="off"; 
-rssfeed_item_description="on"; 
-rssfeed_item_description_length="120"; 
-rssfeed_item_description_color="#666"; 
-rssfeed_item_description_link_color="#333"; 
-rssfeed_item_description_tag="off"; 
-rssfeed_no_items="0"; 
-rssfeed_cache = "cd5e13a8cb6a8bc7d14f98ca9dd5a0a9"; 
-//--> 
-</script> 
-<script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
-<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
-<div style="text-align:right; width:230px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">feedwidget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">Surfing Waves</a></div> 
-<!-- end sw-rss-feed code -->
+					<!-- start sw-rss-feed code --> 
+					<script type="text/javascript"> 
+					<!-- 
+					rssfeed_url = new Array(); 
+					rssfeed_url[0]="https://streemian.com/rss/@techtek";  
+					rssfeed_frame_width="251"; 
+					rssfeed_frame_height="150"; 
+					rssfeed_scroll="on"; 
+					rssfeed_scroll_step="6"; 
+					rssfeed_scroll_bar="off"; 
+					rssfeed_target="_blank"; 
+					rssfeed_font_size="12"; 
+					rssfeed_font_face=""; 
+					rssfeed_border="on"; 
+					rssfeed_css_url=""; 
+					rssfeed_title="on"; 
+					rssfeed_title_name="BLOG @techtek"; 
+					rssfeed_title_bgcolor="#55a0ff"; 
+					rssfeed_title_color="#fff"; 
+					rssfeed_title_bgimage=""; 
+					rssfeed_footer="off"; 
+					rssfeed_footer_name="rss feed"; 
+					rssfeed_footer_bgcolor="#fff"; 
+					rssfeed_footer_color="#333"; 
+					rssfeed_footer_bgimage=""; 
+					rssfeed_item_title_length="50"; 
+					rssfeed_item_title_color="#000"; 
+					rssfeed_item_bgcolor="#fff"; 
+					rssfeed_item_bgimage=""; 
+					rssfeed_item_border_bottom="on"; 
+					rssfeed_item_source_icon="off"; 
+					rssfeed_item_date="off"; 
+					rssfeed_item_description="on"; 
+					rssfeed_item_description_length="120"; 
+					rssfeed_item_description_color="#666"; 
+					rssfeed_item_description_link_color="#333"; 
+					rssfeed_item_description_tag="off"; 
+					rssfeed_no_items="0"; 
+					rssfeed_cache = "cd5e13a8cb6a8bc7d14f98ca9dd5a0a9"; 
+					//--> 
+					</script> 
+					<script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
+					<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
+					<div style="text-align:right; width:230px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">feedwidget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">Surfing Waves</a></div> 
+					<!-- end sw-rss-feed code -->
 
 				</li>
+
+			<!-- embedded Live video feed from ustream (for better preformance disable the autoplay value) -->
+
+
 				<li>
 					<iframe src="http://www.ustream.tv/embed/17074538?html5ui=1&autoplay=true" style="border: 0 none transparent;" webkitallowfullscreen allowfullscreen frameborder="no" width="246" height="150"></iframe>				</li>
 				<li>
@@ -276,8 +280,15 @@ rssfeed_cache = "cd5e13a8cb6a8bc7d14f98ca9dd5a0a9";
 				</ul>
 		</article>
 
-<article id="examples">
-			<h3>Links</h3>
+
+
+
+
+<!-- links to Steemit related services -->
+
+		<article id="examples">
+			
+		<h3>Links</h3>
 			<ul>
 				<li>
 					<a href="https://www.steemit.com">
@@ -358,7 +369,7 @@ rssfeed_cache = "cd5e13a8cb6a8bc7d14f98ca9dd5a0a9";
 
 
 
-
+<!-- SteemPi -->
 
 
 		</article>
@@ -372,17 +383,22 @@ rssfeed_cache = "cd5e13a8cb6a8bc7d14f98ca9dd5a0a9";
 			</ul>
 		</article>
 
+
+
+
+<!-- Reference -->
+
 		<article id="reference">
 			<h3 class="seperator">REFERENCE</h3>
 			<ul>
 				<li>
-					<h4>LED Notifications</h4>
-					<pre>/home/pi/Desktop/ledscript.sh</span></pre>
-					<span>Edit this script and change "@techtek" to your steemit account</span>
+					<h4>LED Notifications script</h4>
+					<pre>/var/www/html/ledscript/ledscript.sh</span></pre>
+					<span>Edit this script and change "@techtek" to your Steemit account</span>
 					
 				</li>
 				<li>
-					<h4>Edit the Webinterface</h4>
+					<h4>Edit SteemPi webinterface</h4>
 					<pre>/var/www/html/index.html</span></pre>
 					<span>Edit this file to add in new functions or change the interface</span>
 				</li>
@@ -390,10 +406,13 @@ rssfeed_cache = "cd5e13a8cb6a8bc7d14f98ca9dd5a0a9";
 			</ul>
 		</article>
 
+
+
+<!-- Footer -->
 		
 		<footer>
 			<div class="center">
-				<h3>STEEMPI made by @techtek</h3>
+				<h3>STEEMPI</h3>
 				<section id="meta">
 					<div>SteemPi is made by: @techtek </div>
 				</section>
