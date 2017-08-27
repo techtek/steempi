@@ -1,0 +1,166 @@
+@import 'compass';
+@import 'compass/reset';
+@import 'compass/css3';
+
+@import "icons/*.png";
+@include all-icons-sprites;
+
+@import 'grid/grid';
+
+
+// //////////////////////
+// CONFIG
+// //////////////////////
+
+$total_width: 100%;
+$container_margin: 1%;
+$gutter_width: 2%;
+$max_width: 100%;
+
+$color_yellow: #fff200;
+$color_nearlyblack: #252525;
+$color_nearlynearlyblack: #454545;
+$color_body: #636363;
+$color_headlines: #b7b7b7;
+
+
+
+// //////////////////////
+// MODULE STYLES
+// //////////////////////
+
+@import "examples/modules/global-styles";
+@import "examples/modules/overlay";
+@import "examples/modules/nav";
+@import "examples/modules/header-example";
+@import "examples/modules/footer";
+
+article div{
+	height: 80px;
+	background: $color_yellow;
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 900;
+	font-size: 24px;
+	text-align: center;
+	color: $color_nearlynearlyblack;
+	line-height: 80px;
+}
+
+#grid{
+	margin-bottom: 0px;
+	height: 0px;
+
+	div{
+		background: none;
+
+		div{
+			background: black;
+		}
+	}
+}
+
+
+///////////////////
+// LAYOUT < 720  //
+///////////////////
+
+$total_width: 100%;
+$container_margin: 1%;
+$gutter_width: 2%;
+$max_width: 2000px;
+
+article{
+	@include container();
+	@include clearfix();
+}
+
+#row1, #row2, #row3, #row4, #row5, #row6{
+	div{@include column(12);}
+	@include generate_grid_positions(div, 12);
+}
+
+
+///////////////////
+// LAYOUT > 720  //
+///////////////////
+
+@media screen and (min-width: 720px) {
+
+	$total_width: 100%;
+	$container_margin: 1%;
+	$gutter_width: 2%;
+	$max_width: 2000px;
+
+	article{
+		@include container();
+		@include clearfix();
+	}
+
+	#row1{
+		div{@include column(2);}
+		@include generate_grid_positions(div, 2);
+	}
+	#row2{
+		div{@include column(2);}
+		@include generate_grid_positions(div, 2);
+	}
+	#row3{
+		div{@include column(4);}
+		@include generate_grid_positions(div, 4);
+		div.last{@include column(12);};
+	}
+	#row4{
+		div{@include column(4);}
+		@include generate_grid_positions(div, 4);
+	}
+	#row5{
+		div{@include column(6);}
+		@include generate_grid_positions(div, 6);
+	}
+	#row6{
+		div{@include column(12);}
+	}
+}
+
+
+///////////////////
+// LAYOUT > 960  //
+///////////////////
+
+@media all and (min-width: 960px) {
+
+	$total_width: 100%;
+	$container_margin: 1%;
+	$gutter_width: 2%;
+	$max_width: 2000px;
+
+	article{
+		@include container();
+		@include clearfix();
+	}
+
+	#row1{
+		div{@include column(1);}
+		@include generate_grid_positions(div, 1);
+	}
+	#row2{
+		div{@include column(2);}
+		@include generate_grid_positions(div, 2);
+	}
+	#row3{
+		div{@include column(3);}
+		div.last{@include column(3);}
+		@include generate_grid_positions(div, 3);
+	}
+	#row4{
+		div{@include column(4);}
+		@include generate_grid_positions(div, 4);
+	}
+	#row5{
+		div{@include column(6);}
+		@include generate_grid_positions(div, 6);
+	}
+	#row6{
+		div{@include column(12);}
+	}
+}

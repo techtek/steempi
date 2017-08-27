@@ -1,0 +1,37 @@
+*{
+	outline: none;
+}
+
+html, body{
+	background: #f5f5f5;	
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	min-height: 100%;
+}
+
+article{
+	width: $total_width;
+	max-width: $max_width;
+	margin: 0 auto;	
+	margin-bottom: 80px;
+
+	h3{
+		width: 100%;
+		text-align: center;
+		font-family: 'Raleway', Arial, sans-serif;
+		font-weight: 900;
+		font-size: 38px;
+		padding-top: 72px;
+		padding-bottom: 55px;
+		color: $color_headlines;
+	}
+
+	h3.seperator{
+		border-top: 1px solid rgba(0,0,0,0.1);
+	}
+}

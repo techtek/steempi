@@ -1,0 +1,190 @@
+@import 'compass';
+@import 'compass/reset';
+@import 'compass/css3';
+
+@import "icons/*.png";
+@include all-icons-sprites;
+
+@import 'grid/grid';
+
+
+// //////////////////////
+// CONFIG
+// //////////////////////
+
+$total_width: 100%;
+$container_margin: 1%;
+$gutter_width: 2%;
+$max_width: 100%;
+
+$color_yellow: #fff200;
+$color_nearlyblack: #252525;
+$color_nearlynearlyblack: #454545;
+$color_body: #636363;
+$color_headlines: #b7b7b7;
+
+
+
+// //////////////////////
+// MODULE STYLES
+// //////////////////////
+@import "examples/modules/global-styles";
+@import "examples/modules/overlay";
+@import "examples/modules/nav";
+@import "examples/modules/header-example";
+@import "examples/modules/footer";
+
+footer {
+	width: 100%;
+}
+
+footer .center{
+	margin: 0 auto;
+}
+
+article{
+	@include container();
+	@include clearfix();
+	margin-bottom: $gutter_width;
+}
+
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12{
+	min-height: 80px;
+	background: $color_yellow;
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 900;
+	font-size: 24px;
+	text-align: center;
+	color: $color_nearlynearlyblack;
+	line-height: 80px;
+}
+
+#grid{
+	margin-bottom: 0px;
+	height: 0px;
+
+	div{
+		background: none;
+
+		div{
+			background: black;
+		}
+	}
+}
+
+@include generate_helper_classes();
+
+///////////////////
+// SUBGRID 1
+///////////////////
+
+$total_width: 100%;
+$container_margin: 1%;
+$gutter_width: 2%;
+
+$color_yellow: #fff200;
+$color_nearlyblack: #252525;
+$color_nearlynearlyblack: #454545;
+$color_body: #636363;
+$color_headlines: #b7b7b7;
+
+.subgrid1{
+	margin: 0;
+	@include container();
+	@include clearfix();
+	max-width: 2000px;
+
+	.subcol{
+		background: #ccbb27;
+	}
+
+	.subcol1{
+		@include column(1);
+	}
+
+	.subcol6{
+		@include column(6);
+	}
+
+	@include generate_grid_positions(div, 1);
+
+	.subcol6:nth-child(1){
+		@include push(0);
+	}
+	.subcol6:nth-child(2){
+		@include push(6);
+	}
+}
+
+article .subgrid1:first-child{
+	margin-top: $gutter_width;
+}
+
+///////////////////
+// SUBGRID 2
+///////////////////
+
+$total_width: 100%;
+$container_margin: 1%;
+$gutter_width: 2%;
+$max_width: 2000px;
+
+$color_yellow: #fff200;
+$color_nearlyblack: #252525;
+$color_nearlynearlyblack: #454545;
+$color_body: #636363;
+$color_headlines: #b7b7b7;
+
+.subgrid2{
+	background: none !important; 
+	margin: 0;
+	@include container();
+	@include clearfix();
+	margin-left: $container_margin !important;
+	margin-bottom: $container_margin !important;
+
+	.subsubcol {
+		background: #a2951d;
+	}
+
+	.subcol1{
+		@include column(1);
+	}
+
+	.subcol6{
+		@include column(6);
+	}
+
+	@include generate_grid_positions(div, 1);
+
+	.subcol6:nth-child(1){
+		@include push(0);
+	}
+	.subcol6:nth-child(2){
+		@include push(6);
+	}
+}
+
+article .subgrid2:first-child{
+	margin-top: $gutter_width;
+}
+
+@media screen and (max-width: 960px) {
+	.subgrid2{
+		font-size: 12px !important;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.subgrid2{
+		font-size: 0px !important;
+	}
+	.subgrid1{
+		font-size: 12px !important;
+	}
+}
+@media screen and (max-width: 400px) {
+	.subgrid1, .subgrid2{
+		font-size: 0px !important;
+	}
+}

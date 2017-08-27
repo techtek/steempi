@@ -1,0 +1,186 @@
+header{
+	width: 100%;
+	background: $color_yellow;
+	padding-top: 100px;
+
+	h1{
+		width: 100%;
+		text-align: center;
+		font-family: 'Raleway', Arial, sans-serif;
+		font-weight: 500;
+		font-size: 24px;
+		letter-spacing: 7px;
+		color: #252525;
+		text-align: center;
+		padding-bottom:30px;
+
+		span{
+			font-weight: 900;
+			letter-spacing: 8px;
+		}
+		
+		a{
+			text-decoration: none;
+			color: $color_nearlyblack;
+			text-align: center;
+		}
+	}
+
+	.seperator{
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		width: 15%;
+		margin: 0 auto;
+	}
+
+	h2{
+		text-align: center;
+		font-family: 'Raleway', Arial, sans-serif;
+		font-weight: 200;
+		font-size: 22px;
+		margin-top:25px;
+		line-height: 30px;
+		color: $color_nearlynearlyblack;
+		margin-left: 7%;
+		margin-right: 7%;
+	}
+
+	section {
+		width: $total_width;
+		max-width: $max_width;
+		margin: 0 auto;	
+		margin-top: 30px;
+		padding-bottom: 45px;
+
+		ul{
+			@include clearfix();
+			@include container();
+			max-width: $max_width;
+
+			li{
+				@include column(12);
+
+				h3{
+					width: 100%;
+					text-align: center;
+					font-family: 'Raleway', Arial, sans-serif;
+					font-weight: 900;
+					font-size: 26px;
+					color: $color_nearlynearlyblack;
+				}
+
+				p{
+					text-align: center;
+					margin-left: 5%;
+					margin-right: 5%;
+					text-align: center;
+					font-family: Arial, sans-serif;
+					font-weight: normal;
+					font-size: 14px;
+					margin-top: 8px;
+					line-height: 20px;
+					color: $color_nearlynearlyblack;
+				}
+
+				img{
+					display: block;
+					width: 100%;
+					max-width: 351px;
+					margin: 0 auto;
+				}
+			}
+
+			@include generate_grid_positions(li, 12);
+		}
+	}
+}
+
+
+// ///////////////////////////
+// MEDIA QUERIES
+// ///////////////////////////
+
+@media screen and (min-width: 460px) {
+	header h2{
+		font-size: 26px;
+		line-height: 33px;
+		margin-left:7%;
+		margin-right:7%;
+	}
+
+	header section ul li p {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	header section ul li h3{
+		font-size: 20px;
+	}
+
+}
+
+@media screen and (min-width: 550px) {
+	header h2{
+		font-size: 28px;
+		line-height: 38px;
+		margin-left:10%;
+		margin-right:10%;
+	}
+
+	header section ul li p {
+		font-size: 14px;
+	}
+
+	header section ul li h3{
+		font-size: 24px;
+	}
+
+}
+
+@media screen and (min-width: 700px) {
+	header h2{
+		font-size: 30px;
+		line-height: 38px;
+		margin-left:20%;
+		margin-right:20%;
+	}
+
+	header section{
+		margin-top: 30px;
+	}
+
+	header section ul li p {
+		font-size: 16px;
+	}
+
+	header section{
+		padding-bottom: 25px;
+	}
+
+	header section ul {
+		li{
+			@include column(4);
+		}
+		@include generate_grid_positions(li, 4);
+	}
+}
+
+
+
+@media screen and (min-width: 900px) {
+
+	header h2{
+		font-size: 32px;
+		line-height: 48px;		
+		max-width: 800px !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+
+	section ul li p {
+		font-size: 18px;
+	}
+
+	header section ul li h3{
+		font-size: 28px;
+	}
+}

@@ -1,0 +1,158 @@
+.tooltip{
+	position: absolute;
+	display: block;
+	color: white;
+	background: $color_nearlynearlyblack;
+	@include border-radius(4px);
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	@include transition(opacity 0.1s ease-out, margin-top 0.1s ease-out);
+	opacity: 0;
+  	filter: alpha(opacity = 0);
+  	margin-top:3px;
+  	z-index: 9000;
+  	
+	.arrow{
+		position: absolute;
+		display: block;
+		top: -5px;
+		left: 50%;
+		margin-left: -5px;
+		background-position: 0 -329px;
+		width: 10px;
+		height: 5px;
+		@include icons-sprite(arrow);
+	}
+	
+}
+
+.tooltip.show{
+	margin-top:0px;
+	opacity: 1;
+  	filter: alpha(opacity = 100);
+}
+
+nav{
+	width: $total_width;
+	background: white;
+
+	div{
+
+		width: $total_width;
+		max-width: $max_width;
+		margin: 0 auto;	
+
+		ul{
+			
+			@include clearfix();
+			@include container();
+			height: 100%;
+			position: relative;
+
+			li:nth-child(1){
+				@include column(5);
+				@include push(0);
+				position: absolute;
+				left: 0px;
+				top: 50%;
+				margin-top: -25px;
+				text-align: left;
+			}
+
+			li:nth-child(2){
+				@include column(2);
+				@include push(5);
+				text-align: center;
+				
+				a{
+					margin: 0 auto;
+					
+					img{
+						width: 100%;
+						max-width: 153px;
+						height: auto;
+						width: auto\9;
+					}
+				}
+				
+			}
+			
+			li:nth-child(3){
+				@include column(5);
+				@include push(7);
+				text-align: right;
+				position: absolute;
+				right: 100%;
+				top: 50%;
+				margin-top: -25px;
+			}	
+
+			li:first-child a, li:last-child a{
+				display: inline-block;
+				width: 50px;
+				height: 47px;
+				text-indent: -1000px;
+				overflow: hidden;
+				text-align: left;
+				opacity: 0.3;
+		  		filter: alpha(opacity = 30);
+		  		@include transition(0.25s ease-out);
+			}
+
+			li:first-child a:hover, li:last-child a:hover{
+				opacity: 1;
+		  		filter: alpha(opacity = 100);
+			}
+
+			li:first-child a{
+				@include icons-sprite(grid);
+			}
+
+			#navDownload{
+				@include icons-sprite(download);
+				display:none;
+			}
+
+			#navGithub{
+				@include icons-sprite(github);
+				display:none;
+			}
+
+			#navFacebook{
+				@include icons-sprite(facebook);
+			}
+
+			#navTwitter{
+				@include icons-sprite(twitter);
+			}
+		}
+	}
+}
+
+// ///////////////////////////
+// MEDIA QUERIES
+// ///////////////////////////
+
+@media screen and (min-width: 460px) {
+	
+}
+
+@media screen and (min-width: 550px) {
+}
+
+@media screen and (min-width: 700px) {
+	#navDownload{
+		display: inline-block !important;
+	}
+
+	#navGithub{
+		display: inline-block !important;
+	}
+
+}
+
+
+
+@media screen and (min-width: 900px) {
+}

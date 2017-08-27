@@ -1,0 +1,151 @@
+@import 'compass';
+@import 'compass/reset';
+@import 'compass/css3';
+
+@import "icons/*.png";
+@include all-icons-sprites;
+
+@import 'grid/grid';
+
+
+// //////////////////////
+// CONFIG
+// //////////////////////
+
+$total_width: 960px;
+$container_margin: auto;
+$gutter_width: 20px;
+
+$color_yellow: #fff200;
+$color_nearlyblack: #252525;
+$color_nearlynearlyblack: #454545;
+$color_body: #636363;
+$color_headlines: #b7b7b7;
+
+$max_width: 960px;
+
+// //////////////////////
+// MODULE STYLES
+// //////////////////////
+@import "examples/modules/global-styles";
+@import "examples/modules/overlay";
+@import "examples/modules/nav";
+@import "examples/modules/header-example";
+@import "examples/modules/footer";
+
+nav, footer {
+	width: 100%;
+}
+
+nav .center, footer .center{
+	margin: 0 auto;
+}
+
+$total_width: 960px;
+$container_margin: auto;
+$gutter_width: 20px;
+
+article{
+	margin-bottom: $gutter_width;
+	height: 80px;
+}
+
+#grid{
+	margin-bottom: 0px;
+	height: 0px;
+
+	div{
+		background: none;
+
+		div{
+			background: black;
+		}
+	}
+}
+
+article div{
+	height: 80px;
+	background: $color_yellow;
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 900;
+	font-size: 24px;
+	text-align: center;
+	color: $color_nearlynearlyblack;
+	line-height: 80px;
+}
+
+@include generate_helper_classes();
+
+#row1{
+	div{@include column(1);}
+	@include generate_grid_positions(div, 1);
+}
+
+#row2{
+	div{@include column(2);}
+	@include generate_grid_positions(div, 2);
+}
+
+#row3{
+	div{@include column(3);}
+	@include generate_grid_positions(div, 3);
+}
+
+#row4{
+	div{@include column(4);}
+	@include generate_grid_positions(div, 4);
+}
+
+
+
+
+// //////////////////////////////////////////////////////
+// CANCEL OUT MEDIA QUERIES FOR THIS EXAMPLE
+// //////////////////////////////////////////////////////
+nav {
+	min-width: 960px !important;
+}
+
+header {
+	.center{
+		h1{
+			font-size: 38px !important;
+		}
+
+		a span{
+			display: block !important;
+		}
+		a#example_prev{
+			left: 0px !important;
+		}
+		a#example_next{
+			right: 0px !important;
+		}
+	}
+}	
+
+
+footer {
+	min-width: 960px !important;
+	div{
+		#meta{
+			div:first-child{
+				@include column(9);
+				font-size: 12px;
+				text-align: left;
+				margin-top: 0px;
+				line-height: 50px;
+			}
+
+			div:nth-child(2){
+				@include column(3);
+				@include push(9);
+				text-align: right;
+			}
+		}
+	}	
+}
+
+
+
+	
