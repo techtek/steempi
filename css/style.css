@@ -83,6 +83,7 @@ footer {
  ========================================= */
 
 .google-trends-box {
+    float: left;
     width: 33%;
 }
 
@@ -93,11 +94,24 @@ footer {
     width: 100%;
 }
 
+@media (max-width: 900px) {
+    .google-trends-box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .google-trends-box {
+        width: 100%;
+    }
+}
+
 /** Apps
  ========================================= */
 
 .apps-box {
-    width: calc(25% - 5px);
+    float: left;
+    width: 25%;
 }
 
 .apps-box iframe {
@@ -105,15 +119,52 @@ footer {
     width: 100%;
 }
 
+@media (max-width: 900px) {
+    .apps-box {
+        width: 33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .apps-box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .apps-box {
+        width: 100%;
+    }
+}
+
 /** Links
  ========================================= */
 
 .links-box {
-    width: calc(25% - 5px);
+    float: left;
+    width: 25%;
 }
 
 .links-box img {
     width: 100%;
+}
+
+@media (max-width: 900px) {
+    .links-box {
+        width: 33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .links-box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .links-box {
+        width: 100%;
+    }
 }
 
 /** Downloads
@@ -121,6 +172,7 @@ footer {
 
 .downloads {
     text-align: center;
+    padding: 0 20px;
 }
 
 .downloads a {
@@ -131,6 +183,20 @@ footer {
     padding: 30px;
     text-decoration: none;
     width: 25%;
+}
+
+@media (max-width: 900px) {
+    .downloads a {
+        margin-bottom: 10px;
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .downloads a {
+        margin-bottom: 10px;
+        width: 100%;
+    }
 }
 
 /** Downloads
@@ -148,6 +214,13 @@ footer {
     color: #454545;
     font-family: "Courier New", Courier, Georgia, serif;
     margin: 10px 0;
+    overflow: auto;
     padding: 20px;
     word-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+    .reference-entry {
+        width: 100%;
+    }
 }
