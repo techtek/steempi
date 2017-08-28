@@ -48,7 +48,7 @@ Step 3: Steemit LED light notifications
 - Make ledscript.sh executable, "cd /var/www/html/ledscript/" and use the command "sudo chmod u+x ledscript.sh" 
 - To run the script manualy: "cd /var/www/html/ledscript/" and to run it, "sudo ./ledscript.sh" The LED should blink one time.
 
-You can test if it worked by making a reply on my Steemit account http://steemit.com/@techtek 
+You can test if it is working by making a reply on my Steemit account http://steemit.com/@techtek 
 This way you can test if your LED lights up, and it's a way to let me know you installed SteemPi.   
 
 If the LED lights up, change "@techtek" in the script, to watch your account for updates to do this, use the commands:
