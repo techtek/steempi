@@ -66,12 +66,17 @@ Everything is now ready to use!
 (When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the auto-play function in index.html)
 <br>
 <br>
+<br>
 
 If you make changes to the SteemPi project, please do share them back to the SteemPi project so others can use those functionalities as well.
+
 https://github.com/techtek/steempi
+
 https://steemit.com/@techtek
+https://steemit.com/@dehenne   
 
 Please support the makers of the services that are integrated into SteemPi.
+
 If you have a service or functionality you want to integrate, you could help by writing a custom code for your service that can be implemented in the SteemPi web interface.
 
 
