@@ -3,16 +3,16 @@ STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry P
 SteemPi shows its interface on a connected TV (HDMI), but you can also view the interface with a web browser on mobile devices, laptops, pc, game consoles and smartwatches and other devices that are capable of browsing web pages.
 
 SteemPi is made by @techtek and @dehenne
-
-
+<br>
+<br>
 
 "How to make your Pi, Steem?"
-
-
+<br>
+<br>
 
 SteemPi v1.0 Tutorial
-
-
+<br>
+<br>
 
 Step 1: Operating system
 
@@ -21,8 +21,8 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 - Boot up the system and connect to your home network and the internet (Wifi or cable)
 - Enable SSH "Start > Preferences > Raspberry Pi Configuration > Interfaces > Enable ssh"
-
-
+<br>
+<br>
 
 Step 2: SteemPi Installation 
 
@@ -33,8 +33,8 @@ Step 2: SteemPi Installation
 - Clone the SteemPi project files to you Pi "cd /var/www/" and to clone it into the root html webserver folder use the command, "sudo git clone https://github.com/techtek/steempi.git html"
 
 The Webinterface is done!, Open the IP of your Pi in a browser and you should see the SteemPi webinterface.
-
-
+<br>
+<br>
 
 
 Step 3: Steemit LED light notifications
@@ -52,16 +52,15 @@ If the LED lights up, change "@techtek" in the script, to watch your account for
 
 To make ledscript.sh boot on startup, "sudo nano /etc/rc.local" add in this file before exit 0 this line "/var/www/html/ledscript/./ledscript.sh"
 and exit and save with, ctrl+x
-
-
+<br>
+<br>
 
 
 Everything is now ready to use!
 
 (When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the auto-play function in index.html)
-
-
-
+<br>
+<br>
 
 If you make changes to the SteemPi project, please do share them back to the SteemPi project so others can use those functionalities as well.
 https://github.com/techtek/steempi
