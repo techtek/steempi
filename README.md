@@ -5,12 +5,15 @@ SteemPi shows its interface on a connected TV (HDMI), but you can also view the 
 SteemPi is made by @techtek and @dehenne
 <br>
 <br>
+<br>
 
 "How to make your Pi, Steem?"
 <br>
 <br>
+<br>
 
 SteemPi v1.0 Tutorial
+<br>
 <br>
 <br>
 
@@ -21,6 +24,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 - Boot up the system and connect to your home network and the internet (Wifi or cable)
 - Enable SSH "Start > Preferences > Raspberry Pi Configuration > Interfaces > Enable ssh"
+<br>
 <br>
 <br>
 
@@ -35,7 +39,7 @@ Step 2: SteemPi Installation
 The Webinterface is done!, Open the IP of your Pi in a browser and you should see the SteemPi webinterface.
 <br>
 <br>
-
+<br>
 
 Step 3: Steemit LED light notifications
 
@@ -52,6 +56,7 @@ If the LED lights up, change "@techtek" in the script, to watch your account for
 
 To make ledscript.sh boot on startup, "sudo nano /etc/rc.local" add in this file before exit 0 this line "/var/www/html/ledscript/./ledscript.sh"
 and exit and save with, ctrl+x
+<br>
 <br>
 <br>
 
