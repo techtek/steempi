@@ -1,37 +1,73 @@
-Tutotial is unfinished at this moment
+STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library
 
-<br>
-# STEEMPI V1.0
-Steemit LED light notifications and Web interface for Raspberry Pi (and other pi clones that uses the Wirringpi library)
+SteemPi shows its interface on a connected TV (HDMI), but you can also view the interface with a web browser on mobile devices, laptops, pc, game consoles and smartwatches and other devices that are capable of browsing web pages.
 
-<br>
+SteemPi is made by @techtek and @dehenne
 
-Operating system
 
-1. Install the latest version of Raspbian on your SD card
 
-2. Boot up the system and connect to your network and the internet (wifi or cable)
+"How to make your Pi, Steem?"
 
-<br>
 
-Steemit LED light notifications 
 
-3. Copy ledscript.sh to the desktop of Raspbian
+SteemPi v1.0 Tutorial
 
-4. Make ledscript.sh excecutable "CHMOD    to run manualy: "sudo ./ledscript"
 
-5. Make ledscript.sh boot on startup, "sudo nano /etc/rc.local" add before exit 0 this line "/home/pi/Desktop/./ledscript"
 
-6. Check if it works, and to celebrate, please leave me a reply on my steemit post and check if your LED lights up.
+Step 1: Operating system
 
-7. if it worked, you can change "@techtek" the script, to watch your account for updates: "cd /home/pi/Desktop"   "sudo nano ledscript.sh"
+Install the latest version of Raspbian on your SD card
+https://www.raspberrypi.org/downloads/raspbian/
 
-<br>
+- Boot up the system and connect to your home network and the internet (Wifi or cable)
+- Enable SSH "Start > Preferences > Raspberry Pi Configuration > Interfaces > Enable ssh"
 
-Webinterface
 
-8. Install Apache and PHP5, "sudo apt-get update"   "sudo apt-get install apache2 php5 libapache2-mod-php5" test it by opening a browser and type in the IP of your Pi, it should show a "it works" page. delete the index file from /var/www/html/
 
-9. Copy and replace the Steempi interface files from this Github into the /var/www/html/ folder
+Step 2: SteemPi Installation 
 
-10. Done!, Open the IP of your PI in a browser and you should see the SteemPi webinterface
+- Install Apache and PHP5, "sudo apt-get update" and install with the command "sudo apt-get install apache2 php5 libapache2-mod-php5" 
+- Test the Apache websserver by opening a browser and type in the IP of your Pi, it should show a "it works" page. 
+- If the test went ok you can delete the index file from /var/www/html/ open the directory by using the command "cd /var/www/html/" and to remove, "sudo rm index.html" 
+
+- Clone the SteemPi project files to you Pi "cd /var/www/" and to clone it into the root html webserver folder use the command, "sudo git clone https://github.com/techtek/steempi.git html"
+
+The Webinterface is done!, Open the IP of your Pi in a browser and you should see the SteemPi webinterface.
+
+
+
+
+Step 3: Steemit LED light notifications
+
+- Connect a LED to GPIO17 of the Pi 
+(and you shoud solder the correct resistor to the LED. it works without one, no problems so far but you may damage the pi without one. 
+- Make ledscript.sh executable, "cd /var/www/html/ledscript/" and use the command "sudo chmod u+x ledscript.sh" 
+- To run the script manualy: "cd /var/www/html/ledscript/" and to run it, "sudo ./ledscript.sh" The LED should blink one time.
+
+You can test if it worked by making a reply on my Steemit account http://steemit.com/@techtek 
+This way you can test if your LED lights up, and it's a way to let me know you installed SteemPi.   
+
+If the LED lights up, change "@techtek" in the script, to watch your account for updates to do this, use the commands:
+"cd /var/www/html/ledscript/" and to edit use the command "sudo nano ledscript.sh" edit the username in the URL and exit and save with, ctrl+x
+
+To make ledscript.sh boot on startup, "sudo nano /etc/rc.local" add in this file before exit 0 this line "/var/www/html/ledscript/./ledscript.sh"
+and exit and save with, ctrl+x
+
+
+
+
+Everything is now ready to use!
+
+(When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the auto-play function in index.html)
+
+
+
+
+If you make changes to the SteemPi project, please do share them back to the SteemPi project so others can use those functionalities as well.
+https://github.com/techtek/steempi
+https://steemit.com/@techtek
+
+Please support the makers of the services that are integrated into SteemPi.
+If you have a service or functionality you want to integrate, you could help by writing a custom code for your service that can be implemented in the SteemPi web interface.
+
+
