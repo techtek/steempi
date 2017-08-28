@@ -1,8 +1,8 @@
-STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library
+STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library.
 
 SteemPi shows its interface on a connected TV (HDMI), but you can also view the interface with a web browser on mobile devices, laptops, pc, game consoles and smartwatches and other devices that are capable of browsing web pages.
 
-SteemPi is made by @techtek and @dehenne
+SteemPi is made by @techtek and @dehenne.
 <br>
 <br>
 <br>
