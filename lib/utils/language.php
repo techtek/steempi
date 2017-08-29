@@ -10,7 +10,16 @@ function getLocale($language = false)
 {
     $dir       = dirname(dirname(dirname(__FILE__)));
     $localeDir = $dir.'/locale/';
-    $config    = require $dir.'/conf/config.php';
+
+    $config = array(
+        'steemitUsername' => '',
+        'steempiLanguage' => 'en_EN'
+    );
+
+    if (file_exists('conf/config.php')) {
+        $config = require $dir.'/conf/config.php';
+    }
+
 
     if ($language !== false) {
         $locale = $localeDir.$language.'.php';
