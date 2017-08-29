@@ -18,7 +18,6 @@ SteemPi is made by @techtek and @dehenne.
 <h2>SteemPi v1.0 Tutorial</h2>
 <br>
 <br>
-<br>
 
 <h3>Step 1: Operating system</h3>
 
