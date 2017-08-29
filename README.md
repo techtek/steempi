@@ -13,7 +13,7 @@ SteemPi is made by @techtek and @dehenne.
 "How to make your Pi, Steem?"
 <br>
 <br>
-<br>
+
 
 <h2>SteemPi v1.0 Tutorial</h2>
 <br>
@@ -28,7 +28,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 - Enable SSH "Start > Preferences > Raspberry Pi Configuration > Interfaces > Enable ssh"
 <br>
 <br>
-<br>
+
 
 <h3>Step 2: SteemPi Installation</h3>
 
@@ -41,7 +41,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 The Webinterface is done!, Open the IP of your Pi in a browser and you should see the SteemPi webinterface.
 <br>
 <br>
-<br>
+
 
 <h3>Step 3: Steemit LED light notifications</h3>
 
@@ -60,7 +60,7 @@ To make ledscript.sh boot on startup, "sudo nano /etc/rc.local" add in this file
 and exit and save with, ctrl+x
 <br>
 <br>
-<br>
+
 
 
 <h1>Everything is now ready to use!</h1>
@@ -75,6 +75,7 @@ If you make changes to the SteemPi project, please do share them back to the Ste
 https://github.com/techtek/steempi
 
 https://steemit.com/@techtek
+
 https://steemit.com/@dehenne   
 
 Please support the makers of the services that are integrated into SteemPi.
