@@ -14,6 +14,10 @@ function saveConfig($data)
     $dir  = dirname(dirname(dirname(__FILE__)));
     $file = $dir.'/conf/config.php';
 
+    if (!is_dir($dir.'/conf/')) {
+        mkdir($dir.'/conf/');
+    }
+
     $currentConfig = require $dir.'/conf/config.php';
 
     if (!isset($currentConfig['steemitUsername'])) {
