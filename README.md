@@ -35,7 +35,7 @@ Install the latest version of Raspbian on your SD card
 - Test the Apache websserver by opening a browser and type in the IP of your Pi, it should show a "it works" page. 
 - If the test went ok you can delete the index file from /var/www/html/ open the directory by using the command <code>cd /var/www/html/</code> and to remove, <code>sudo rm index.html</code> 
 
-- Clone the SteemPi project files to you Pi <code>cd /var/www/</code> and to clone it into the root html webserver folder use the command, <code>sudo git clone https://github.com/techtek/steempi.git html</code>
+- Clone the SteemPi project files to your Pi <code>cd /var/www/</code> and to clone it into the root html folder use the command, <code>sudo git clone https://github.com/techtek/steempi.git html</code>
 
 The Webinterface is done!, Open the IP of your Pi in a browser and you should see the SteemPi webinterface.
 <br>
