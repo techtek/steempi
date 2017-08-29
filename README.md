@@ -7,7 +7,6 @@ SteemPi shows its interface on a connected TV (HDMI), but you can also view the 
 SteemPi is made by @techtek and @dehenne.
 <br>
 <br>
-<br>
 
 "How to make your Pi, Steem?"
 <br>
