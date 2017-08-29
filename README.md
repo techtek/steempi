@@ -1,5 +1,5 @@
-<addr><h2>SteemPi</h2></addr>
-
+<h2>SteemPi</h2>
+<addr>SteemPi</addr>
 
 STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library.
 
