@@ -1,6 +1,12 @@
 <center> ![SteemPi logo](https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png) </center>
 
 
+<p align="center">
+  <img https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png/>
+</p>
+
+
+
 STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library.
 
 SteemPi shows its interface on a connected TV (HDMI), but you can also view the interface with a web browser on mobile devices, laptops, pc, game consoles, smartwatches and other devices that are capable of browsing web pages.
