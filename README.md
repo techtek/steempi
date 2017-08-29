@@ -1,5 +1,4 @@
-<center> ![SteemPi logo](https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png) </center>
-
+ ![SteemPi logo](https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png)
 
 <p align="center">
   ![SteemPi logo](https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png)
