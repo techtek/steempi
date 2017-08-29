@@ -17,7 +17,7 @@ SteemPi is made by @techtek and @dehenne.
 <br>
 <br>
 
-<h3Step 1: Operating system</h3>
+<h3>Step 1: Operating system</h3>
 
 Install the latest version of Raspbian on your SD card
 https://www.raspberrypi.org/downloads/raspbian/
