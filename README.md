@@ -22,10 +22,10 @@ SteemPi is made by @techtek and @dehenne.
 <h3>Step 1: Operating system</h3>
 
 Install the latest version of Raspbian on your SD card
-https://www.raspberrypi.org/downloads/raspbian/
+<code>https://www.raspberrypi.org/downloads/raspbian/</code>
 
 - Boot up the system and connect to your home network and the internet (Wifi or cable)
-- Enable SSH "Start > Preferences > Raspberry Pi Configuration > Interfaces > Enable ssh"
+- Enable SSH <code>Start > Preferences > Raspberry Pi Configuration > Interfaces > Enable ssh</code>
 <br>
 <br>
 
