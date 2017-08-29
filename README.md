@@ -1,5 +1,4 @@
 <h2>SteemPi</h2>
-<code>SteemPi</code>
 
 STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library.
 
@@ -34,9 +33,9 @@ Install the latest version of Raspbian on your SD card
 
 - Install Apache and PHP5, "sudo apt-get update" and install with the command "sudo apt-get install apache2 php5 libapache2-mod-php5" 
 - Test the Apache websserver by opening a browser and type in the IP of your Pi, it should show a "it works" page. 
-- If the test went ok you can delete the index file from /var/www/html/ open the directory by using the command "cd /var/www/html/" and to remove, "sudo rm index.html" 
+- If the test went ok you can delete the index file from /var/www/html/ open the directory by using the command <code>cd /var/www/html/</code> and to remove, <code>sudo rm index.html</code> 
 
-- Clone the SteemPi project files to you Pi "cd /var/www/" and to clone it into the root html webserver folder use the command, "sudo git clone https://github.com/techtek/steempi.git html"
+- Clone the SteemPi project files to you Pi <code>cd /var/www/</code> and to clone it into the root html webserver folder use the command, <code>sudo git clone https://github.com/techtek/steempi.git html</code>
 
 The Webinterface is done!, Open the IP of your Pi in a browser and you should see the SteemPi webinterface.
 <br>
@@ -47,16 +46,16 @@ The Webinterface is done!, Open the IP of your Pi in a browser and you should se
 
 - Connect a LED to GPIO17 of the Pi 
 (and you shoud solder the correct resistor to the LED. it works without one, no problems so far but you may damage the pi without one. 
-- Make ledscript.sh executable, "cd /var/www/html/ledscript/" and use the command "sudo chmod u+x ledscript.sh" 
-- To run the script manualy: "cd /var/www/html/ledscript/" and to run it, "sudo ./ledscript.sh" The LED should blink one time.
+- Make ledscript.sh executable, <code>cd /var/www/html/ledscript/</code> and use the command <code>sudo chmod u+x ledscript.sh</code> 
+- To run the script manualy: <code>cd /var/www/html/ledscript/</code> and to run it, <code>sudo ./ledscript.sh</code> The LED should blink one time because it detected change.
 
-You can test if it is working by making a reply on my Steemit account http://steemit.com/@techtek 
+You can test if it is working by making a reply on my Steemit account <code>http://steemit.com/@techtek</code> 
 This way you can test if your LED lights up, and it's a way to let me know you installed SteemPi.   
 
-If the LED lights up, change "@techtek" in the script, to watch your account for updates to do this, use the commands:
-"cd /var/www/html/ledscript/" and to edit use the command "sudo nano ledscript.sh" edit the username in the URL and exit and save with, ctrl+x
+If the LED lights up, change <code>@techtek</code> in the script, to watch your account for updates to do this, use the commands:
+<code>cd /var/www/html/ledscript/</code> and to edit use the command <code>sudo nano ledscript.sh</code> edit the username in the URL and exit and save with, ctrl+x
 
-To make ledscript.sh boot on startup, "sudo nano /etc/rc.local" add in this file before exit 0 this line "/var/www/html/ledscript/./ledscript.sh"
+To make ledscript.sh boot on startup, <code>sudo nano /etc/rc.local</code> add in this file before exit 0 this line <code>/var/www/html/ledscript/./ledscript.sh</code>
 and exit and save with, ctrl+x
 <br>
 <br>
@@ -65,7 +64,7 @@ and exit and save with, ctrl+x
 
 <h1>Everything is now ready to use!</h1>
 
-(When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the auto-play function in index.html)
+(When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the <code>autoplay</code> function in <code>index.html</code>)
 <br>
 <br>
 <br>
