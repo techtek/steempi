@@ -12,12 +12,12 @@ SteemPi is made by @techtek and @dehenne.
 <br>
 <br>
 
-<h2>SteemPi v1.0 Tutorial<h2>
+<h2>SteemPi v1.0 Tutorial</h2>
 <br>
 <br>
 <br>
 
-<h3Step 1: Operating system<h3>
+<h3Step 1: Operating system</h3>
 
 Install the latest version of Raspbian on your SD card
 https://www.raspberrypi.org/downloads/raspbian/
@@ -28,7 +28,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 <br>
 <br>
 
-<h3>Step 2: SteemPi Installation<h3>
+<h3>Step 2: SteemPi Installation</h3>
 
 - Install Apache and PHP5, "sudo apt-get update" and install with the command "sudo apt-get install apache2 php5 libapache2-mod-php5" 
 - Test the Apache websserver by opening a browser and type in the IP of your Pi, it should show a "it works" page. 
@@ -41,7 +41,7 @@ The Webinterface is done!, Open the IP of your Pi in a browser and you should se
 <br>
 <br>
 
-<h3>Step 3: Steemit LED light notifications<h3>
+<h3>Step 3: Steemit LED light notifications</h3>
 
 - Connect a LED to GPIO17 of the Pi 
 (and you shoud solder the correct resistor to the LED. it works without one, no problems so far but you may damage the pi without one. 
@@ -61,7 +61,7 @@ and exit and save with, ctrl+x
 <br>
 
 
-<h1>Everything is now ready to use!<h1>
+<h1>Everything is now ready to use!</h1>
 
 (When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the auto-play function in index.html)
 <br>
