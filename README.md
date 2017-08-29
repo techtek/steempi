@@ -59,6 +59,7 @@ To make ledscript.sh boot on startup, <code>sudo nano /etc/rc.local</code> add i
 and exit and save with, ctrl+x
 <br>
 <br>
+<br>
 
 
 
