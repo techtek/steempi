@@ -6,7 +6,15 @@ ini_set('display_errors', 1);
 require 'lib/utils/config.php';
 require 'lib/utils/language.php';
 
-$config = require 'conf/config.php';
+$config = array(
+    'steemitUsername' => '',
+    'steempiLanguage' => 'en_EN'
+);
+
+if (file_exists('conf/config.php')) {
+    $config = require 'conf/config.php';
+}
+
 $locale = getLocale();
 
 // saving
