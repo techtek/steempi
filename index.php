@@ -18,13 +18,13 @@ $config = require 'conf/config.php';
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="initial-scale=1,minimum-scale=1,width=device-width">
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="screen"/>
 
-    <!-- SteemPi webinterface has switchable headers, this is where you can add or remove headers -->
+    <!-- Javascript -->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+
     <script>
         var locations = [
             "http://steemitpond.com/",
@@ -36,45 +36,16 @@ $config = require 'conf/config.php';
             "/headers/spacepi.php",
             "/headers/aquarium.php"
         ];
-
-        var currentIndex = 0;
-        var len          = locations.length;
-
-        $(document).ready(function () {
-            $(':button').click(function () {
-                currentIndex = this.value === ">" ?
-                    currentIndex < len - 1 ? ++currentIndex : len - 1 :
-                    currentIndex > 0 ? --currentIndex : 0;
-                $('#frame').attr('src', locations[currentIndex]);
-            });
-        });
     </script>
-
+    <script type="text/javascript" src="/js/index.js"></script>
 </head>
 
 <body>
 <header>
     <div style="text-align: center">
-        <a href="https://steemit.com/@<?php echo $config['steemitUsername']; ?>">
-            <img border="0" alt="SteemPi" src="/img/logosteempi.png">
-        </a>
+        <img border="0" alt="SteemPi" src="/img/logosteempi.png">
     </div>
-
-    <!-- SteemPi logo -->
-
-    <!-- Script to hide the switchable header -->
-    <script>
-        $(document).ready(function () {
-            $("#hide").click(function () {
-                $(".steemit-pond").hide();
-            });
-            $("#show").click(function () {
-                $(".steemit-pond").show();
-            });
-        });
-    </script>
 </header>
-
 
 <!-- Switchable header iframe with as default Steemitpond -->
 <div class="steemit-pond">
@@ -87,8 +58,8 @@ $config = require 'conf/config.php';
     <button>></button>
     <button id="hide">Hide</button>
     <button id="show">Show</button>
+    <a class="button" href="settings.php">Settings</a>
 </div>
-
 
 <div class="google-trends container">
     <script type="text/javascript" src="http://ssl.gstatic.com/trends_nrtr/1127_RC02/embed_loader.js"></script>
@@ -530,12 +501,14 @@ $config = require 'conf/config.php';
 
 <!-- Footer -->
 <footer>
-    <div class="foter-container">
+    <div class="footer-container">
         <header>
-            <h3>STEEMPI</h3>
+            <h3>STEEMPI v. 1.0.0</h3>
         </header>
-        <section>
-            <div>SteemPi is made by: @techtek</div>
+
+        <section class="footer-container-links">
+            SteemPi is made by: <a href="https://steemit.com/@techtek" target="_blank">@techtek</a>
+            and <a href="https://steemit.com/@dehenne" target="_blank">@dehenne</a>
         </section>
     </div>
 </footer>

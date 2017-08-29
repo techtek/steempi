@@ -1,5 +1,5 @@
 <?php
-
 return array(
-    'steemitUsername' => 'techtek'
+    'steemitUsername' => 'dehenne',
+    'steempiLanguage' => 'de_DE'
 );
