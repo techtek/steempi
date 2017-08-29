@@ -31,7 +31,7 @@ Install the latest version of Raspbian on your SD card
 
 <h3>Step 2: SteemPi Installation</h3>
 
-- Install Apache and PHP5, "sudo apt-get update" and install with the command "sudo apt-get install apache2 php5 libapache2-mod-php5" 
+- Install Apache and PHP5, <code>sudo apt-get update</code> and install with the command <code>sudo apt-get install apache2 php5 libapache2-mod-php5</code> 
 - Test the Apache websserver by opening a browser and type in the IP of your Pi, it should show a "it works" page. 
 - If the test went ok you can delete the index file from /var/www/html/ open the directory by using the command <code>cd /var/www/html/</code> and to remove, <code>sudo rm index.html</code> 
 
