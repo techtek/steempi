@@ -64,7 +64,7 @@ and exit and save with, ctrl+x
 
 <h1>Everything is now ready to use!</h1>
 
-(When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the <code>autoplay</code> function in <code>index.html</code>)
+(When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, you can fix this by disabling the <code>autoplay</code> function in <code>index.php</code>)
 <br>
 <br>
 <br>
