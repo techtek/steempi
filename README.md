@@ -1,20 +1,6 @@
- ![SteemPi logo](https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png)
-
-<p align="center">
-  ![SteemPi logo](https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png)
-  
-  cvcxvcv
-</p>
-
-
-
-
 <p align="center"> 
 <img src="https://steemitimages.com/DQmVmaHMM4Hx8CzhZ4tAjvzJZAH1yq1R6xDABpFHgob8HNb/logo-09.png">
 </p>
-
-
-
 
 
 STEEMPI V1.0 | Steemit LED light notifications and web interface for Raspberry Pi and other Raspberry Pi clones that uses the Wirringpi GPIO library.
