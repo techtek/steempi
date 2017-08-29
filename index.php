@@ -1,6 +1,17 @@
 <?php
 
-$config = require 'conf/config.php';
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
+$config = array(
+    'steemitUsername' => '',
+    'steempiLanguage' => 'en_EN'
+);
+
+if (file_exists('conf/config.php')) {
+    $config = require 'conf/config.php';
+}
+
 
 ?>
 <!DOCTYPE html>
