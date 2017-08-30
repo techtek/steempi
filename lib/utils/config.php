@@ -18,7 +18,16 @@ function saveConfig($data)
         mkdir($dir.'/conf/');
     }
 
-    $currentConfig = require $dir.'/conf/config.php';
+
+    $currentConfig = array(
+        'steemitUsername' => '',
+        'steempiLanguage' => 'en_EN'
+    );
+
+    if (file_exists($dir.'/conf/config.php')) {
+        $currentConfig = require $dir.'/conf/config.php';
+    }
+
 
     if (!isset($currentConfig['steemitUsername'])) {
         $currentConfig['steemitUsername'] = '';
