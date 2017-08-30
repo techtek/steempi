@@ -45,7 +45,7 @@ if (file_exists('conf/config.php')) {
         <ul class="navigation">
             <li class="navigation-entry">
                 <a href="">
-                    <span class="navigation-entry-icon">
+                    <span class="navigation-entry-icon" style="color: #3498db">
                         <span class="fa fa-home"></span>
                     </span>
                     <span class="navigation-entry-text">
@@ -55,7 +55,7 @@ if (file_exists('conf/config.php')) {
             </li>
             <li class="navigation-entry">
                 <a href="">
-                    <span class="navigation-entry-icon">
+                    <span class="navigation-entry-icon" style="color: #e67e22">
                         <span class="fa fa-hashtag"></span>
                     </span>
                     <span class="navigation-entry-text">
@@ -65,7 +65,7 @@ if (file_exists('conf/config.php')) {
             </li>
             <li class="navigation-entry">
                 <a href="">
-                    <span class="navigation-entry-icon">
+                    <span class="navigation-entry-icon" style="color: #e74c3c">
                         <span class="fa fa-heartbeat"></span>
                     </span>
                     <span class="navigation-entry-text">
@@ -75,7 +75,7 @@ if (file_exists('conf/config.php')) {
             </li>
             <li class="navigation-entry">
                 <a href="">
-                    <span class="navigation-entry-icon">
+                    <span class="navigation-entry-icon" style="color: #2c3e50">
                         <span class="fa fa-globe"></span>
                     </span>
                     <span class="navigation-entry-text">
