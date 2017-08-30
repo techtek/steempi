@@ -1,11 +1,13 @@
-var currentIndex = 0;
-var len          = locations.length;
-
 $(document).ready(function () {
-    $(':button').click(function () {
-        currentIndex = this.value === ">" ?
-            currentIndex < len - 1 ? ++currentIndex : len - 1 :
-            currentIndex > 0 ? --currentIndex : 0;
+    var currentIndex = 0;
+
+    $('.header-buttons .previous,.header-buttons .next').click(function () {
+        if (this.getAttribute('data-value') === ">") {
+            currentIndex++;
+        } else {
+            currentIndex--
+        }
+
         $('#frame').attr('src', locations[currentIndex]);
     });
 

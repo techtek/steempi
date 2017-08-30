@@ -48,6 +48,7 @@ if (file_exists('conf/config.php')) {
             "/headers/aquarium.php"
         ];
     </script>
+
     <script type="text/javascript" src="/js/index.js"></script>
 </head>
 
@@ -65,8 +66,8 @@ if (file_exists('conf/config.php')) {
 
 <!-- Switchable header buttons -->
 <div class="header-buttons">
-    <button><</button>
-    <button>></button>
+    <button class="previous" data-value="<"><</button>
+    <button class="next" data-value=">">></button>
     <button id="hide">Hide</button>
     <button id="show">Show</button>
     <a class="button" href="settings.php">Settings</a>
