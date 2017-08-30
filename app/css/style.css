@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    color: #18191b;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+/** Navigation
+ =============================================== */
+
+header {
+    border-bottom: 1px solid #dedede;
+    padding-left: 60px;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 90;
+}
+
+.header-buttons {
+    text-align: right;
+}
+
+.header-buttons-button {
+    display: inline-block;
+    color: #18191b;
+    font-size: 16px;
+    line-height: 60px;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+.header-buttons-button:hover {
+    background: #dedede;
+    color: #18191b;
+}
+
+/** Navigation
+ =============================================== */
+
+nav {
+    border-right: 1px solid #dedede;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 60px;
+    z-index: 100;
+
+    transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
+    -webkit-transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
+}
+
+nav:hover {
+    box-shadow: 3px 0 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+
+    transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
+    -webkit-transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
+}
+
+nav .steemPi-logo {
+    color: #999;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+    width: 60px;
+}
+
+.navigation {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation-entry a {
+    display: inline-block;
+    color: #666666;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.navigation-entry a:hover {
+    background: #dedede;
+}
+
+.navigation-entry-icon {
+    display: inline-block;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    width: 60px;
+}
+
+.navigation-entry-text {
+    display: inline-block;
+    float: left;
+    width: 240px;
+}
