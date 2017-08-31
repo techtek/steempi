@@ -115,10 +115,11 @@ $modules       = $ModuleHandler->getModules();
     </header>
 
     <main>
-        <iframe src="//en.wikipedia.org/wiki/Steemit"></iframe>
+        <iframe id="module" src="//en.wikipedia.org/wiki/Steemit"></iframe>
     </main>
 </div>
 
+<script src="app/js/navigo.min.js"></script>
 <script src="app/js/init.js"></script>
 </body>
 </html>

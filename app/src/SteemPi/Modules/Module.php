@@ -19,6 +19,13 @@ class Module
     protected $data = array();
 
     /**
+     * Module name
+     *
+     * @var string
+     */
+    protected $name = '';
+
+    /**
      * Module constructor.
      *
      * @param $jsonFile
@@ -30,13 +37,28 @@ class Module
             throw new SteemPi\Exception('Module has no module.json File');
         }
 
+        // name
+        $this->name = basename(dirname($jsonFile));
+
+        // data
         $data = json_decode(file_get_contents($jsonFile), true);
+
 
         // @todo check json errors
 
         if ($data) {
             $this->data = $data;
         }
+    }
+
+    /**
+     * Return the module name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     //region left menu
@@ -56,7 +78,7 @@ class Module
      */
     public function getLeftMenu()
     {
-        return new SteemPi\Menu\Item($this->data['leftMenu']);
+        return new SteemPi\Menu\Item($this->data['leftMenu'], $this);
     }
 
     //endregion
@@ -78,7 +100,7 @@ class Module
      */
     public function getTopMenu()
     {
-        return new SteemPi\Menu\Item($this->data['topMenu']);
+        return new SteemPi\Menu\Item($this->data['topMenu'], $this);
     }
 
     //endregion

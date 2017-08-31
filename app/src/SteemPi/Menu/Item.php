@@ -6,6 +6,8 @@
 
 namespace SteemPi\Menu;
 
+use SteemPi\Modules\Module;
+
 /**
  * Class Item
  * - A MenuItem
@@ -14,6 +16,11 @@ namespace SteemPi\Menu;
  */
 class Item
 {
+    /**
+     * @var Module
+     */
+    protected $Module;
+
     /**
      * @var array
      */
@@ -27,8 +34,9 @@ class Item
      * Menu constructor.
      *
      * @param array $params
+     * @param null|Module $Module
      */
-    public function __construct($params = array())
+    public function __construct($params = array(), $Module = null)
     {
         if (isset($params['icon'])) {
             $this->attributes['icon'] = $params['icon'];
@@ -41,6 +49,18 @@ class Item
         if (isset($params['color'])) {
             $this->attributes['color'] = $params['color'];
         }
+
+        if ($Module instanceof Module) {
+            $this->Module = $Module;
+        }
+    }
+
+    /**
+     * @param Module $Module
+     */
+    public function setModule(Module $Module)
+    {
+        $this->Module = $Module;
     }
 
     /**
@@ -93,10 +113,15 @@ class Item
      */
     public function create()
     {
-        $icon  = $this->getIcon();
-        $title = $this->getText();
+        $icon   = $this->getIcon();
+        $title  = $this->getText();
+        $module = '';
 
-        return '<a href="">
+        if ($this->Module) {
+            $module = $this->Module->getName();
+        }
+
+        return '<a href="#!'.$module.'">
             '.$icon.'
             '.$title.'
         </a> ';
