@@ -1,7 +1,9 @@
 <?php
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require 'app/src/autoload.php';
 
 $config = array(
     'steemitUsername' => '',
@@ -12,6 +14,8 @@ if (file_exists('conf/config.php')) {
     $config = require 'conf/config.php';
 }
 
+$ModuleHandler = new SteemPi\Modules\Handler();
+$modules       = $ModuleHandler->getModules();
 
 ?>
 <!DOCTYPE html>
@@ -43,46 +47,59 @@ if (file_exists('conf/config.php')) {
         </a>
 
         <ul class="navigation">
-            <li class="navigation-entry">
-                <a href="">
-                    <span class="navigation-entry-icon" style="color: #3498db">
-                        <span class="fa fa-home"></span>
-                    </span>
-                    <span class="navigation-entry-text">
-                        Your Feed
-                    </span>
-                </a>
-            </li>
-            <li class="navigation-entry">
-                <a href="">
-                    <span class="navigation-entry-icon" style="color: #e67e22">
-                        <span class="fa fa-hashtag"></span>
-                    </span>
-                    <span class="navigation-entry-text">
-                        Steemitpond
-                    </span>
-                </a>
-            </li>
-            <li class="navigation-entry">
-                <a href="">
-                    <span class="navigation-entry-icon" style="color: #e74c3c">
-                        <span class="fa fa-heartbeat"></span>
-                    </span>
-                    <span class="navigation-entry-text">
-                        Whale Sonar
-                    </span>
-                </a>
-            </li>
-            <li class="navigation-entry">
-                <a href="">
-                    <span class="navigation-entry-icon" style="color: #2c3e50">
-                        <span class="fa fa-globe"></span>
-                    </span>
-                    <span class="navigation-entry-text">
-                        ISS Live
-                    </span>
-                </a>
-            </li>
+            <?php foreach ($modules as $Module) { ?>
+                <li class="navigation-entry">
+                    <?php
+                    /* @var $Module \SteemPi\Modules\Module */
+                    if (!$Module->extendsLeftMenu()) {
+                        continue;
+                    }
+
+                    $MenuItem = $Module->getLeftMenu();
+                    echo $MenuItem->create();
+                    ?>
+                </li>
+            <?php } ?>
+            <!--            <li class="navigation-entry">-->
+            <!--                <a href="">-->
+            <!--                    <span class="navigation-entry-icon" style="color: #3498db">-->
+            <!--                        <span class="fa fa-home"></span>-->
+            <!--                    </span>-->
+            <!--                    <span class="navigation-entry-text">-->
+            <!--                        Your Feed-->
+            <!--                    </span>-->
+            <!--                </a>-->
+            <!--            </li>-->
+            <!--            <li class="navigation-entry">-->
+            <!--                <a href="">-->
+            <!--                    <span class="navigation-entry-icon" style="color: #e67e22">-->
+            <!--                        <span class="fa fa-hashtag"></span>-->
+            <!--                    </span>-->
+            <!--                    <span class="navigation-entry-text">-->
+            <!--                        Steemitpond-->
+            <!--                    </span>-->
+            <!--                </a>-->
+            <!--            </li>-->
+            <!--            <li class="navigation-entry">-->
+            <!--                <a href="">-->
+            <!--                    <span class="navigation-entry-icon" style="color: #e74c3c">-->
+            <!--                        <span class="fa fa-heartbeat"></span>-->
+            <!--                    </span>-->
+            <!--                    <span class="navigation-entry-text">-->
+            <!--                        Whale Sonar-->
+            <!--                    </span>-->
+            <!--                </a>-->
+            <!--            </li>-->
+            <!--            <li class="navigation-entry">-->
+            <!--                <a href="">-->
+            <!--                    <span class="navigation-entry-icon" style="color: #2c3e50">-->
+            <!--                        <span class="fa fa-globe"></span>-->
+            <!--                    </span>-->
+            <!--                    <span class="navigation-entry-text">-->
+            <!--                        ISS Live-->
+            <!--                    </span>-->
+            <!--                </a>-->
+            <!--            </li>-->
         </ul>
     </nav>
 
@@ -98,7 +115,7 @@ if (file_exists('conf/config.php')) {
     </header>
 
     <main>
-
+        <iframe src="//en.wikipedia.org/wiki/Steemit"></iframe>
     </main>
 </div>
 
