@@ -1,0 +1,6 @@
+
+msgid "username"
+msgstr "Username"
+
+msgid "language"
+msgstr "Language"

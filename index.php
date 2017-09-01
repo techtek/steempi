@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require 'app/src/autoload.php';
+require 'app/autoload.php';
 
 $config = array(
     'steemitUsername' => '',
@@ -108,14 +108,25 @@ $modules       = $ModuleHandler->getModules();
             <a href="" class="header-buttons-button">
                 <span class="fa fa-bell-o"></span>
             </a>
-            <a href="" class="header-buttons-button">
-                <span class="fa fa-gears"></span>
-            </a>
+
+            <?php foreach ($modules as $Module) {
+
+                /* @var $Module \SteemPi\Modules\Module */
+                if (!$Module->extendsTopMenu()) {
+                    continue;
+                }
+
+                $MenuItem = $Module->getTopMenu();
+                $MenuItem->addClass('header-buttons-button');
+
+                echo $MenuItem->create();
+
+            } ?>
         </section>
     </header>
 
     <main>
-        <iframe id="module" src="//en.wikipedia.org/wiki/Steemit"></iframe>
+        <iframe id="module" src="frame.php"></iframe>
     </main>
 </div>
 

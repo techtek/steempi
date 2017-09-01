@@ -31,6 +31,11 @@ class Item
     );
 
     /**
+     * @var array
+     */
+    protected $cssClasses = array();
+
+    /**
      * Menu constructor.
      *
      * @param array $params
@@ -61,6 +66,14 @@ class Item
     public function setModule(Module $Module)
     {
         $this->Module = $Module;
+    }
+
+    /**
+     * @param $class
+     */
+    public function addClass($class)
+    {
+        $this->cssClasses[] = $class;
     }
 
     /**
@@ -113,15 +126,21 @@ class Item
      */
     public function create()
     {
-        $icon   = $this->getIcon();
-        $title  = $this->getText();
-        $module = '';
+        $icon  = $this->getIcon();
+        $title = $this->getText();
+
+        $module  = '';
+        $classes = '';
 
         if ($this->Module) {
             $module = $this->Module->getName();
         }
 
-        return '<a href="#!'.$module.'">
+        if (!empty($this->cssClasses)) {
+            $classes = ' class="'.implode('', $this->cssClasses).'"';
+        }
+
+        return '<a href="#!'.$module.'"'.$classes.'>
             '.$icon.'
             '.$title.'
         </a> ';

@@ -61,6 +61,14 @@ class Module
         return $this->name;
     }
 
+    /**
+     * Return the module path
+     */
+    public function getDir()
+    {
+        return SteemPi\SteemPi::getRootPath().'/modules/'.$this->name.'/';
+    }
+
     //region left menu
 
     /**

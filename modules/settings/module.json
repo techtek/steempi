@@ -1,0 +1,8 @@
+{
+  "title": "SteemPi Settings",
+  "topMenu": {
+    "icon": "fa fa-gears",
+    "title": "Settings",
+    "color": "#18191b"
+  }
+}
