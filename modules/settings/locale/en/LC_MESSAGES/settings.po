@@ -4,3 +4,15 @@ msgstr "Username"
 
 msgid "language"
 msgstr "Language"
+
+msgid "settings saved successfully"
+msgstr "Settings saved successfully."
+
+msgid "save"
+msgstr "Save"
+
+msgid "language en"
+msgstr "English"
+
+msgid "language de"
+msgstr "German (deutsch)"

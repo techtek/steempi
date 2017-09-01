@@ -33,7 +33,7 @@ $Config = \SteemPi\SteemPi::getConfig();
 <form>
     <?php if (isset($_POST['save'])) { ?>
         <div class="message-save-successfully">
-            <?php echo gettext('settings.message.saved.successfully'); ?>
+            <?php echo dgettext('settings', 'settings saved successfully'); ?>
         </div>
     <?php } ?>
 
@@ -46,16 +46,16 @@ $Config = \SteemPi\SteemPi::getConfig();
         <span class="label"><?php echo dgettext('settings', 'language'); ?></span>
         <select name="steempiLanguage">
             <option value="en_EN" <?php echo $Config->get('steempiLanguage') == 'en_EN' ? 'selected = "selected"' : ''; ?>>
-                <?php echo gettext('settings.language.en_EN'); ?>
+                <?php echo dgettext('settings', 'language en'); ?>
             </option>
             <option value="de_DE" <?php echo $Config->get('steempiLanguage') == 'de_DE' ? 'selected = "selected"' : ''; ?>>
-                <?php echo gettext('settings.language.de_DE'); ?>
+                <?php echo dgettext('settings', 'language de'); ?>
             </option>
         </select>
     </label>
 
     <button type="submit" name="save">
-        <?php echo gettext('settings.save.button'); ?>
+        <?php echo dgettext('settings', 'save'); ?>
     </button>
 </form>
 

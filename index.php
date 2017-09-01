@@ -43,7 +43,8 @@ $modules       = $ModuleHandler->getModules();
 <div id="app">
     <nav>
         <a href="/" class="steemPi-logo">
-            <span class="fa fa-bandcamp"></span>
+            <img src="/app/images/logo.svg" class="logo"/>
+            <img src="/app/images/logo-text.svg" class="logo-text"/>
         </a>
 
         <ul class="navigation">
@@ -126,7 +127,7 @@ $modules       = $ModuleHandler->getModules();
     </header>
 
     <main>
-        <iframe id="module" src="frame.php"></iframe>
+        <iframe id="module" src="app/frame.php"></iframe>
     </main>
 </div>
 

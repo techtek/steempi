@@ -16,7 +16,7 @@ body {
 }
 
 form {
-    padding: 60px;
+    padding: 30px 60px 20px 60px;
     max-width: 600px;
     width: 100%;
 }

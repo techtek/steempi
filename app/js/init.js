@@ -4,10 +4,13 @@
     var Frame  = document.getElementById('module');
 
     var openModule = function () {
+        if (window.location.hash === '') {
+            Frame.src = '/app/frame.php';
+            return;
+        }
+
         var hash  = window.location.hash.replace('\!', '').replace('\#', '');
         Frame.src = '/modules/' + hash + '/index.php';
-
-        console.log(Frame.src);
     };
 
     Router.on('*', openModule);
