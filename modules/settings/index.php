@@ -43,7 +43,7 @@ $Config = \SteemPi\SteemPi::getConfig();
     </label>
 
     <label>
-        <span class="label"><?php echo gettext('settings.language'); ?></span>
+        <span class="label"><?php echo dgettext('settings', 'language'); ?></span>
         <select name="steempiLanguage">
             <option value="en_EN" <?php echo $Config->get('steempiLanguage') == 'en_EN' ? 'selected = "selected"' : ''; ?>>
                 <?php echo gettext('settings.language.en_EN'); ?>

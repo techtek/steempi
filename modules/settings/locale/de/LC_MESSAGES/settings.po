@@ -1,3 +1,6 @@
 
 msgid "username"
 msgstr "Benutzername"
+
+msgid "language"
+msgstr "SteemPi Sprache"

@@ -4,9 +4,17 @@ $Loader = require dirname(dirname(__FILE__)).'/vendor/autoload.php';
 $Loader->setPsr4('SteemPi\\', __DIR__.'/src/SteemPi/');
 
 // load gettext and translation
-$lang = 'en';
+$lang = 'en_US';
 
-setlocale(LC_ALL, $lang);
+setlocale(
+    6,
+    $lang.".UTF-8",
+    $lang.".utf8",
+    $lang.".UTF8",
+    $lang.".utf-8",
+    $lang
+);
+
 putenv("LANG=".$lang);
 
 bindtextdomain('steemPi', './locale');
