@@ -6,7 +6,9 @@ msgid "language"
 msgstr "SteemPi Sprache"
 
 msgid "settings saved successfully"
-msgstr "Die Einstellungen wurden erfolgreich gespeichert."
+msgstr ""
+"Die Einstellungen wurden erfolgreich gespeichert.<br />"
+"In wenigen Sekunden wird SteemPi neu geladen."
 
 msgid "save"
 msgstr "Speichern"

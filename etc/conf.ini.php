@@ -1,7 +1,7 @@
 ;<?php exit; ?>
 
 [steempi]
-language = "en_EN"
+language = "de_DE"
 
 [steemit]
 username = "dehenne"

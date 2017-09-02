@@ -7,11 +7,11 @@ require '../../app/autoload.php';
 
 textdomain('settings');
 
-$Config = \SteemPi\SteemPi::getConfig();
+$Config      = \SteemPi\SteemPi::getConfig();
+$configSaved = false;
 
 if (isset($_POST['save'])) {
     unset($_POST['save']);
-
     // @todo create a setting class
     // @todo saving the settings must be outsourced
 
@@ -31,6 +31,8 @@ if (isset($_POST['save'])) {
     $Config->save();
 
     \SteemPi\SteemPi::loadLanguage();
+
+    $configSaved = true;
 }
 
 ?>
@@ -50,9 +52,14 @@ if (isset($_POST['save'])) {
 <body>
 
 <form method="POST" action="">
-    <?php if (isset($_POST['save'])) { ?>
+    <?php if ($configSaved) { ?>
         <div class="message-save-successfully">
             <?php echo dgettext('settings', 'settings saved successfully'); ?>
+            <script>
+                setTimeout(function () {
+                    window.parent.location.reload();
+                }, 5000);
+            </script>
         </div>
     <?php } ?>
 
@@ -80,10 +87,6 @@ if (isset($_POST['save'])) {
     <button type="submit" name="save">
         <?php echo dgettext('settings', 'save'); ?>
     </button>
-
-    <?php
-    echo dgettext('feed', 'Feed');
-    ?>
 </form>
 
 </body>

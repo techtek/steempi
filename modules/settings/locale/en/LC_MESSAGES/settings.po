@@ -6,7 +6,9 @@ msgid "language"
 msgstr "Language"
 
 msgid "settings saved successfully"
-msgstr "Settings saved successfully."
+msgstr ""
+"Settings saved successfully."
+"In a few seconds SteemPi will be reloaded."
 
 msgid "save"
 msgstr "Save"
