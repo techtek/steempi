@@ -18,13 +18,10 @@ $ModuleHandler = new SteemPi\Modules\Handler();
 $modules       = $ModuleHandler->getModules();
 
 ?>
-<!DOCTYPE html>
-
-<!-- SteemPi webinterface V1.0 -->
-<!-- SteemPi webinterface is build with profoundgrid, made by Profound Creative Studio LLC -->
-<!-- SteemPi is made by @techtek -->
+<!-- SteemPi webinterface V2.0 -->
 <!-- SteemPi is made by @dehenne -->
-
+<!-- SteemPi is made by @techtek -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>STEEMPI | A system for Steemit</title>
@@ -61,46 +58,6 @@ $modules       = $ModuleHandler->getModules();
                     ?>
                 </li>
             <?php } ?>
-            <!--            <li class="navigation-entry">-->
-            <!--                <a href="">-->
-            <!--                    <span class="navigation-entry-icon" style="color: #3498db">-->
-            <!--                        <span class="fa fa-home"></span>-->
-            <!--                    </span>-->
-            <!--                    <span class="navigation-entry-text">-->
-            <!--                        Your Feed-->
-            <!--                    </span>-->
-            <!--                </a>-->
-            <!--            </li>-->
-            <!--            <li class="navigation-entry">-->
-            <!--                <a href="">-->
-            <!--                    <span class="navigation-entry-icon" style="color: #e67e22">-->
-            <!--                        <span class="fa fa-hashtag"></span>-->
-            <!--                    </span>-->
-            <!--                    <span class="navigation-entry-text">-->
-            <!--                        Steemitpond-->
-            <!--                    </span>-->
-            <!--                </a>-->
-            <!--            </li>-->
-            <!--            <li class="navigation-entry">-->
-            <!--                <a href="">-->
-            <!--                    <span class="navigation-entry-icon" style="color: #e74c3c">-->
-            <!--                        <span class="fa fa-heartbeat"></span>-->
-            <!--                    </span>-->
-            <!--                    <span class="navigation-entry-text">-->
-            <!--                        Whale Sonar-->
-            <!--                    </span>-->
-            <!--                </a>-->
-            <!--            </li>-->
-            <!--            <li class="navigation-entry">-->
-            <!--                <a href="">-->
-            <!--                    <span class="navigation-entry-icon" style="color: #2c3e50">-->
-            <!--                        <span class="fa fa-globe"></span>-->
-            <!--                    </span>-->
-            <!--                    <span class="navigation-entry-text">-->
-            <!--                        ISS Live-->
-            <!--                    </span>-->
-            <!--                </a>-->
-            <!--            </li>-->
         </ul>
     </nav>
 

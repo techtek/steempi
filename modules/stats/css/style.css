@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    color: #18191b;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.container {
+    clear: both;
+    float: left;
+    padding: 30px 60px 20px 60px;
+    width: 100%;
+}
+
+.container header {
+    border-top: 1px solid #DEDEDE;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #b7b7b7;
+    width: 100%;
+}
+
+.container header h3 {
+    font-weight: normal;
+}
+
+.container-box {
+    padding: 10px;
+}
+
+/** Trends
+ ========================================= */
+
+.container-trends {
+    border-top: none;
+}
+
+.google-trends header {
+    border-top: none;
+}
+
+.google-trends-box {
+    float: left;
+    width: 50%;
+}
+
+.google-trends-box iframe {
+    border: none;
+    height: 350px;
+    width: 100%;
+}
+
+/** Apps
+ ========================================= */
+
+.apps-box {
+    float: left;
+    width: 25%;
+}
+
+.apps-box iframe {
+    height: 125px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .apps-box {
+        width: 33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .apps-box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .apps-box {
+        width: 100%;
+    }
+}
