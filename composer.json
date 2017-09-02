@@ -1,7 +1,6 @@
 {
   "minimum-stability": "dev",
   "require": {
-    "davidkevork/steemphp": "dev-master",
     "piwik/ini": "1.*"
   }
 }
