@@ -147,3 +147,21 @@ main iframe {
     height: 100%;
     width: 100%
 }
+
+/** Navigation
+ =============================================== */
+
+.boot-logo {
+    display: block;
+    margin: 60px auto 0;
+    max-width: 300px;
+    width: 100%;
+}
+
+.boot-logo-text {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+}
