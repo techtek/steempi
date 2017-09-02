@@ -1,6 +1,7 @@
 {
   "minimum-stability": "dev",
   "require": {
-    "piwik/ini": "1.*"
+    "piwik/ini": "1.*",
+    "guzzlehttp/guzzle": "~6.0"
   }
 }

@@ -1,18 +1,24 @@
 <?php
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require '../../app/autoload.php';
 
-$Config   = \SteemPi\SteemPi::getConfig();
+$Config   = SteemPi\SteemPi::getConfig();
 $username = $Config->get('steemit', 'username');
 
 // not working for a RPI
+$Client   = new GuzzleHttp\Client();
+$Response = $Client->request('GET', 'https://api.asksteem.com/search', [
+    'query' => ['q' => 'steemit']
+]);
+
 //$SteemArticle = new \SteemPHP\SteemArticle('https://steemd.steemit.com');
 //$feed         = $SteemArticle->getDiscussionsByCreated('steemit', 10);
 
-$feed = array();
+$result = json_decode($Response->getBody(), true);
+$feed   = $result['results'];
 
 ?>
 <!DOCTYPE html>
@@ -40,27 +46,31 @@ $feed = array();
     <?php
 
     foreach ($feed as $entry) {
-        $description = strip_tags($entry['body']);
+        $description = strip_tags($entry['summary']);
+        $category    = $entry['tags'][0];
+
+        $entry['pending_payout_value'] = 0;
+        $entry['active_votes'] = 0;
 
         if (strlen($description) > 120) {
             $description = mb_substr($description, 0, 120).'...';
         }
 
         $link = 'https://steemit.com/';
-        $link .= $entry['category'].'/';
+        $link .= $category.'/';
         $link .= '@'.$entry['author'].'/';
         $link .= $entry['permlink'];
 
-        $jsonMeta = json_decode($entry['json_metadata'], true);
-        $image    = '';
+//        $jsonMeta = json_decode($entry['json_metadata'], true);
+        $image = '';
 
-        if (isset($jsonMeta['image'])
-            && $jsonMeta['image']
-            && is_array($jsonMeta['image'])
-            && count($jsonMeta['image'])
-        ) {
-            $image = $jsonMeta['image'][0];
-        }
+//        if (isset($jsonMeta['image'])
+//            && $jsonMeta['image']
+//            && is_array($jsonMeta['image'])
+//            && count($jsonMeta['image'])
+//        ) {
+//            $image = $jsonMeta['image'][0];
+//        }
 
         ?>
         <article class="feed-tile" data-link="<?php echo $link; ?>">
