@@ -9,7 +9,7 @@ header("Content-Security-Policy:
 require '../../app/autoload.php';
 
 $Config   = \SteemPi\SteemPi::getConfig();
-$username = $Config->get('steemitUsername');
+$username = $Config->get('steemit', 'username');
 
 ?>
 <!DOCTYPE html>

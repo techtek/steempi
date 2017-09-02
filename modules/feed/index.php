@@ -6,7 +6,7 @@
 require '../../app/autoload.php';
 
 $Config   = \SteemPi\SteemPi::getConfig();
-$username = $Config->get('steemitUsername');
+$username = $Config->get('steemit', 'username');
 
 $SteemArticle = new \SteemPHP\SteemArticle('https://steemd.steemit.com');
 $feed         = $SteemArticle->getDiscussionsByCreated('steemit', 10);

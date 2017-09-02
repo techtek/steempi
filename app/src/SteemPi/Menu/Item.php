@@ -111,6 +111,7 @@ class Item
         }
 
         $text = htmlspecialchars($this->attributes['text']);
+        $text = dgettext($this->Module->getName(), $text);
 
         return '
             <span class="menuItem-text">

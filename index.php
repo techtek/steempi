@@ -5,15 +5,6 @@ ini_set('display_errors', 1);
 
 require 'app/autoload.php';
 
-$config = array(
-    'steemitUsername' => '',
-    'steempiLanguage' => 'en_EN'
-);
-
-if (file_exists('conf/config.php')) {
-    $config = require 'conf/config.php';
-}
-
 $ModuleHandler = new SteemPi\Modules\Handler();
 $modules       = $ModuleHandler->getModules();
 

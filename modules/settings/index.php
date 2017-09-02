@@ -9,13 +9,32 @@ textdomain('settings');
 
 $Config = \SteemPi\SteemPi::getConfig();
 
+if (isset($_POST['save'])) {
+    unset($_POST['save']);
+
+    // @todo create a setting class
+    // @todo saving the settings must be outsourced
+
+    // steemit username
+    $steemitUsername = $_POST['steemitUsername'];
+    $steemitUsername = str_replace('@', '', $steemitUsername);
+    $steemitUsername = preg_replace('/[^a-zA-Z0-9\-]/i', '', $steemitUsername);
+
+    if (!empty($steemitUsername)) {
+        $Config->set('steemit', 'username', $steemitUsername);
+    }
+
+    // steempi language
+    $Config->set('steempi', 'language', $_POST['steempiLanguage']);
+
+    // save config
+    $Config->save();
+
+    \SteemPi\SteemPi::loadLanguage();
+}
+
 ?>
 <!DOCTYPE html>
-
-<!-- SteemPi webinterface V2.0 -->
-<!-- SteemPi is made by @techtek -->
-<!-- SteemPi is made by @dehenne -->
-
 <html lang="en">
 <head>
     <title>STEEMPI | A system for Steemit</title>
@@ -30,7 +49,7 @@ $Config = \SteemPi\SteemPi::getConfig();
 </head>
 <body>
 
-<form>
+<form method="POST" action="">
     <?php if (isset($_POST['save'])) { ?>
         <div class="message-save-successfully">
             <?php echo dgettext('settings', 'settings saved successfully'); ?>
@@ -39,16 +58,20 @@ $Config = \SteemPi\SteemPi::getConfig();
 
     <label>
         <span class="label"><?php echo dgettext('settings', 'username'); ?></span>
-        <input name="steemitUsername" value="<?php echo $Config->get('steemitUsername'); ?>"/>
+        <input name="steemitUsername" value="<?php echo $Config->get('steemit', 'username'); ?>"/>
     </label>
 
     <label>
         <span class="label"><?php echo dgettext('settings', 'language'); ?></span>
         <select name="steempiLanguage">
-            <option value="en_EN" <?php echo $Config->get('steempiLanguage') == 'en_EN' ? 'selected = "selected"' : ''; ?>>
+            <option value="en_EN"
+                <?php echo $Config->get('steempi', 'language') == 'en_EN' ? 'selected = "selected"' : ''; ?>
+            >
                 <?php echo dgettext('settings', 'language en'); ?>
             </option>
-            <option value="de_DE" <?php echo $Config->get('steempiLanguage') == 'de_DE' ? 'selected = "selected"' : ''; ?>>
+            <option value="de_DE"
+                <?php echo $Config->get('steempi', 'language') == 'de_DE' ? 'selected = "selected"' : ''; ?>
+            >
                 <?php echo dgettext('settings', 'language de'); ?>
             </option>
         </select>
@@ -57,6 +80,10 @@ $Config = \SteemPi\SteemPi::getConfig();
     <button type="submit" name="save">
         <?php echo dgettext('settings', 'save'); ?>
     </button>
+
+    <?php
+    echo dgettext('feed', 'Feed');
+    ?>
 </form>
 
 </body>

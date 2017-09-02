@@ -4,3 +4,15 @@ msgstr "Benutzername"
 
 msgid "language"
 msgstr "SteemPi Sprache"
+
+msgid "settings saved successfully"
+msgstr "Die Einstellungen wurden erfolgreich gespeichert."
+
+msgid "save"
+msgstr "Speichern"
+
+msgid "language en"
+msgstr "Englisch (english)"
+
+msgid "language de"
+msgstr "Deutsch (german)"

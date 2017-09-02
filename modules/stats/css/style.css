@@ -59,6 +59,7 @@ body {
 }
 
 .google-trends-box iframe {
+    background: #ffffff;
     border: none;
     height: 350px;
     width: 100%;
