@@ -24,3 +24,6 @@ msgstr "General setting"
 
 msgid "module activation status"
 msgstr "Module status"
+
+msgid "module order"
+msgstr "Modul order"

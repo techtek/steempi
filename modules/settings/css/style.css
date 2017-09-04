@@ -106,4 +106,5 @@ section.settings-container header {
 
 section.settings-container:first-child header {
     border-top: none;
+    padding-top: 0;
 }

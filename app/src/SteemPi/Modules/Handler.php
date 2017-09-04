@@ -6,6 +6,8 @@
 
 namespace SteemPi\Modules;
 
+use SteemPi\SteemPi;
+
 /**
  * Class ModuleHandler
  * - Handles the modules
@@ -26,6 +28,16 @@ class Handler
     }
 
     /**
+     * Return the number of modules
+     *
+     * @return int
+     */
+    public function getLength()
+    {
+        return count($this->getModules());
+    }
+
+    /**
      * Return the module list
      *
      * @return array
@@ -35,8 +47,19 @@ class Handler
         $path    = $this->getBaseDir().'modules/';
         $folders = scandir($path);
 
-        $result = array();
+        $result  = array();
+        $modules = array();
 
+        // get the order
+        $order = SteemPi::getConfig()->get('steempi', 'modulesOrder');
+
+        if (empty($order)) {
+            $order = array();
+        } else {
+            $order = explode(',', $order);
+        }
+
+        // read modules
         foreach ($folders as $folder) {
             if ($folder == '.' || $folder == '..') {
                 continue;
@@ -46,7 +69,26 @@ class Handler
                 continue;
             }
 
-            $result[] = new Module($path.$folder.'/module.json');
+            $modules[] = new Module($path.$folder.'/module.json');
+        }
+
+        // order it
+        $missingCheck = array();
+
+        foreach ($order as $moduleName) {
+            if (file_exists($path.$moduleName.'/module.json')) {
+                $Module = new Module($path.$moduleName.'/module.json');;
+                $result[] = $Module;
+
+                $missingCheck[$Module->getName()] = true;
+            }
+        }
+
+        /* @var $Module Module */
+        foreach ($modules as $Module) {
+            if (!isset($missingCheck[$Module->getName()])) {
+                $result[] = $Module;
+            }
         }
 
         return $result;

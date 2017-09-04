@@ -24,3 +24,6 @@ msgstr "Allgemeine Einstellungen"
 
 msgid "module activation status"
 msgstr "Modul Status"
+
+msgid "module order"
+msgstr "Modul Sortierung"

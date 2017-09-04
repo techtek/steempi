@@ -11,7 +11,9 @@ use SteemPi\SteemPi;
 
 $Config  = SteemPi::getConfig();
 $Modules = SteemPi::getModuleHandler();
-$modules = $Modules->getModules();
+
+$modules      = $Modules->getModules();
+$modulesCount = $Modules->getLength();
 
 $configSaved = false;
 
@@ -51,6 +53,16 @@ if (isset($_POST['save'])) {
         }
     }
 
+    // steempi module order
+    if (isset($_POST['moduleOrder'])) {
+        asort($_POST['moduleOrder']);
+        $keys = array_keys($_POST['moduleOrder']);
+
+        $Config->set('steempi', 'modulesOrder', implode(',', $keys));
+
+        //refresh modules
+        $modules = $Modules->getModules();
+    }
 
     // save config
     $Config->save();
@@ -80,11 +92,11 @@ if (isset($_POST['save'])) {
     <?php if ($configSaved) { ?>
         <div class="message-save-successfully">
             <?php echo dgettext('settings', 'settings saved successfully'); ?>
-            <script>
-                setTimeout(function () {
-                    window.parent.location.reload();
-                }, 5000);
-            </script>
+            <!--            <script>-->
+            <!--                setTimeout(function () {-->
+            <!--                    window.parent.location.reload();-->
+            <!--                }, 5000);-->
+            <!--            </script>-->
         </div>
     <?php } ?>
 
@@ -135,6 +147,39 @@ if (isset($_POST['save'])) {
                 />
             </label>
             <?php
+        }
+
+        ?>
+    </section>
+
+    <section class="settings-container">
+        <header><?php echo dgettext('settings', 'module order'); ?></header>
+        <?php
+
+        $mc = 1;
+
+        foreach ($modules as $Module) {
+            /* @var $Module \SteemPi\Modules\Module */
+            ?>
+            <label>
+                <span class="label"><?php echo $Module->getTitle(); ?></span>
+                <select name="moduleOrder[<?php echo $Module->getName(); ?>]">
+                    <?php for ($i = 1; $i <= $modulesCount; $i++) { ?>
+                        <option value="<?php echo $i; ?>"
+                            <?php
+                            if ($i === $mc) {
+                                echo ' selected';
+                            }
+                            ?>
+                        >
+                            <?php echo $i; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </label>
+            <?php
+
+            $mc++;
         }
 
         ?>
