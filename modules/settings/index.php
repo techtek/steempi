@@ -7,7 +7,12 @@ require '../../app/autoload.php';
 
 textdomain('settings');
 
-$Config      = \SteemPi\SteemPi::getConfig();
+use SteemPi\SteemPi;
+
+$Config  = SteemPi::getConfig();
+$Modules = SteemPi::getModuleHandler();
+$modules = $Modules->getModules();
+
 $configSaved = false;
 
 if (isset($_POST['save'])) {
@@ -27,10 +32,30 @@ if (isset($_POST['save'])) {
     // steempi language
     $Config->set('steempi', 'language', $_POST['steempiLanguage']);
 
+    // steempi module status
+    if (isset($_POST['modulesStatus'])) {
+        $status = $_POST['modulesStatus'];
+        /* @var $Module \SteemPi\Modules\Module */
+        foreach ($modules as $Module) {
+            if ($Module->getName() === 'settings') {
+                $Module->activate();
+                continue;
+            }
+
+            if (in_array($Module->getName(), $status)) {
+                $Module->activate();
+                continue;
+            }
+
+            $Module->deactivate();
+        }
+    }
+
+
     // save config
     $Config->save();
 
-    \SteemPi\SteemPi::loadLanguage();
+    SteemPi::loadLanguage();
 
     $configSaved = true;
 }
@@ -63,30 +88,63 @@ if (isset($_POST['save'])) {
         </div>
     <?php } ?>
 
-    <label>
-        <span class="label"><?php echo dgettext('settings', 'username'); ?></span>
-        <input name="steemitUsername" value="<?php echo $Config->get('steemit', 'username'); ?>"/>
-    </label>
+    <section class="settings-container">
+        <header><?php echo dgettext('settings', 'main settings'); ?></header>
+        <label>
+            <span class="label"><?php echo dgettext('settings', 'username'); ?></span>
+            <input name="steemitUsername" type="text" value="<?php echo $Config->get('steemit', 'username'); ?>"/>
+        </label>
 
-    <label>
-        <span class="label"><?php echo dgettext('settings', 'language'); ?></span>
-        <select name="steempiLanguage">
-            <option value="en_EN"
-                <?php echo $Config->get('steempi', 'language') == 'en_EN' ? 'selected = "selected"' : ''; ?>
-            >
-                <?php echo dgettext('settings', 'language en'); ?>
-            </option>
-            <option value="de_DE"
-                <?php echo $Config->get('steempi', 'language') == 'de_DE' ? 'selected = "selected"' : ''; ?>
-            >
-                <?php echo dgettext('settings', 'language de'); ?>
-            </option>
-        </select>
-    </label>
+        <label>
+            <span class="label"><?php echo dgettext('settings', 'language'); ?></span>
+            <select name="steempiLanguage">
+                <option value="en_EN"
+                    <?php echo $Config->get('steempi', 'language') == 'en_EN' ? 'selected = "selected"' : ''; ?>
+                >
+                    <?php echo dgettext('settings', 'language en'); ?>
+                </option>
+                <option value="de_DE"
+                    <?php echo $Config->get('steempi', 'language') == 'de_DE' ? 'selected = "selected"' : ''; ?>
+                >
+                    <?php echo dgettext('settings', 'language de'); ?>
+                </option>
+            </select>
+        </label>
+    </section>
 
-    <button type="submit" name="save">
-        <?php echo dgettext('settings', 'save'); ?>
-    </button>
+    <section class="settings-container">
+        <header><?php echo dgettext('settings', 'module activation status'); ?></header>
+        <?php
+
+        /* @var $Module \SteemPi\Modules\Module */
+        foreach ($modules as $Module) {
+            if ($Module->getName() === 'settings') {
+                continue;
+            }
+            ?>
+            <label>
+                <span class="label"><?php echo $Module->getTitle(); ?></span>
+                <input type="checkbox"
+                       name="modulesStatus[]"
+                       value="<?php echo $Module->getName(); ?>"
+                    <?php
+                    if ($Module->isActive()) {
+                        echo ' checked';
+                    }
+                    ?>
+                />
+            </label>
+            <?php
+        }
+
+        ?>
+    </section>
+
+    <section class="settings-save">
+        <button type="submit" name="save">
+            <?php echo dgettext('settings', 'save'); ?>
+        </button>
+    </section>
 </form>
 
 </body>

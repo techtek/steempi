@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * This file contains SteemPi\Modules\Module
+ */
+
 namespace SteemPi\Modules;
 
 use SteemPi;
@@ -62,12 +66,61 @@ class Module
     }
 
     /**
+     * Return the module title
+     * Its the locale title from the module, not the name
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        $title = $this->getName().' title';
+
+        if ($this->data['title']) {
+            $title = $this->data['title'];
+        }
+
+        return dgettext($this->getName(), $title);
+    }
+
+    /**
      * Return the module path
      */
     public function getDir()
     {
-        return SteemPi\SteemPi::getRootPath().'/modules/'.$this->name.'/';
+        return SteemPi\SteemPi::getRootPath().'/modules/'.$this->getName().'/';
     }
+
+    //region activation
+
+    /**
+     * Return the active status from the module
+     *
+     * @return bool
+     */
+    public function isActive()
+    {
+        return (bool)SteemPi\SteemPi::getConfig()->get('modules', $this->getName());
+    }
+
+    /**
+     * Activate the module
+     */
+    public function activate()
+    {
+        $Config = SteemPi\SteemPi::getConfig();
+        $Config->set('modules', $this->getName(), 1);
+    }
+
+    /**
+     * Deactivate the module
+     */
+    public function deactivate()
+    {
+        $Config = SteemPi\SteemPi::getConfig();
+        $Config->set('modules', $this->getName(), 0);
+    }
+
+    //endregion
 
     //region left menu
 

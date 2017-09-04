@@ -40,7 +40,7 @@ $modules       = $ModuleHandler->getModules();
                 <li class="navigation-entry">
                     <?php
                     /* @var $Module \SteemPi\Modules\Module */
-                    if (!$Module->extendsLeftMenu()) {
+                    if (!$Module->extendsLeftMenu() || !$Module->isActive()) {
                         continue;
                     }
 
@@ -61,7 +61,7 @@ $modules       = $ModuleHandler->getModules();
             <?php foreach ($modules as $Module) {
 
                 /* @var $Module \SteemPi\Modules\Module */
-                if (!$Module->extendsTopMenu()) {
+                if (!$Module->extendsTopMenu() || !$Module->isActive()) {
                     continue;
                 }
 

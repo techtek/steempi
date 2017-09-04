@@ -31,7 +31,12 @@ form label {
     width: 100%;
 }
 
-form label input,
+form label input[type="text"],
+form label input[type="email"],
+form label input[type="tel"],
+form label input[type="date"],
+form label input[type="file"],
+form label input[type="search"],
 form label select {
     float: left;
     padding: 10px;
@@ -68,4 +73,37 @@ button:hover {
     padding: 10px;
     text-align: center;
     width: 100%;
+}
+
+/** settings container
+ ==================================================== */
+
+form section.settings-save,
+form section.settings-container {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+section.settings-save {
+    border-top: 1px solid #DEDEDE;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+section.settings-container header {
+    border-top: 1px solid #DEDEDE;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #b7b7b7;
+    width: 100%;
+}
+
+section.settings-container:first-child header {
+    border-top: none;
 }

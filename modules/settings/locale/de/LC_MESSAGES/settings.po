@@ -18,3 +18,9 @@ msgstr "Englisch (english)"
 
 msgid "language de"
 msgstr "Deutsch (german)"
+
+msgid "main settings"
+msgstr "Allgemeine Einstellungen"
+
+msgid "module activation status"
+msgstr "Modul Status"

@@ -52,7 +52,7 @@ $feed   = $result['results'];
         $entry['pending_payout_value'] = 0;
         $entry['active_votes'] = 0;
 
-        if (strlen($description) > 120) {
+        if (mb_strlen($description) > 120) {
             $description = mb_substr($description, 0, 120).'...';
         }
 

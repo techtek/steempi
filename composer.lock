@@ -4,188 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "334ba49dbe05ae1232117a0d1a1488ae",
+    "content-hash": "0a3694fbfb9e4085cc24c2584c3e73bc",
     "packages": [
         {
-            "name": "bitwasp/bitcoin",
-            "version": "0.0.33.x-dev",
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Bit-Wasp/bitcoin-php.git",
-                "reference": "c42b07de4c62f10c387200f4efc65ed6a4badc00"
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bit-Wasp/bitcoin-php/zipball/c42b07de4c62f10c387200f4efc65ed6a4badc00",
-                "reference": "c42b07de4c62f10c387200f4efc65ed6a4badc00",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
-                "bitwasp/buffertools": "^0.4.0",
-                "bitwasp/secp256k1-php": "^0.1.2",
-                "composer/semver": "^1.4.0",
-                "ext-bcmath": "*",
-                "ext-gmp": "*",
-                "ext-openssl": "*",
-                "lastguest/murmurhash": "v1.3.0",
-                "mdanter/ecc": "^0.4.0",
-                "paragonie/random_compat": "^1.4.0|^2.0.0",
-                "php-64bit": ">=5.6",
-                "pleonasm/merkle-tree": "1.0.0",
-                "rgooding/protobuf-php": "v0.0.1",
-                "symfony/http-foundation": "^2.7|^3.0"
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
             },
             "require-dev": {
-                "ext-json": "*",
-                "phpunit/phpunit": "^5.4.0",
-                "squizlabs/php_codesniffer": "^2.0.0"
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.0 || ^5.0",
+                "psr/log": "^1.0"
             },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "BitWasp\\Bitcoin\\": "src/"
-                },
-                "files": [
-                    "src/Script/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Unlicense"
-            ],
-            "authors": [
-                {
-                    "name": "Thomas Kerin",
-                    "homepage": "https://thomaskerin.io",
-                    "role": "Author"
-                }
-            ],
-            "description": "PHP Bitcoin library with functions for transactions, signatures, serialization, Random/Deterministic ECDSA keys, blocks, RPC bindings",
-            "homepage": "https://github.com/bit-wasp/bitcoin-php",
-            "time": "2017-06-23T10:36:40+00:00"
-        },
-        {
-            "name": "bitwasp/buffertools",
-            "version": "0.4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Bit-Wasp/buffertools-php.git",
-                "reference": "5ac7578fc00d093075a493320bd0a01d1ae0128c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bit-Wasp/buffertools-php/zipball/5ac7578fc00d093075a493320bd0a01d1ae0128c",
-                "reference": "5ac7578fc00d093075a493320bd0a01d1ae0128c",
-                "shasum": ""
-            },
-            "require": {
-                "mdanter/ecc": "~0.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~5.0",
-                "satooshi/php-coveralls": "~0.6.1",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "BitWasp\\Buffertools\\": "src/Buffertools/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Thomas Kerin",
-                    "homepage": "https://thomaskerin.io"
-                },
-                {
-                    "name": "Ruben de Vries",
-                    "email": "ruben@rubensayshi.com"
-                }
-            ],
-            "description": "Toolbox for working with binary and hex data. Similar to NodeJS Buffer.",
-            "time": "2017-06-21T18:23:36+00:00"
-        },
-        {
-            "name": "bitwasp/secp256k1-php",
-            "version": "v0.1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Bit-Wasp/secp256k1-php.git",
-                "reference": "8f6b62ea33407091ec93f4cebfea5fa519e7cdd2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bit-Wasp/secp256k1-php/zipball/8f6b62ea33407091ec93f4cebfea5fa519e7cdd2",
-                "reference": "8f6b62ea33407091ec93f4cebfea5fa519e7cdd2",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.3.*",
-                "squizlabs/php_codesniffer": "2.*",
-                "symfony/yaml": "*"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Unlicence"
-            ],
-            "authors": [
-                {
-                    "name": "Ruben de Vries",
-                    "email": "ruben@rubensayshi.com"
-                },
-                {
-                    "name": "Thomas Kerin",
-                    "email": "afk11@users.noreply.github.com"
-                }
-            ],
-            "description": "PHP Extension with bindings for bitcoin/secp256k1.",
-            "keywords": [
-                "ECDSA",
-                "bitcoin",
-                "bitwasp",
-                "cryptocurrency",
-                "ecc",
-                "extension",
-                "php",
-                "secp256k1"
-            ],
-            "time": "2017-03-09T10:07:06+00:00"
-        },
-        {
-            "name": "composer/semver",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "7ea669582e6396857cf6d1c0a6cd2728f4e7e383"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/7ea669582e6396857cf6d1c0a6cd2728f4e7e383",
-                "reference": "7ea669582e6396857cf6d1c0a6cd2728f4e7e383",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "6.2-dev"
                 }
             },
             "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
                 "psr-4": {
-                    "Composer\\Semver\\": "src"
+                    "GuzzleHttp\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -194,189 +53,56 @@
             ],
             "authors": [
                 {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
             ],
-            "time": "2017-05-15T12:49:06+00:00"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
-            "name": "davidkevork/steemphp",
+            "name": "guzzlehttp/promises",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/davidkevork/steemphp.git",
-                "reference": "035c275cf16c9853b3bdf81eaeebf6fdfa0096c6"
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "09e549f5534380c68761260a71f847644d8f65aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidkevork/steemphp/zipball/035c275cf16c9853b3bdf81eaeebf6fdfa0096c6",
-                "reference": "035c275cf16c9853b3bdf81eaeebf6fdfa0096c6",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/09e549f5534380c68761260a71f847644d8f65aa",
+                "reference": "09e549f5534380c68761260a71f847644d8f65aa",
                 "shasum": ""
             },
             "require": {
-                "bitwasp/bitcoin": "0.0.33.x-dev",
-                "fguillot/json-rpc": "^1.2",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SteemPHP\\": "src/SteemPHP/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Kevork",
-                    "email": "david@davidkevork.me"
-                }
-            ],
-            "description": "steem php client api",
-            "homepage": "https://github.com/davidkevork/steemphp",
-            "time": "2017-09-01T12:54:07+00:00"
-        },
-        {
-            "name": "fgrosse/phpasn1",
-            "version": "dev-compat/php5-5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fgrosse/PHPASN1.git",
-                "reference": "7f7b25ee26bc5bdba6fdcf97d3dc2f8f86bea629"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fgrosse/PHPASN1/zipball/7f7b25ee26bc5bdba6fdcf97d3dc2f8f86bea629",
-                "reference": "7f7b25ee26bc5bdba6fdcf97d3dc2f8f86bea629",
-                "shasum": ""
-            },
-            "require": {
-                "ext-gmp": "*",
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.5",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "suggest": {
-                "php-curl": "For loading OID information from the web if they have not bee defined statically"
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev",
-                    "dev-compat/php5-5": "1.5.x-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "FG\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Friedrich Große",
-                    "email": "friedrich.grosse@gmail.com",
-                    "homepage": "https://github.com/FGrosse",
-                    "role": "Author"
+                    "GuzzleHttp\\Promise\\": "src/"
                 },
-                {
-                    "name": "All contributors",
-                    "homepage": "https://github.com/FGrosse/PHPASN1/contributors"
-                }
-            ],
-            "description": "A PHP Framework that allows you to encode and decode arbitrary ASN.1 structures using the ITU-T X.690 Encoding Rules.",
-            "homepage": "https://github.com/FGrosse/PHPASN1",
-            "time": "2015-09-30T18:31:02+00:00"
-        },
-        {
-            "name": "fguillot/json-rpc",
-            "version": "v1.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fguillot/JsonRPC.git",
-                "reference": "ea2720b13e986bbf23e832b135c84c91ead7259f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fguillot/JsonRPC/zipball/ea2720b13e986bbf23e832b135c84c91ead7259f",
-                "reference": "ea2720b13e986bbf23e832b135c84c91ead7259f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.8.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "JsonRPC": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Frédéric Guillot"
-                }
-            ],
-            "description": "Simple Json-RPC client/server library that just works",
-            "homepage": "https://github.com/fguillot/JsonRPC",
-            "time": "2017-01-12T21:31:30+00:00"
-        },
-        {
-            "name": "lastguest/murmurhash",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lastguest/murmurhash-php.git",
-                "reference": "8eb06483456bc98f5adb7707d981a8ef6a065fa2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lastguest/murmurhash-php/zipball/8eb06483456bc98f5adb7707d981a8ef6a065fa2",
-                "reference": "8eb06483456bc98f5adb7707d981a8ef6a065fa2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=4.3"
-            },
-            "type": "library",
-            "autoload": {
                 "files": [
-                    "murmurhash3.php"
+                    "src/functions_include.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -385,113 +111,53 @@
             ],
             "authors": [
                 {
-                    "name": "Stefano Azzolini",
-                    "email": "lastguest@gmail.com",
-                    "homepage": "https://github.com/lastguest/murmurhash-php"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "description": "MurmurHash3 Hash",
-            "homepage": "https://github.com/lastguest/murmurhash-php",
+            "description": "Guzzle promises library",
             "keywords": [
-                "hash",
-                "hashing",
-                "murmur"
+                "promise"
             ],
-            "time": "2016-05-16T23:22:58+00:00"
+            "time": "2017-05-20T23:14:18+00:00"
         },
         {
-            "name": "mdanter/ecc",
-            "version": "0.4.x-dev",
+            "name": "guzzlehttp/psr7",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpecc/phpecc.git",
-                "reference": "92a5390ee188ce5c295b735c4450e37f90eeddd8"
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "811b676fbab9c99e359885032e5ebc70e442f5b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpecc/phpecc/zipball/92a5390ee188ce5c295b735c4450e37f90eeddd8",
-                "reference": "92a5390ee188ce5c295b735c4450e37f90eeddd8",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/811b676fbab9c99e359885032e5ebc70e442f5b8",
+                "reference": "811b676fbab9c99e359885032e5ebc70e442f5b8",
                 "shasum": ""
             },
             "require": {
-                "ext-gmp": "*",
-                "fgrosse/phpasn1": "~1.5",
-                "paragonie/random_compat": "^1|^2",
-                "php": ">=5.6.0"
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.1|~5.0",
-                "squizlabs/php_codesniffer": "~2",
-                "symfony/yaml": "~2.6|~3.0"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Mdanter\\Ecc\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matyas Danter",
-                    "homepage": "http://matejdanter.com/",
-                    "role": "Author"
+                    "GuzzleHttp\\Psr7\\": "src/"
                 },
-                {
-                    "name": "Thibaud Fabre",
-                    "email": "thibaud@aztech.io",
-                    "homepage": "http://aztech.io",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "PHP Elliptic Curve Cryptography library",
-            "homepage": "https://github.com/phpecc/phpecc",
-            "keywords": [
-                "Diffie",
-                "ECDSA",
-                "Hellman",
-                "curve",
-                "ecdh",
-                "elliptic",
-                "nistp192",
-                "nistp224",
-                "nistp256",
-                "nistp521",
-                "phpecc",
-                "secp256k1"
-            ],
-            "time": "2017-06-10T17:59:31+00:00"
-        },
-        {
-            "name": "paragonie/random_compat",
-            "version": "v2.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
-            },
-            "type": "library",
-            "autoload": {
                 "files": [
-                    "lib/random.php"
+                    "src/functions_include.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -500,18 +166,26 @@
             ],
             "authors": [
                 {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com",
-                    "homepage": "https://paragonie.com"
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
-            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
-                "csprng",
-                "pseudorandom",
-                "random"
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
             ],
-            "time": "2017-03-13T16:27:32+00:00"
+            "time": "2017-07-17T09:11:21+00:00"
         },
         {
             "name": "piwik/ini",
@@ -547,133 +221,32 @@
             "time": "2016-01-14T21:13:33+00:00"
         },
         {
-            "name": "pleonasm/merkle-tree",
-            "version": "1.0.0",
+            "name": "psr/http-message",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pleonasm/merkle-tree.git",
-                "reference": "9ddc9d0a0e396750fada378f3aa90f6c02dd56a1"
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pleonasm/merkle-tree/zipball/9ddc9d0a0e396750fada378f3aa90f6c02dd56a1",
-                "reference": "9ddc9d0a0e396750fada378f3aa90f6c02dd56a1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "ext-xdebug": ">=2.2.0",
-                "phpunit/php-invoker": ">=1.0.0,<1.2.0",
-                "phpunit/phpunit": "3.7.19",
-                "satooshi/php-coveralls": "*@dev",
-                "squizlabs/php_codesniffer": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Pleo": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Matthew Nagi",
-                    "email": "matthew.nagi@base-2.net"
-                }
-            ],
-            "description": "An implementation of a Merkle Tree in PHP",
-            "time": "2013-05-22T20:46:20+00:00"
-        },
-        {
-            "name": "rgooding/protobuf-php",
-            "version": "0.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rgooding/Protobuf-PHP.git",
-                "reference": "d688d7894d65d80a38846e0b622b9a2cd7fd4d68"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rgooding/Protobuf-PHP/zipball/d688d7894d65d80a38846e0b622b9a2cd7fd4d68",
-                "reference": "d688d7894d65d80a38846e0b622b9a2cd7fd4d68",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "bin": [
-                "protoc-gen-php.bat",
-                "protoc-gen-php.php"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "DrSlump": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Iván -DrSlump- Montes",
-                    "email": "drslump@pollinimini.net",
-                    "homepage": "https://github.com/drslump/Protobuf-PHP"
-                },
-                {
-                    "name": "Richard Gooding",
-                    "email": "richard.gooding@justdevelop.it"
-                }
-            ],
-            "description": "PHP implementation of Google's Protocol Buffers",
-            "homepage": "https://github.com/rgooding/Protobuf-PHP",
-            "keywords": [
-                "protobuf",
-                "protocol buffer",
-                "serializing"
-            ],
-            "time": "2013-05-29T14:39:13+00:00"
-        },
-        {
-            "name": "symfony/http-foundation",
-            "version": "3.4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "9cc8019b5d013f3b0dda7f1ba5596677229562b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/9cc8019b5d013f3b0dda7f1ba5596677229562b9",
-                "reference": "9cc8019b5d013f3b0dda7f1ba5596677229562b9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9|>=7.0.8",
-                "symfony/polyfill-mbstring": "~1.1"
-            },
-            "require-dev": {
-                "symfony/expression-language": "~2.8|~3.0|~4.0"
-            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.4-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Component\\HttpFoundation\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
+                    "Psr\\Http\\Message\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -681,84 +254,27 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
-            "description": "Symfony HttpFoundation Component",
-            "homepage": "https://symfony.com",
-            "time": "2017-08-22T20:48:27+00:00"
-        },
-        {
-            "name": "symfony/polyfill-mbstring",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
             "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
             ],
-            "time": "2017-06-14T15:44:48+00:00"
+            "time": "2016-08-06T14:39:51+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "davidkevork/steemphp": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
