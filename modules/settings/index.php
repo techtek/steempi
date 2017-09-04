@@ -92,11 +92,11 @@ if (isset($_POST['save'])) {
     <?php if ($configSaved) { ?>
         <div class="message-save-successfully">
             <?php echo dgettext('settings', 'settings saved successfully'); ?>
-            <!--            <script>-->
-            <!--                setTimeout(function () {-->
-            <!--                    window.parent.location.reload();-->
-            <!--                }, 5000);-->
-            <!--            </script>-->
+            <script>
+                setTimeout(function () {
+                    window.parent.location.reload();
+                }, 5000);
+            </script>
         </div>
     <?php } ?>
 
