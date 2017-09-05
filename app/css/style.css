@@ -125,6 +125,14 @@ nav .steemPi-logo img.logo-text {
     width: 60px;
 }
 
+.navigation-entry .menuItem-icon img {
+    border: 0;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    width: calc(100% - 20px);
+}
+
 .navigation-entry .menuItem-text {
     display: inline-block;
     line-height: 30px;

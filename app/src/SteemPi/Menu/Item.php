@@ -85,8 +85,16 @@ class Item
             return '';
         }
 
+        $name  = htmlspecialchars($this->Module->getName());
         $icon  = htmlspecialchars($this->attributes['icon']);
         $color = '';
+
+        if (strpos($icon, 'fa-') === false) {
+            $path = '/modules/'.$name.'/'.$icon;
+            $html = '<img src="'.$path.'" />';
+        } else {
+            $html = '<span class="'.$icon.'"></span>';
+        }
 
         if (isset($this->attributes['color'])) {
             $color = htmlspecialchars($this->attributes['color']);
@@ -94,7 +102,7 @@ class Item
 
         return '
             <span class="menuItem-icon" style="color: '.$color.'">
-                <span class="'.$icon.'"></span>
+                '.$html.'
             </span>
         ';
     }
