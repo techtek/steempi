@@ -14,7 +14,7 @@
 
 require_once 'utils.php';
 
-$dir = dirname(dirname(dirname(__FILE__))).'/';
+$dir = dirname(dirname(dirname(__FILE__)));
 
 // first, we make a full update
 system('apt-get update -y');
@@ -50,8 +50,8 @@ system('git checkout -b dev origin/dev');
 include 'composer.php';
 
 // create etc folder
-if (!is_dir($dir.'etc/')) {
-    mkdir($dir.'etc/');
+if (!is_dir($dir.'/etc/')) {
+    mkdir($dir.'/etc/');
 
     $conf = '
     ;<?php exit; ?>
@@ -74,11 +74,13 @@ discord = 1
 
 ';
 
-    file_put_contents($dir.'etc/conf.ini.php', $conf);
+    file_put_contents($dir.'/etc/conf.ini.php', $conf);
 }
 
 // set chown
 include 'chown.php';
 
 echo PHP_EOL;
+echo PHP_EOL;
 echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
+echo PHP_EOL;
