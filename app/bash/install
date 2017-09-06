@@ -11,6 +11,10 @@
 #
 
 command -v php >/dev/null 2>&1 || {
+    echo "";
+    echo "No PHP is installed. I will install php7 for you.";
+    echo "";
+
     command sudo echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list
     command sudo apt-get update -y
     command sudo apt install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y

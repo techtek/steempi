@@ -23,40 +23,12 @@ system('apt-get upgrade -y');
 // what is installed?
 $apache = command_exist('apache2');
 $light  = command_exist('lighttpd');
-$php    = command_exist('php');
 
 //if nothing is installed, we want to install LIGHTTPD
 if (!$apache && !$light) {
     echo PHP_EOL;
     echo "No Webserver is installed. I will install lighttpd for you.".PHP_EOL;
     system('apt-get install lighttpd');
-}
-
-// if no php exists, we want php7
-if (!$php) {
-    echo PHP_EOL;
-    echo "No PHP is installed. I will install php7 for you.".PHP_EOL;
-    system(
-        'echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list'
-    );
-
-    system('apt-get update -y');
-    system('apt install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y');
-    system('rm /etc/apt/sources.list.d/debian-stretch.list');
-    system('apt-get update -y');
-
-    if ($light) {
-        system('
-        sudo tee /etc/lighttpd/conf-enabled/php.conf > /dev/null <<EOF
-fastcgi.server += (".php" => ((
-        "socket" => "/var/run/php/php7.0-fpm.sock"
-)))
-EOF
-        ');
-
-        system('sudo lighttpd-enable-mod fastcgi');
-        system('sudo /etc/init.d/lighttpd force-reload');
-    }
 }
 
 // SteemPi
