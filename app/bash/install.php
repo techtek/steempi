@@ -14,7 +14,7 @@
 
 require_once 'utils.php';
 
-$dir = dirname(dirname(dirname(__FILE__)));
+$dir = dirname(dirname(dirname(__FILE__))).'/';
 
 // first, we make a full update
 system('apt-get update -y');
@@ -49,5 +49,36 @@ system('git checkout -b dev origin/dev');
 // composer
 include 'composer.php';
 
+// create etc folder
+if (!is_dir($dir.'etc/')) {
+    mkdir($dir.'etc/');
+
+    $conf = '
+    ;<?php exit; ?>
+
+[steempi]
+language = "en_EN"
+modulesOrder = "feed,WhaleSonar,settings,issLive,stats,Steemitpond,discord"
+
+[steemit]
+username = ""
+
+[modules]
+feed = 1
+issLive = 1
+settings = 1
+stats = 1
+Steemitpond = 1
+WhaleSonar = 1
+discord = 1
+
+';
+
+    file_put_contents($dir.'etc/conf.ini.php', $conf);
+}
+
 // set chown
 include 'chown.php';
+
+echo PHP_EOL;
+echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
