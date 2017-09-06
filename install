@@ -9,3 +9,5 @@
 #
 # This is the installation script for the SteemPi
 #
+
+./app/bash/install

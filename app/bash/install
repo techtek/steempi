@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#   __ _                        ___ _
+#  / _\ |_ ___  ___ _ __ ___   / _ (_)
+#  \ \| __/ _ \/ _ \ '_ ` _ \ / /_)/ |
+#  _\ \ ||  __/  __/ | | | | / ___/| |
+#  \__/\__\___|\___|_| |_| |_\/    |_|
+#
+#
+# This is the installation script for the SteemPi
+#
+
+command -v php >/dev/null 2>&1 || {
+    command sudo echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list
+    command sudo apt-get update -y
+    command sudo apt install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y
+
+    command sudo rm /etc/apt/sources.list.d/debian-stretch.list
+    command sudo apt-get update -y
+}
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+command php ${DIR}/install.php
