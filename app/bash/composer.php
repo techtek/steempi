@@ -8,18 +8,15 @@
  *  \__/\__\___|\___|_| |_| |_\/    |_|
  *
  *
- * This script installs steempi
+ * This script runs a composer update
  *
  */
 
 $dir = dirname(dirname(dirname(__FILE__)));
 
-echo "Starting SteemPi Update...".PHP_EOL;
+chdir($dir);
 
-system('sudo git fetch');
+system('wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet');
+system('php composer.phar update');
 
-// if dev
-system('sudo git reset --hard origin/dev');
-
-include dirname(__FILE__).'/composer.php';
-include dirname(__FILE__).'/chown.php';
+unlink('composer.phar');

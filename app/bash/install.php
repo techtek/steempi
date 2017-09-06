@@ -14,6 +14,8 @@
 
 require_once 'utils.php';
 
+$dir = dirname(dirname(dirname(__FILE__)));
+
 // first, we make a full update
 system('apt-get update -y');
 system('apt-get upgrade -y');
@@ -60,7 +62,7 @@ EOF
 // SteemPi
 echo "Now i will install SteemPi for you.".PHP_EOL;
 
-chdir('cd /var/www/html/');
+chdir($dir);
 
 if (file_exists('/var/www/html/index.lighttpd.html')) {
     unlink('/var/www/html/index.lighttpd.html');
@@ -73,9 +75,7 @@ system('git clone https://github.com/techtek/steempi.git .');
 system('git checkout -b dev origin/dev');
 
 // composer
-system('wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet');
-system('php composer.phar update');
-
+include 'composer.php';
 
 // set chown
 include 'chown.php';

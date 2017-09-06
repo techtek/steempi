@@ -1,7 +1,7 @@
 {
-  "minimum-stability": "dev",
   "require": {
     "piwik/ini": "1.*",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~6.0",
+    "wp-cli/php-cli-tools": "*"
   }
 }
