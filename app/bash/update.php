@@ -44,5 +44,5 @@ include dirname(__FILE__).'/chown.php';
 
 echo PHP_EOL;
 echo PHP_EOL;
-echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
+echo "I am done. We wish you a lot of fun with SteemPi - @dehenne and @Techtek";
 echo PHP_EOL;
