@@ -10,4 +10,9 @@
 # This is the installation script for the SteemPi
 #
 
+if [ "$(id -u)" != "0" ]; then
+   echo "Please use sudo to execute the installation. 'sudo ./install''" 1>&2
+   exit 1
+fi
+
 ./app/bash/install

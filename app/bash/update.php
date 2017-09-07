@@ -14,6 +14,17 @@
 
 $dir = dirname(dirname(dirname(__FILE__)));
 
+$executeUser = shell_exec('id -u');
+$executeUser = trim($executeUser);
+$executeUser = (int)$executeUser;
+
+if ($executeUser !== 0) {
+    \cli\Colors::enable();
+    \cli\line('Please use %Csudo ./steempi update%n to update SteemPi%n', true);
+    \cli\Colors::disable();
+    exit;
+}
+
 echo "Starting SteemPi Update...".PHP_EOL;
 
 // on which branch we are
@@ -30,3 +41,8 @@ system('git reset --hard origin/'.$branch);
 
 include dirname(__FILE__).'/composer.php';
 include dirname(__FILE__).'/chown.php';
+
+echo PHP_EOL;
+echo PHP_EOL;
+echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
+echo PHP_EOL;
