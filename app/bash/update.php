@@ -40,12 +40,25 @@ system('git fetch');
 system('git reset --hard origin/'.$branch);
 
 
+\cli\Colors::enable();
+\cli\line('%CGenerate locale%n', true);
+\cli\Colors::disable();
 include dirname(__FILE__).'/locale.php';
 
+
+\cli\Colors::enable();
+\cli\line('%CUpdate PHP libraries%n', true);
+\cli\Colors::disable();
 include dirname(__FILE__).'/composer.php';
 
+\cli\Colors::enable();
+\cli\line('%CSet folder permissions%n', true);
+\cli\Colors::disable();
 include dirname(__FILE__).'/chown.php';
 
+\cli\Colors::enable();
+\cli\line('%CRestart services%n', true);
+\cli\Colors::disable();
 include dirname(__FILE__).'/restart.php';
 
 echo PHP_EOL;
