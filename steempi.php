@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 /**
@@ -32,8 +33,15 @@ $Arguments->addFlag(array('help', 'h'), 'Show this help screen');
 $Arguments->addFlag(array('version', 'v'), 'Display the version');
 
 
-$Arguments->addOption('update', 'Update SteemPi');
-$Arguments->addOption('change-branch', 'Change between the branches from SteemPi: dev or master');
+$Arguments->addOption(
+    'update',
+    'Update SteemPi'
+);
+
+$Arguments->addOption(
+    'change-branch',
+    'Change between the branches from SteemPi: dev or master'
+);
 
 
 $Arguments->parse();
