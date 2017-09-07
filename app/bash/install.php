@@ -77,6 +77,9 @@ discord = 1
     file_put_contents($dir.'/etc/conf.ini.php', $conf);
 }
 
+// language pack
+include 'locale.php';
+
 // set chown
 include 'chown.php';
 

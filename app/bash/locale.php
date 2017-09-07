@@ -12,11 +12,27 @@
  *
  */
 
-$available = array('de_DE', 'en_EN', 'nl_NL');
+$needle    = array('de_DE', 'en_EN', 'nl_NL');
+$available = shell_exec('locale -a');
+$available = explode("\n", trim($available));
+$available = array_flip($available);
 
-foreach ($available as $locale) {
-    system("locale-gen {$locale}");
-    system("locale-gen {$locale}.UTF-8");
+$missLanguagePack = function () use ($available, $needle) {
+    foreach ($needle as $locale) {
+        if (isset($available[$locale])) {
+            continue;
+        }
+
+        return true;
+    }
+
+    return false;
+};
+
+if ($missLanguagePack()) {
+    \cli\Colors::enable();
+    \cli\line('%CI will install the language pack.%n', true);
+    \cli\Colors::disable();
+
+    system('apt-get install locales-all -y');
 }
-
-system("update-locale");
