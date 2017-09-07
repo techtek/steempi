@@ -39,7 +39,7 @@ $Arguments->addOption('change-branch', 'Change between the branches from SteemPi
 $Arguments->parse();
 $arguments = json_decode($Arguments->asJSON(), true);
 
-$showHelp = function() use ($arguments) {
+$showHelp = function () use ($arguments) {
     if (isset($arguments['help']) && $arguments['help']) {
         return true;
     }
@@ -54,7 +54,7 @@ $showHelp = function() use ($arguments) {
 };
 
 if ($showHelp()) {
-$logo = "
+    $logo = "
 
   Welcome to
 
@@ -67,7 +67,7 @@ $logo = "
     ";
 
     \cli\Colors::enable();
-    \cli\line('%C'. $logo .'%n', true);
+    \cli\line('%C'.$logo.'%n', true);
     \cli\Colors::disable();
 
     echo PHP_EOL;
