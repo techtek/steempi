@@ -18,7 +18,8 @@ if (php_sapi_name() != 'cli') {
     die('Must run from command line');
 }
 
-error_reporting(E_ALL | E_ERROR | E_PARSE);
+// error_reporting(E_ALL | E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 
 ini_set('display_errors', 1);
 ini_set('log_errors', 0);
@@ -47,12 +48,16 @@ $Arguments->addOption(
 $Arguments->parse();
 $arguments = json_decode($Arguments->asJSON(), true);
 
-$showHelp = function () use ($arguments) {
+$needHelp = function () use ($arguments) {
     if (isset($arguments['help']) && $arguments['help']) {
         return true;
     }
 
     foreach ($arguments as $name => $value) {
+        if ($value === null) {
+            return false;
+        }
+
         if (!empty($value)) {
             return false;
         }
@@ -61,7 +66,7 @@ $showHelp = function () use ($arguments) {
     return true;
 };
 
-if ($showHelp()) {
+$displayHelp = function () use ($Arguments) {
     $logo = "
 
   Welcome to
@@ -82,9 +87,14 @@ if ($showHelp()) {
     echo $Arguments->getHelpScreen();
     echo PHP_EOL.PHP_EOL;
     exit;
+};
+
+
+if ($needHelp()) {
+    $displayHelp();
 }
 
-if ($arguments['update']) {
+if ($arguments['update'] || $arguments['update'] === null) {
     include 'app/bash/update.php';
     exit;
 }
@@ -108,4 +118,4 @@ if (isset($arguments['change-branch'])) {
     }
 }
 
-//var_dump($arguments);
+$displayHelp();
