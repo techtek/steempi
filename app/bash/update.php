@@ -46,6 +46,8 @@ include dirname(__FILE__).'/composer.php';
 
 include dirname(__FILE__).'/chown.php';
 
+include dirname(__FILE__).'/restart.php';
+
 echo PHP_EOL;
 echo PHP_EOL;
 echo "I am done. We wish you a lot of fun with SteemPi - @dehenne and @Techtek";

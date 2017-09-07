@@ -68,12 +68,12 @@ class SteemPi
         $lang = self::getConfig()->get('steempi', 'language');
 
         if (!$lang) {
-            $lang = 'en_US';
+            $lang = 'en_GB';
         }
 
         switch ($lang) {
             case 'en_EN':
-                $lang = 'en_US';
+                $lang = 'en_GB';
                 break;
         }
 
