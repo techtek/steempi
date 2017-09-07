@@ -1,7 +1,7 @@
 {
   "title": "Steemit Feed",
   "leftMenu": {
-    "icon": "fa fa-home",
+    "icon": "images/menu.svg",
     "text": "Feed",
     "color": "#3498db"
   }

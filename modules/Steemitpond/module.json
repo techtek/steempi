@@ -1,7 +1,7 @@
 {
   "title": "Stats",
   "leftMenu": {
-    "icon": "fa fa-ship",
+    "icon": "images/menu.svg",
     "text": "Steemit Pond",
     "color": "#3A8199"
   }

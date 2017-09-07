@@ -1,7 +1,7 @@
 {
   "title": "SteemPi Chat",
   "leftMenu": {
-    "icon": "fa fa-comments-o",
+    "icon": "images/menu.svg",
     "text": "Chat",
     "color": "#BB4632"
   }

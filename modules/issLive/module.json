@@ -1,7 +1,7 @@
 {
   "title": "ISS Live",
   "leftMenu": {
-    "icon": "fa fa-podcast",
+    "icon": "images/menu.svg",
     "text": "ISS Live",
     "color": "#999999"
   }

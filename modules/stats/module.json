@@ -1,7 +1,7 @@
 {
   "title": "Steemitpond",
   "leftMenu": {
-    "icon": "fa fa-bar-chart",
+    "icon": "images/menu.svg",
     "text": "Stats",
     "color": "#e67e22"
   }

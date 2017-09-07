@@ -1,7 +1,7 @@
 {
   "title": "Whale sonar",
   "leftMenu": {
-    "icon": "fa fa-bullseye",
+    "icon": "images/menu.svg",
     "text": "Whale Sonar",
     "color": "#9E7682"
   }

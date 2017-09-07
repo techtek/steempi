@@ -130,7 +130,7 @@ nav .steemPi-logo img.logo-text {
     height: 100%;
     object-position: center;
     object-fit: cover;
-    width: calc(100% - 20px);
+    width: calc(100% - 30px);
 }
 
 .navigation-entry .menuItem-text {
