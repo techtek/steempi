@@ -50,3 +50,4 @@ if ($lightHttp) {
 
 echo "Set folder permissions 'chown {$user}:{$user} to {$dir}'";
 system("chown {$user}:{$user} {$dir} -R");
+echo PHP_EOL;
