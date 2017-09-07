@@ -17,22 +17,50 @@ $available = shell_exec('locale -a');
 $available = explode("\n", trim($available));
 $available = array_flip($available);
 
-$missLanguagePack = function () use ($available, $needle) {
-    foreach ($needle as $locale) {
-        if (isset($available[$locale])) {
-            continue;
-        }
+$localeFile = '/etc/locale.gen';
+$newLocales = false;
 
-        return true;
+foreach ($needle as $locale) {
+    if (isset($available[$locale])) {
+        continue;
     }
 
-    return false;
-};
+    $search  = '';
+    $replace = '';
 
-if ($missLanguagePack()) {
+    switch ($locale) {
+        case 'de_DE':
+            $search  = '# de_DE.UTF-8 UTF-8';
+            $replace = 'de_DE.UTF-8 UTF-8';
+            break;
+
+        case 'nl_NL':
+            $search  = '# nl_NL.UTF-8 UTF-8';
+            $replace = 'nl_NL.UTF-8 UTF-8';
+            break;
+
+        case 'en_EN':
+            $search  = '# en_GB.UTF-8 UTF-8';
+            $replace = 'en_GB.UTF-8 UTF-8';
+            break;
+    }
+
+    if (empty($search)) {
+        continue;
+    }
+
+    $newLocales = true;
+    $content    = file_get_contents($localeFile);
+
+    $content = str_replace($search, $replace, $content);
+
+    file_put_contents($localeFile, $content);
+}
+
+if ($newLocales) {
     \cli\Colors::enable();
-    \cli\line('%CI will install the language pack.%n', true);
+    \cli\line('%CI will generate the language pack.%n', true);
     \cli\Colors::disable();
 
-    system('apt-get install locales-all -y');
+    system('locale-gen');
 }
