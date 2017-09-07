@@ -12,7 +12,8 @@
  *
  */
 
-$needle    = array('de_DE', 'en_EN', 'nl_NL');
+$needle = array('de_DE.utf8', 'en_GB.utf8', 'nl_NL.utf8');
+
 $available = shell_exec('locale -a');
 $available = explode("\n", trim($available));
 $available = array_flip($available);
@@ -29,17 +30,17 @@ foreach ($needle as $locale) {
     $replace = '';
 
     switch ($locale) {
-        case 'de_DE':
+        case 'de_DE.utf8':
             $search  = '# de_DE.UTF-8 UTF-8';
             $replace = 'de_DE.UTF-8 UTF-8';
             break;
 
-        case 'nl_NL':
+        case 'nl_NL.utf8':
             $search  = '# nl_NL.UTF-8 UTF-8';
             $replace = 'nl_NL.UTF-8 UTF-8';
             break;
 
-        case 'en_EN':
+        case 'en_GB.utf8':
             $search  = '# en_GB.UTF-8 UTF-8';
             $replace = 'en_GB.UTF-8 UTF-8';
             break;
