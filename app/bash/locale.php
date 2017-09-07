@@ -52,8 +52,7 @@ foreach ($needle as $locale) {
 
     $newLocales = true;
     $content    = file_get_contents($localeFile);
-
-    $content = str_replace($search, $replace, $content);
+    $content    = str_replace($search, $replace, $content);
 
     file_put_contents($localeFile, $content);
 }

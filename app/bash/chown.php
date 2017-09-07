@@ -35,8 +35,17 @@ if ($lightHttp) {
         'ps aux | egrep \'(lighttpd)\' | awk \'{print $1}\' | uniq'
     );
 
-    $result = explode("\n", $result);
-    $user   = trim($result[0]);
+    $result = explode("\n", trim($result));
+
+    if (count($result)) {
+        $result = array_filter($result, function ($entry) {
+            return $entry !== 'root';
+        });
+
+        $result = array_values($result);
+    }
+
+    $user = trim($result[0]);
 }
 
 echo "Set folder permissions 'chown {$user}:{$user} to {$dir}'";
