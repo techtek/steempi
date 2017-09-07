@@ -75,7 +75,6 @@ class SteemPi
             case 'en_EN':
                 $lang = 'en_US';
                 break;
-
         }
 
         setlocale(

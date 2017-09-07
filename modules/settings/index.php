@@ -120,6 +120,11 @@ if (isset($_POST['save'])) {
                 >
                     <?php echo dgettext('settings', 'language de'); ?>
                 </option>
+                <option value="nl_NL"
+                    <?php echo $Config->get('steempi', 'language') == 'nl_NL' ? 'selected = "selected"' : ''; ?>
+                >
+                    <?php echo dgettext('settings', 'language nl'); ?>
+                </option>
             </select>
         </label>
     </section>

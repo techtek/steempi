@@ -1,0 +1,31 @@
+msgid "username"
+msgstr "Gebruikersnaam"
+
+msgid "language"
+msgstr "Taal"
+
+msgid "settings saved successfully"
+msgstr ""
+"De instellingen zijn succesvol opgeslagen<br />"
+"In enkele ongenblikken zal de SteemPi interface worden geladen"
+
+msgid "save"
+msgstr "Opslaan"
+
+msgid "language en"
+msgstr "Engels (english)"
+
+msgid "language de"
+msgstr "Duits (deutsch)"
+
+msgid "language nl"
+msgstr "Nederlands"
+
+msgid "main settings"
+msgstr "Algemene instellingen"
+
+msgid "module activation status"
+msgstr "Module Status"
+
+msgid "module order"
+msgstr "Module sorteren"

@@ -39,7 +39,11 @@ $branch = trim(trim($result[0], '*'));
 system('git fetch');
 system('git reset --hard origin/'.$branch);
 
+
+include dirname(__FILE__).'/locale.php';
+
 include dirname(__FILE__).'/composer.php';
+
 include dirname(__FILE__).'/chown.php';
 
 echo PHP_EOL;

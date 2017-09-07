@@ -19,6 +19,9 @@ msgstr "English"
 msgid "language de"
 msgstr "German (deutsch)"
 
+msgid "language nl"
+msgstr "Dutch (nederlands)"
+
 msgid "main settings"
 msgstr "General setting"
 
