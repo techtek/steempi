@@ -86,7 +86,7 @@ class SteemPi
             $lang
         );
 
-        putenv("LANG=".$lang);
+        putenv("LANG=".$lang.'.utf8');
 
         bindtextdomain('steemPi', './locale');
         bind_textdomain_codeset('steemPi', 'UTF-8');
