@@ -63,5 +63,5 @@ if ($newLocales) {
     \cli\line('%CI will generate the language pack.%n', true);
     \cli\Colors::disable();
 
-    system('locale-gen');
+    system('locale-gen en_GB.UTF-8');
 }
