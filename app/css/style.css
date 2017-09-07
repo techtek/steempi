@@ -58,18 +58,20 @@ nav {
     position: fixed;
     top: 0;
     width: 60px;
+    will-change: transition;
     z-index: 100;
 
-    transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
-    -webkit-transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
+   transition: width .2s, box-shadow: 0.1s linear 0.1s;
+    -webkit-transition: width .2s, box-shadow .1s linear .1s;
 }
 
 nav:hover {
     box-shadow: 3px 0 20px rgba(0, 0, 0, 0.2);
     width: 300px;
+    will-change: width;
 
-    transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
-    -webkit-transition: width .2s, opacity .8s, box-shadow .1s linear .1s, background-color .3s;
+    transition: width .2s, box-shadow: 0.1s;
+    -webkit-transition: width .2s, box-shadow .1s linear .1s;
 }
 
 nav .steemPi-logo {
