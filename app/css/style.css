@@ -9,6 +9,7 @@
 
 body {
     background: #f5f5f5;
+    background-size: cover;
     color: #18191b;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -20,6 +21,7 @@ body {
 
 header {
     border-bottom: 1px solid #dedede;
+    color: #fff;
     padding-left: 60px;
     position: fixed;
     top: 0;
@@ -61,7 +63,7 @@ nav {
     will-change: transition;
     z-index: 100;
 
-    transition: width .2s, box-shadow: 0.1s linear 0.1s;
+    transition: width .2s, box-shadow 0.1s linear 0.1s;
     -webkit-transition: width .2s, box-shadow .1s linear .1s;
 }
 
@@ -70,7 +72,7 @@ nav:hover {
     width: 300px;
     will-change: width;
 
-    transition: width .2s, box-shadow: 0.1s linear .1s;
+    transition: width .2s, box-shadow 0.1s linear .1s;
     -webkit-transition: width .2s, box-shadow .1s linear .1s;
 }
 
@@ -158,20 +160,41 @@ main iframe {
     width: 100%
 }
 
-/** Navigation
+/** Modulelisting
  =============================================== */
 
-.boot-logo {
-    display: block;
-    margin: 60px auto 0;
-    max-width: 300px;
+.modules {
+    float: left;
+    padding: 30px 60px 20px 60px;
     width: 100%;
 }
 
-.boot-logo-text {
-    clear: both;
+.modules-module {
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+    transition: box-shadow .1s ease-out, transform .1s ease-out;
+    transition-delay: .1s;
+    width: calc(100% / 4 - 20px);
+}
+
+.modules-module:hover {
+    box-shadow: rgba(32, 32, 32, 0.05) 0 16px 16px;
+    outline: 1px solid #DEDEDE;
+    transform: translate(0, -4px);
+}
+
+.modules-module:after {
     display: block;
-    margin: 0 auto;
-    max-width: 300px;
+    content: '';
+    padding-top: 56.25%;
+}
+
+.modules-module img {
+    background: #fff;
+    max-height: 100%;
+    position: absolute;
     width: 100%;
 }

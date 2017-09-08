@@ -59,7 +59,6 @@ $modules       = $ModuleHandler->getModules();
             </a>
 
             <?php foreach ($modules as $Module) {
-
                 /* @var $Module \SteemPi\Modules\Module */
                 if (!$Module->extendsTopMenu() || !$Module->isActive()) {
                     continue;

@@ -83,6 +83,30 @@ class Module
     }
 
     /**
+     * Return the module icon
+     *
+     * @return string
+     */
+    public function getIcon()
+    {
+        if (!isset($this->data['icon']) || empty($this->data['icon'])) {
+            return '<img src="/app/images/logo.svg" />';
+        }
+
+        $name = $this->getName();
+        $icon = htmlspecialchars($this->data['icon']);
+
+        if (strpos($icon, 'fa-') === false) {
+            $path = '/modules/'.$name.'/'.$icon;
+            $html = '<img src="'.$path.'" />';
+        } else {
+            $html = '<span class="'.$icon.'"></span>';
+        }
+
+        return $html;
+    }
+
+    /**
      * Return the module path
      */
     public function getDir()

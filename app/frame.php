@@ -1,3 +1,14 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require 'autoload.php';
+
+$ModuleHandler = new SteemPi\Modules\Handler();
+$modules       = $ModuleHandler->getModules();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +19,30 @@
     <meta name="viewport" content="initial-scale=1,minimum-scale=1,width=device-width">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="/app/css/style.css" type="text/css"/>
 </head>
 <body>
 
-<div class="boot">
-    <img src="/app/images/logo.svg" class="boot-logo"/>
-    <img src="/app/images/logo-text.svg" class="boot-logo-text"/>
-</div>
+<section class="modules">
+    <?php
+    /* @var $Module \SteemPi\Modules\Module */
+    foreach ($modules as $Module) {
+        if (!$Module->isActive()) {
+            continue;
+        }
+
+        if ($Module->getName() === 'settings') {
+            continue;
+        }
+
+
+        ?>
+        <div class="modules-module">
+            <?php echo $Module->getIcon(); ?>
+        </div>
+
+    <?php } ?>
+</section>
 
 </body>
 </html>

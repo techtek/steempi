@@ -1,5 +1,6 @@
 {
   "title": "SteemPi Chat",
+  "icon": "images/icon.svg",
   "leftMenu": {
     "icon": "images/menu.svg",
     "text": "Chat",

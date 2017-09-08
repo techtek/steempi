@@ -1,5 +1,6 @@
 {
   "title": "Stats",
+  "icon": "images/icon.svg",
   "leftMenu": {
     "icon": "images/menu.svg",
     "text": "Steemit Pond",
