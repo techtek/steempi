@@ -4,5 +4,17 @@
     "icon": "images/menu.svg",
     "text": "Feed",
     "color": "#3498db"
-  }
+  },
+  "settings": [
+    {
+      "type": "text",
+      "name": "filter-tags",
+      "text": "Tags (after this tags is filtered)"
+    },
+    {
+      "type": "text",
+      "name": "filter-usernames",
+      "text": "Usernames  (after this usernames is filtered)"
+    }
+  ]
 }

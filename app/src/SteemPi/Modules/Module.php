@@ -122,6 +122,27 @@ class Module
 
     //endregion
 
+    //region settings
+
+    /**
+     *
+     * @return bool
+     */
+    public function hasSettings()
+    {
+        if (!isset($this->data['settings'])) {
+            return false;
+        }
+
+        if (!count($this->data['settings'])) {
+            return false;
+        }
+
+        return true;
+    }
+
+    //endregion
+
     //region left menu
 
     /**

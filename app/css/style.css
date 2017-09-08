@@ -61,7 +61,7 @@ nav {
     will-change: transition;
     z-index: 100;
 
-   transition: width .2s, box-shadow: 0.1s linear 0.1s;
+    transition: width .2s, box-shadow: 0.1s linear 0.1s;
     -webkit-transition: width .2s, box-shadow .1s linear .1s;
 }
 
@@ -70,7 +70,7 @@ nav:hover {
     width: 300px;
     will-change: width;
 
-    transition: width .2s, box-shadow: 0.1s;
+    transition: width .2s, box-shadow: 0.1s linear .1s;
     -webkit-transition: width .2s, box-shadow .1s linear .1s;
 }
 
@@ -145,7 +145,7 @@ nav .steemPi-logo img.logo-text {
 main {
     height: 100%;
     left: 0;
-    padding: 60px 0px 0 60px;
+    padding: 60px 0 0 60px;
     position: fixed;
     top: 0;
     width: 100%;
