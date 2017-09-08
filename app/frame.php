@@ -43,6 +43,7 @@ $modules       = $ModuleHandler->getModules();
     <?php } ?>
 </section>
 
+<script src="/app/js/anime.min.js"></script>
 <script src="/app/js/frame.js"></script>
 </body>
 </html>

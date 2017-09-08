@@ -160,7 +160,7 @@ main iframe {
     width: 100%
 }
 
-/** Modulelisting
+/** Module listing
  =============================================== */
 
 .modules {
@@ -174,7 +174,9 @@ main iframe {
     float: left;
     overflow: hidden;
     margin: 10px;
+    opacity: 0;
     position: relative;
+    top: 20px;
     transition: box-shadow .1s ease-out, transform .1s ease-out;
     transition-delay: .1s;
     width: calc(100% / 4 - 20px);
