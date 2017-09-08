@@ -35,14 +35,14 @@ $modules       = $ModuleHandler->getModules();
             continue;
         }
 
-
         ?>
-        <div class="modules-module">
+        <div class="modules-module" data-module="<?php echo $Module->getName(); ?>">
             <?php echo $Module->getIcon(); ?>
         </div>
 
     <?php } ?>
 </section>
 
+<script src="/app/js/frame.js"></script>
 </body>
 </html>
