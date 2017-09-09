@@ -10,6 +10,7 @@ use Michelf\Markdown;
 
 $html = Markdown::defaultTransform($_POST['content']);
 
+// cleanup
 $html = preg_replace_callback(
     '#<p><img([^>]*)></p>#i',
     function ($output) {
@@ -33,6 +34,8 @@ $html = preg_replace_callback(
     },
     $html
 );
+
+$html = str_replace('<p></p>', '', $html);
 
 echo $html;
 exit;
