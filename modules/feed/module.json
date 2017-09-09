@@ -6,16 +6,20 @@
     "text": "Feed",
     "color": "#3498db"
   },
+  "allowedSettings": [
+    "filter-tags",
+    "filter-usernames"
+  ],
   "settings": [
     {
       "type": "text",
       "name": "filter-tags",
-      "text": "Tags (after this tags is filtered)"
+      "text": "Tags (the result is filtered by these tags)"
     },
     {
       "type": "text",
       "name": "filter-usernames",
-      "text": "Usernames  (after this usernames is filtered)"
+      "text": "Usernames  (the result is filtered by these usernames)"
     }
   ]
 }

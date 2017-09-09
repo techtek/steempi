@@ -54,7 +54,7 @@ form label select {
 form label .label {
     float: left;
     font-size: 16px;
-    line-height: 30px;
+    padding-top: 12px;
     width: 40%;
 }
 
