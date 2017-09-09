@@ -77,7 +77,7 @@ class Handler
 
         foreach ($order as $moduleName) {
             if (file_exists($path.$moduleName.'/module.json')) {
-                $Module = new Module($path.$moduleName.'/module.json');;
+                $Module   = new Module($path.$moduleName.'/module.json');
                 $result[] = $Module;
 
                 $missingCheck[$Module->getName()] = true;
@@ -92,5 +92,19 @@ class Handler
         }
 
         return $result;
+    }
+
+    /**
+     * Return a specific module
+     *
+     * @param $moduleName
+     * @return Module
+     */
+    public function getModule($moduleName)
+    {
+        $path   = $this->getBaseDir().'modules/';
+        $Module = new Module($path.$moduleName.'/module.json');
+
+        return $Module;
     }
 }

@@ -5,13 +5,41 @@ ini_set('display_errors', 1);
 
 require '../../app/autoload.php';
 
-$Config   = SteemPi\SteemPi::getConfig();
-$username = $Config->get('steemit', 'username');
+$Feed = SteemPi\SteemPi::getModuleHandler()->getModule('feed');
 
-// not working for a RPI
+$tags      = $Feed->getSetting('feed', 'filter-tags');
+$userNames = $Feed->getSetting('feed', 'filter-usernames');
+$query     = array();
+
+if (!empty($tags)) {
+    $tags = preg_replace('/[^A-Za-z0-9\-]/', '', $tags);
+    $tags = explode(' ', $tags);
+
+
+    foreach ($tags as $tag) {
+        $query[] = 'tags:'.$tag;
+    }
+}
+
+if (!empty($userNames)) {
+    $userNames = str_replace('@', '', $userNames);
+    $userNames = str_replace(',', ' ', $userNames);
+    $userNames = str_replace(';', ' ', $userNames);
+    $userNames = preg_replace('/\s+/', ' ', $userNames);
+    $userNames = explode(' ', $userNames);
+
+    foreach ($userNames as $username) {
+        $query[] = 'author:'.$username;
+    }
+}
+
+if (empty($query)) {
+    $query[] = 'tags:steempi';
+}
+
 $Client   = new GuzzleHttp\Client();
 $Response = $Client->request('GET', 'https://api.asksteem.com/search', [
-    'query' => ['q' => 'steemit']
+    'query' => ['q' => implode(' ', $query)]
 ]);
 
 //$SteemArticle = new \SteemPHP\SteemArticle('https://steemd.steemit.com');
@@ -20,12 +48,17 @@ $Response = $Client->request('GET', 'https://api.asksteem.com/search', [
 $result = json_decode($Response->getBody(), true);
 $feed   = $result['results'];
 
+// sort feed
+usort($feed, function ($entryA, $entryB) {
+    return strtotime($entryA["created"]) - strtotime($entryB["created"]);
+});
+
 ?>
 <!DOCTYPE html>
 
 <!-- SteemPi webinterface V2.0 -->
-<!-- SteemPi is made by @techtek -->
 <!-- SteemPi is made by @dehenne -->
+<!-- SteemPi is made by @techtek -->
 
 <html lang="en">
 <head>
@@ -46,11 +79,13 @@ $feed   = $result['results'];
     <?php
 
     foreach ($feed as $entry) {
+//        echo '<pre>';
+//        var_dump($entry);
+//        exit;
         $description = strip_tags($entry['summary']);
         $category    = $entry['tags'][0];
 
         $entry['pending_payout_value'] = 0;
-        $entry['active_votes'] = 0;
 
         if (mb_strlen($description) > 120) {
             $description = mb_substr($description, 0, 120).'...';
@@ -97,7 +132,7 @@ $feed   = $result['results'];
 
                     <span class="feed-tile-action-view">
                         <span class="fa fa-hand-o-up"></span>
-                        <span><?php echo count($entry['active_votes']); ?></span>
+                        <span><?php echo $entry['net_votes']; ?></span>
                     </span>
                 </div>
             </div>
