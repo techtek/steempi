@@ -8,5 +8,19 @@ if (!isset($_POST['content'])) {
 
 use Michelf\Markdown;
 
-echo Markdown::defaultTransform($_POST['content']);
+$html = Markdown::defaultTransform($_POST['content']);
+
+$html = preg_replace_callback(
+    '#<p><img([^>]*)></p>#i',
+    function ($output) {
+        $result = $output[0];
+        $result = str_replace('<p>', '<figure>', $result);
+        $result = str_replace('</p>', '</figure>', $result);
+
+        return $result;
+    },
+    $html
+);
+
+echo $html;
 exit;
