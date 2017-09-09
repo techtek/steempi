@@ -22,5 +22,17 @@ $html = preg_replace_callback(
     $html
 );
 
+$html = preg_replace_callback(
+    '#<center><img([^>]*)></center>#i',
+    function ($output) {
+        $result = $output[0];
+        $result = str_replace('<p>', '<center>', $result);
+        $result = str_replace('</p>', '</center>', $result);
+
+        return $result;
+    },
+    $html
+);
+
 echo $html;
 exit;
