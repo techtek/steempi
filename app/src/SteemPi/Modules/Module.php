@@ -173,7 +173,7 @@ class Module
     public function getSetting($group, $name = false)
     {
         if (!isset($this->settings[$group])) {
-            return $group;
+            return null;
         }
 
         if ($name === false) {
@@ -206,7 +206,10 @@ class Module
             return;
         }
 
-        $this->settings[$name] = $value;
+        $value = str_replace('"', '', $value);
+        $value = trim($value);
+
+        $this->settings[$this->getName()][$name] = $value;
     }
 
     /**
@@ -235,12 +238,8 @@ class Module
             file_put_contents($config, '');
         }
 
-        $data = array(
-            $name => $this->settings
-        );
-
         $Writer  = new IniWriter();
-        $content = $Writer->writeToString($data);
+        $content = $Writer->writeToString($this->settings);
 
         $result = ';<?php exit; ?>'.PHP_EOL.PHP_EOL;
         $result .= $content;
