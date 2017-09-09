@@ -1,0 +1,21 @@
+article {
+    background: #fff;
+    box-shadow: rgba(32, 32, 32, 0.05) 0 2px 20px;
+    margin-bottom: 2em !important;
+    margin-top: 2em !important;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+article.loading {
+    background: transparent;
+    box-shadow: none;
+    color: #dedede;
+    font-size: 3em;
+    text-align: center;
+    padding: 2em;
+}
+
+article header h1 {
+    margin-top: 0;
+}

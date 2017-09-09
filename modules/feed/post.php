@@ -5,6 +5,8 @@ ini_set('display_errors', 1);
 
 require '../../app/autoload.php';
 
+$permalink = htmlspecialchars($_GET['permalink']);
+$author    = htmlspecialchars($_GET['author']);
 
 ?>
 <!DOCTYPE html>
@@ -23,13 +25,24 @@ require '../../app/autoload.php';
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../app/css/font-awesome/css/font-awesome.min.css" type="text/css"/>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/post.css" type="text/css"/>
+    <link rel="stylesheet" href="css/gutenberg.css">
+
+    <script>
+        var permalink = "<?php echo $permalink;?>";
+        var author    = "<?php echo $author;?>";
+    </script>
 </head>
 <body>
 
-<section class="feed">
+<article class="loading">
+    <span class="fa fa-spinner fa-spin"></span>
+</article>
 
-</section>
+<script src="//cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="/app/js/anime.min.js"></script>
+<script src="/modules/feed/js/fetch.js"></script>
+<script src="/modules/feed/js/post.js"></script>
 
 </body>
 </html>
