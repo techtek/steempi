@@ -96,26 +96,14 @@ usort($feed, function ($entryA, $entryB) {
         $link .= '@'.$entry['author'].'/';
         $link .= $entry['permlink'];
 
-//        $jsonMeta = json_decode($entry['json_metadata'], true);
-        $image = '';
-
-//        if (isset($jsonMeta['image'])
-//            && $jsonMeta['image']
-//            && is_array($jsonMeta['image'])
-//            && count($jsonMeta['image'])
-//        ) {
-//            $image = $jsonMeta['image'][0];
-//        }
-
         ?>
-        <article class="feed-tile" data-link="<?php echo $link; ?>">
+        <article class="feed-tile"
+                 data-link="<?php echo $link; ?>"
+                 data-permlink="<?php echo $entry['permlink']; ?>"
+                 data-author="<?php echo $entry['author']; ?>"
+        >
             <div class="feed-tile-container">
-                <div class="feed-tile-image">
-                    <?php if ($image) { ?>
-                        <img src="<?php echo $image; ?>"/>
-                    <?php } ?>
-                </div>
-
+                <div class="feed-tile-image"></div>
 
                 <div class="feed-tile-info">
                     <header>
@@ -140,6 +128,10 @@ usort($feed, function ($entryA, $entryB) {
     <?php } ?>
 
 </section>
+
+<script src="//cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="/app/js/anime.min.js"></script>
+<script src="/modules/feed/js/feed.js"></script>
 
 </body>
 </html>

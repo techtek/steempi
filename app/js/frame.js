@@ -1,4 +1,4 @@
-// history api
+// animations
 (function () {
     var modules = document.getElementsByClassName('modules-module');
 
