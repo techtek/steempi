@@ -15,6 +15,7 @@ steem.api.getContent(author, permalink, function (err, result) {
         Article.classList.remove('loading');
 
         var header = '' +
+            '<div class="article-close fa fa-close"></div>' +
             '<header class="alignCenter">' +
             '<h1>' + result.title + '</h1>' +
             '<h6>' + result.created + ' · ' + author + '</h6>' +
@@ -35,6 +36,18 @@ steem.api.getContent(author, permalink, function (err, result) {
                 headers[i].parentNode.removeChild(headers[i]);
             }
         }
+
+        Article.querySelector('.article-close').addEventListener('click', function () {
+            var Call = anime({
+                targets: Article,
+                opacity: 0,
+                easing : 'easeInOutQuart'
+            });
+
+            Call.complete = function () {
+                window.location = window.location.pathname.replace('post.php', 'index.php');
+            };
+        });
 
         anime({
             targets: Article,
