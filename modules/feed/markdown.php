@@ -40,5 +40,14 @@ $html = str_replace('</figure></p>', '', $html);
 $html = str_replace('<p></p>', '', $html);
 $html = str_replace("\n", '', $html);
 
+// parse empty images
+$html = preg_replace_callback(
+    '/(https:\\/\\/.+(\.png|\.jpeg|\.jpg|\.gif|\.bmp))/Ui',
+    function ($output) {
+        return '<img src="'.$output[0].'" />';
+    },
+    $html
+);
+
 echo $html;
 exit;

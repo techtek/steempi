@@ -23,8 +23,6 @@ steem.api.getContent(author, permalink, function (err, result) {
         Article.style.opacity = 0;
         Article.innerHTML     = header + body;
 
-        console.log(header + body);
-
         // check headers
         var headers = Article.querySelectorAll('h1');
 
