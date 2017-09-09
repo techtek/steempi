@@ -35,7 +35,10 @@ $html = preg_replace_callback(
     $html
 );
 
+$html = str_replace('<p><figure>', '', $html);
+$html = str_replace('</figure></p>', '', $html);
 $html = str_replace('<p></p>', '', $html);
+$html = str_replace("\n", '', $html);
 
 echo $html;
 exit;
