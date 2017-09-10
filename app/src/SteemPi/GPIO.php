@@ -19,8 +19,8 @@ class GPIO
             return;
         }
 
-        system('gpio mode '.$gpio.' out');
-        system('gpio write '.$gpio.' 1');
+        shell_exec('gpio mode '.$gpio.' out');
+        shell_exec('gpio write '.$gpio.' 1');
     }
 
     /**
@@ -32,7 +32,20 @@ class GPIO
             return;
         }
 
-        system('gpio mode '.$gpio.' out');
-        system('gpio write '.$gpio.' 0');
+        shell_exec('gpio mode '.$gpio.' out');
+        shell_exec('gpio write '.$gpio.' 0');
+    }
+
+
+    public static function read($gpio)
+    {
+        if (!is_integer($gpio)) {
+            return false;
+        }
+
+        $status = shell_exec("gpio read ".$gpio);
+        var_dump($status);
+
+        return $status[0];
     }
 }
