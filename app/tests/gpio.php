@@ -1,6 +1,6 @@
 <?php
 
-require '../autoload.php';
+require dirname(dirname(__FILE__)).'/autoload.php';
 
 use \SteemPi\GPIO;
 
