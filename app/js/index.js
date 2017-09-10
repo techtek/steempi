@@ -83,6 +83,6 @@
     var entries = Nav.querySelectorAll('li a');
 
     for (var i = 0, len = entries.length; i < len; i++) {
-        entries[i].addEventListener('click', hideMenu);
+        entries[i].addEventListener('mouseup', hideMenu);
     }
 })();
