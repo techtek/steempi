@@ -28,13 +28,13 @@ $light  = command_exist('lighttpd');
 if (!$apache && !$light) {
     echo PHP_EOL;
     echo "No Webserver is installed. I will install lighttpd for you.".PHP_EOL;
-    system('apt-get install lighttpd');
+    system('apt-get install lighttpd -y');
 }
 
 if (!command_exist('gpio')) {
     echo PHP_EOL;
     echo "No GPIO connection is installed. I will install wiringpi for you.".PHP_EOL;
-    system('apt-get install wiringpi');
+    system('apt-get install wiringpi -y');
 
 }
 

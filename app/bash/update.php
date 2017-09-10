@@ -30,7 +30,7 @@ echo "Starting SteemPi Update...".PHP_EOL;
 if (!command_exist('gpio')) {
     echo PHP_EOL;
     echo "No GPIO connection is installed. I will install wiringpi for you.".PHP_EOL;
-    system('apt-get install wiringpi');
+    system('apt-get install wiringpi -y');
 }
 
 // on which branch we are
