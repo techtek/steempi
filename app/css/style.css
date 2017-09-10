@@ -55,6 +55,22 @@ header {
     color: #18191b;
 }
 
+/** Header Navigation
+ =============================================== */
+
+.header-menu {
+    cursor: pointer;
+    left: 0;
+    outline: none;
+    position: absolute;
+    width: 60px;
+}
+
+.header-menu img {
+    margin: 16px 0 0 10px;
+    width: 40px;
+}
+
 /** Navigation
  =============================================== */
 
@@ -63,6 +79,7 @@ nav {
     border-right: 1px solid #dedede;
     height: 100%;
     left: 0;
+    outline: none;
     overflow: hidden;
     position: fixed;
     top: 0;
