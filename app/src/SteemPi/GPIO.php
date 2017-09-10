@@ -36,7 +36,12 @@ class GPIO
         shell_exec('gpio write '.$gpio.' 0');
     }
 
-
+    /**
+     * Read the GPIO status
+     *
+     * @param integer $gpio
+     * @return bool|string
+     */
     public static function read($gpio)
     {
         if (!is_integer($gpio)) {
@@ -44,8 +49,8 @@ class GPIO
         }
 
         $status = shell_exec("gpio read ".$gpio);
-        var_dump($status);
+        $status = trim($status);
 
-        return $status[0];
+        return $status;
     }
 }
