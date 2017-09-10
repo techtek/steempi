@@ -35,3 +35,15 @@ article header h1 {
     top: 0;
     width: 1em;
 }
+
+@media (max-width: 900px) {
+    article {
+        margin: 0 !important;
+        padding: 20px !important;
+        width: 100% !important;
+    }
+
+    article img {
+        margin-bottom: 20px;
+    }
+}
