@@ -27,6 +27,12 @@ if ($executeUser !== 0) {
 
 echo "Starting SteemPi Update...".PHP_EOL;
 
+if (!command_exist('gpio')) {
+    echo PHP_EOL;
+    echo "No GPIO connection is installed. I will install wiringpi for you.".PHP_EOL;
+    system('apt-get install wiringpi');
+}
+
 // on which branch we are
 $result = shell_exec('git branch');
 $result = explode("\n", trim($result));

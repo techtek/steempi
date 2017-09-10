@@ -31,6 +31,13 @@ if (!$apache && !$light) {
     system('apt-get install lighttpd');
 }
 
+if (!command_exist('gpio')) {
+    echo PHP_EOL;
+    echo "No GPIO connection is installed. I will install wiringpi for you.".PHP_EOL;
+    system('apt-get install wiringpi');
+
+}
+
 // SteemPi
 echo "Now i will install SteemPi for you.".PHP_EOL;
 
