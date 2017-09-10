@@ -30,7 +30,7 @@ header img {
 
 header time {
     color: #ffffff;
-    font-size: 30px;
+    font-size: 2.5em;
     opacity: 0;
     position: absolute;
     right: 70px;
@@ -98,5 +98,9 @@ header time {
 
     .modules-module {
         width: 100%;
+    }
+
+    header time {
+        display: none;
     }
 }
