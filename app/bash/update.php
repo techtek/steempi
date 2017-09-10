@@ -25,6 +25,8 @@ if ($executeUser !== 0) {
     exit;
 }
 
+require_once 'utils.php';
+
 echo "Starting SteemPi Update...".PHP_EOL;
 
 if (!command_exist('gpio')) {
