@@ -23,28 +23,33 @@
     var HeaderNav = document.querySelector('.header-menu');
 
     var showMenu = function () {
-        anime({
-            targets    : Main,
-            paddingLeft: 60,
-            easing     : 'easeInOutQuart',
-            duration   : 500
-        });
+        // anime({
+        //     targets    : Main,
+        //     paddingLeft: 60,
+        //     easing     : 'easeInOutQuart',
+        //     duration   : 500
+        // });
 
         anime({
             targets : Nav,
             left    : 0,
             easing  : 'easeInOutQuart',
-            duration: 500
+            duration: 200,
+            complete: function () {
+                Nav.classList.add('nav-opened');
+            }
         });
     };
 
     var hideMenu = function () {
-        anime({
-            targets    : Main,
-            paddingLeft: 0,
-            easing     : 'easeInOutQuart',
-            duration   : 500
-        });
+        // anime({
+        //     targets    : Main,
+        //     paddingLeft: 0,
+        //     easing     : 'easeInOutQuart',
+        //     duration   : 500
+        // });
+
+        Nav.classList.remove('nav-opened');
 
         anime({
             targets : Nav,
@@ -63,11 +68,17 @@
     HeaderNav.tabIndex = -1;
     Nav.tabIndex       = -1;
 
-    HeaderNav.addEventListener('focus', focusNav);
-    HeaderNav.addEventListener('mouseenter', focusNav);
-    
-    Nav.addEventListener('focus', showMenu);
-    Nav.addEventListener('blur', hideMenu);
+    HeaderNav.addEventListener('focus', focusNav, false);
+    HeaderNav.addEventListener('mouseenter', focusNav, false);
+
+    HeaderNav.addEventListener("touchstart", function (event) {
+        event.preventDefault();
+        focusNav();
+    }, false);
+
+
+    Nav.addEventListener('focus', showMenu, false);
+    Nav.addEventListener('blur', hideMenu, false);
 
     var entries = Nav.querySelectorAll('li a');
 
