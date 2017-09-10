@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: transparent;
+    background-size: cover;
+    color: #18191b;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+header {
+    max-width: 100%;
+    padding: 30px 0 20px 60px;
+    position: relative;
+    width: 100%;
+}
+
+header img {
+    height: 100px;
+    max-width: 100%;
+}
+
+header time {
+    color: #ffffff;
+    font-size: 30px;
+    opacity: 0;
+    position: absolute;
+    right: 70px;
+    text-shadow: 1px 1px 5px #333333;
+    top: 60px;
+}
+
+/** Module listing
+ =============================================== */
+
+.modules {
+    float: left;
+    padding: 30px 60px 20px 60px;
+    width: 100%;
+}
+
+.modules-module {
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    margin: 10px;
+    opacity: 0;
+    position: relative;
+    top: 20px;
+    transition: box-shadow .1s ease-out, transform .1s ease-out;
+    transition-delay: .1s;
+    width: calc(100% / 4 - 20px);
+}
+
+.modules-module:hover {
+    /*box-shadow: rgba(32, 32, 32, 0.05) 0 16px 16px;*/
+    /*outline: 1px solid #DEDEDE;*/
+    transform: translate(0, -4px);
+}
+
+.modules-module:after {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+}
+
+.modules-module img {
+    background: #fff;
+    max-height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .modules-module {
+        width: calc(100% / 3 - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .modules-module {
+        width: calc(100% / 2 - 20px);
+    }
+}
+
+@media (max-width: 650px) {
+    .modules {
+        padding: 30px 20px 20px 0;
+    }
+
+    .modules-module {
+        width: 100%;
+    }
+}

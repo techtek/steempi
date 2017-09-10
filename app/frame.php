@@ -19,9 +19,14 @@ $modules       = $ModuleHandler->getModules();
     <meta name="viewport" content="initial-scale=1,minimum-scale=1,width=device-width">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/app/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="/app/css/frame.css" type="text/css"/>
 </head>
 <body>
+
+<header>
+    <img src="images/logo-text.svg"/>
+    <time>--:--</time>
+</header>
 
 <section class="modules">
     <?php
