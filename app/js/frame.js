@@ -21,4 +21,20 @@
             easing : 'easeInOutQuart'
         });
     }
+
+    // time
+    var Time    = document.querySelector('header time');
+    var setTime = function () {
+        var Now        = new Date();
+        Time.innerHTML = Now.getHours() + ':' + Now.getMinutes();
+    };
+
+    setInterval(setTime, 10000);
+    setTime();
+
+    anime({
+        targets: Time,
+        opacity: 1,
+        easing : 'easeInOutQuart'
+    });
 })();
