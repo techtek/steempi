@@ -25,8 +25,11 @@
     // time
     var Time    = document.querySelector('header time');
     var setTime = function () {
-        var Now        = new Date();
-        Time.innerHTML = Now.getHours() + ':' + Now.getMinutes();
+        var Now   = new Date();
+        var min   = ('0' + Now.getMinutes()).slice(-2);
+        var hours = ('0' + Now.getHours()).slice(-2);
+
+        Time.innerHTML = hours + ':' + min;
     };
 
     setInterval(setTime, 10000);
