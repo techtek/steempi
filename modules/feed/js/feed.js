@@ -44,6 +44,10 @@ var loadArticleData = function (Node) {
     var permlink = Node.getAttribute('data-permlink');
     var author   = Node.getAttribute('data-author');
 
+    if (Node.querySelector('img')) {
+        return;
+    }
+
     steem.api.getContent(author, permlink, function (err, result) {
         if (typeof result.body === 'undefined') {
             return;

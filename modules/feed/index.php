@@ -39,7 +39,12 @@ if (empty($query)) {
 
 $Client   = new GuzzleHttp\Client();
 $Response = $Client->request('GET', 'https://api.asksteem.com/search', [
-    'query' => ['q' => implode(' ', $query)]
+    'query' => [
+        'q'       => implode(' ', $query),
+        'order'   => 'desc',
+        'sort_by' => 'created',
+        'include' => 'meta'
+    ]
 ]);
 
 //$SteemArticle = new \SteemPHP\SteemArticle('https://steemd.steemit.com');
@@ -47,11 +52,6 @@ $Response = $Client->request('GET', 'https://api.asksteem.com/search', [
 
 $result = json_decode($Response->getBody(), true);
 $feed   = $result['results'];
-
-// sort feed
-usort($feed, function ($entryA, $entryB) {
-    return strtotime($entryA["created"]) - strtotime($entryB["created"]);
-});
 
 ?>
 <!DOCTYPE html>
@@ -103,7 +103,11 @@ usort($feed, function ($entryA, $entryB) {
                  data-author="<?php echo $entry['author']; ?>"
         >
             <div class="feed-tile-container">
-                <div class="feed-tile-image"></div>
+                <div class="feed-tile-image">
+                    <?php if (isset($entry['meta']['image'])) { ?>
+                        <img src="<?php echo $entry['meta']['image'][0]; ?>"/>
+                    <?php } ?>
+                </div>
 
                 <div class="feed-tile-info">
                     <header>
