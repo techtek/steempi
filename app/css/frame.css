@@ -30,12 +30,24 @@ header img {
 
 header time {
     color: #ffffff;
-    font-size: 2.5em;
     opacity: 0;
     position: absolute;
     right: 70px;
     text-shadow: 1px 1px 5px #333333;
     top: 50px;
+}
+
+header time .time {
+    display: block;
+    font-size: 2.5em;
+    text-align: right;
+}
+
+header time .date {
+    clear: both;
+    display: block;
+    font-size: 1em;
+    text-align: right;
 }
 
 /** Module listing

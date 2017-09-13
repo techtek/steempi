@@ -25,6 +25,11 @@ class SteemPi
     protected static $Modules = null;
 
     /**
+     * @var null
+     */
+    protected static $Locale = null;
+
+    /**
      * @return string
      */
     public static function getRootPath()
@@ -104,5 +109,7 @@ class SteemPi
         }
 
         textdomain('steemPi');
+
+        \Locale::setDefault(str_replace('_', '-', $lang));
     }
 }

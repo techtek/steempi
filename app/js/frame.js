@@ -25,11 +25,14 @@
     // time
     var Time    = document.querySelector('header time');
     var setTime = function () {
-        var Now   = new Date();
-        var min   = ('0' + Now.getMinutes()).slice(-2);
-        var hours = ('0' + Now.getHours()).slice(-2);
+        var html  = '';
 
-        Time.innerHTML = hours + ':' + min;
+        moment.locale(locale_code);
+
+        html = html + '<span class="time">' + moment().format('HH:mm') + '</span>';
+        html = html + '<span class="date">' + moment().format('dddd, MMMM Do') + '</span>';
+
+        Time.innerHTML = html;
     };
 
     setInterval(setTime, 10000);

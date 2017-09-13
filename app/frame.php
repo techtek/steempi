@@ -20,6 +20,9 @@ $modules       = $ModuleHandler->getModules();
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/app/css/frame.css" type="text/css"/>
+    <script>
+        var locale_code = '<?php echo \Locale::getDefault();?>';
+    </script>
 </head>
 <body>
 
@@ -48,6 +51,7 @@ $modules       = $ModuleHandler->getModules();
     <?php } ?>
 </section>
 
+<script src="/app/js/moment-with-locales.js"></script>
 <script src="/app/js/anime.min.js"></script>
 <script src="/app/js/frame.js"></script>
 </body>
