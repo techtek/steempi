@@ -1,0 +1,9 @@
+{
+  "title": "DTube",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "DTube",
+    "color": "#bd0d13"
+  }
+}
