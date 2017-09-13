@@ -81,7 +81,6 @@ nav {
     left: 0;
     outline: none;
     overflow: hidden;
-    overflow-y: auto;
     position: fixed;
     top: 0;
     width: 60px;
@@ -126,7 +125,10 @@ nav .steemPi-logo img.logo-text {
 
 .navigation {
     border-top: 1px solid #dedede;
+    height: calc(100% - 60px);
     margin: 0;
+    overflow: hidden;
+    overflow-y: auto;
     padding: 0;
     width: 300px;
 }
@@ -167,7 +169,7 @@ nav .steemPi-logo img.logo-text {
     display: inline-block;
     line-height: 30px;
     float: left;
-    width: 240px;
+    width: calc(100% - 60px);
 }
 
 main {

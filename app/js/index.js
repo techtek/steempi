@@ -30,7 +30,7 @@ var Router = new Navigo(null, true, '#!');
     var Nav       = document.querySelector('nav');
     var HeaderNav = document.querySelector('.header-menu');
 
-    document.querySelector('.steemPi-logo').addEventListener('mousedoen', function (event) {
+    document.querySelector('.steemPi-logo').addEventListener('mousedown', function (event) {
         event.preventDefault();
     });
 
