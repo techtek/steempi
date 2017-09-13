@@ -1,7 +1,8 @@
+var Router = new Navigo(null, true, '#!');
+
 // history api
 (function () {
-    var Router = new Navigo(null, true, '#!');
-    var Frame  = document.getElementById('module');
+    var Frame = document.getElementById('module');
 
     var openModule = function () {
         if (window.location.hash === '') {
@@ -9,7 +10,13 @@
             return;
         }
 
-        var hash  = window.location.hash.replace('\!', '').replace('\#', '');
+        var hash = window.location.hash.replace('\!', '').replace('\#', '');
+
+        if (hash === '') {
+            Frame.src = '/app/frame.php';
+            return;
+        }
+
         Frame.src = '/modules/' + hash + '/index.php';
     };
 
@@ -17,10 +24,20 @@
     openModule();
 })();
 
+// navigation events
 (function () {
     var Main      = document.querySelector('main');
     var Nav       = document.querySelector('nav');
     var HeaderNav = document.querySelector('.header-menu');
+
+    document.querySelector('.steemPi-logo').addEventListener('mousedoen', function (event) {
+        event.preventDefault();
+    });
+
+    document.querySelector('.steemPi-logo').addEventListener('click', function (event) {
+        event.preventDefault();
+        Router.navigate('');
+    });
 
     var showMenu = function () {
         // anime({
@@ -68,8 +85,8 @@
     HeaderNav.tabIndex = -1;
     Nav.tabIndex       = -1;
 
-    HeaderNav.addEventListener('focus', focusNav, false);
-    HeaderNav.addEventListener('mouseenter', focusNav, false);
+    // HeaderNav.addEventListener('focus', focusNav, false);
+    HeaderNav.addEventListener('click', focusNav, false);
 
     HeaderNav.addEventListener("touchstart", function (event) {
         event.preventDefault();

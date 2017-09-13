@@ -1,5 +1,9 @@
 // animations
 (function () {
+    document.body.style.float    = 'left';
+    document.body.style.overflow = 'hidden';
+    document.body.style.width    = '100%';
+
     var modules = document.getElementsByClassName('modules-module');
 
     for (var i = 0, len = modules.length; i < len; i++) {
@@ -25,7 +29,7 @@
     // time
     var Time    = document.querySelector('header time');
     var setTime = function () {
-        var html  = '';
+        var html = '';
 
         moment.locale(locale_code);
 
@@ -33,6 +37,8 @@
         html = html + '<span class="date">' + moment().format('dddd, MMMM Do') + '</span>';
 
         Time.innerHTML = html;
+
+        document.body.style.overflow = '';
     };
 
     setInterval(setTime, 10000);
