@@ -47,6 +47,13 @@ $branch = trim(trim($result[0], '*'));
 system('git fetch');
 system('git reset --hard origin/'.$branch);
 
+if (!class_exists('\Locale')) {
+    if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
+        system('apt-get install php7.0-intl -y');
+    } else {
+        system('apt-get install php5-intl -y');
+    }
+}
 
 \cli\Colors::enable();
 \cli\line('%CGenerate locale%n', true);

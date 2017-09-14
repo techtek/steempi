@@ -84,6 +84,14 @@ discord = 1
     file_put_contents($dir.'/etc/conf.ini.php', $conf);
 }
 
+if (!class_exists('\Locale')) {
+    if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
+        system('apt-get install php7.0-intl -y');
+    } else {
+        system('apt-get install php5-intl -y');
+    }
+}
+
 // language pack
 include 'locale.php';
 
