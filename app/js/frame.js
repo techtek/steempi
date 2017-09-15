@@ -50,3 +50,20 @@
         easing : 'easeInOutQuart'
     });
 })();
+
+// feed
+(function () {
+
+// build articles
+    var articles = document.getElementsByClassName('feed-tile');
+
+    for (var i = 0, len = articles.length; i < len; i++) {
+        anime({
+            targets: articles[i],
+            opacity: 1,
+            top    : 0,
+            delay  : i * 100,
+            easing : 'easeInOutQuart'
+        });
+    }
+})();

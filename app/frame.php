@@ -3,10 +3,19 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require 'autoload.php';
+require dirname(__FILE__).'/autoload.php';
+require SteemPi\SteemPi::getRootPath().'/modules/feed//utils.php';
 
 $ModuleHandler = new SteemPi\Modules\Handler();
 $modules       = $ModuleHandler->getModules();
+
+$Response = getFeed(4);
+$result   = json_decode($Response->getBody(), true);
+$feed     = $result['results'];
+
+if (count($feed) > 4) {
+    $feed = array_slice($feed, 0, 4);
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,6 +29,7 @@ $modules       = $ModuleHandler->getModules();
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/app/css/frame.css" type="text/css"/>
+    <link rel="stylesheet" href="/modules/feed/css/feed.css" type="text/css"/>
     <script>
         var locale_code = '<?php echo \Locale::getDefault();?>';
     </script>
@@ -30,6 +40,14 @@ $modules       = $ModuleHandler->getModules();
     <img src="images/logo-text.svg"/>
     <time>--:--</time>
 </header>
+
+<section class="content">
+    <?php
+    foreach ($feed as $entry) {
+        echo parseFeedItemToArticle($entry);
+    }
+    ?>
+</section>
 
 <section class="modules">
     <?php
@@ -47,7 +65,6 @@ $modules       = $ModuleHandler->getModules();
         <div class="modules-module" data-module="<?php echo $Module->getName(); ?>">
             <?php echo $Module->getIcon(); ?>
         </div>
-
     <?php } ?>
 </section>
 
