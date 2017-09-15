@@ -67,6 +67,14 @@ header time .date {
     width: 100%;
 }
 
+.content .feed-tile {
+    max-width: 360px;
+}
+
+.content .feed-tile header {
+    padding: 0;
+}
+
 /** Module listing
  =============================================== */
 
