@@ -29,6 +29,6 @@
     </style>
 </head>
 <body>
-<iframe height="100%" width="100%" frameborder="0" src="http://steem.loadsup.net/sonar/"></iframe>
+<iframe height="100%" width="100%" frameborder="0" src="//steem.loadsup.net/sonar/"></iframe>
 </body>
 </html>

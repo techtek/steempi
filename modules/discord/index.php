@@ -30,6 +30,6 @@
 </head>
 <body>
 <iframe height="100%" width="100%" frameborder="0"
-        src="https://discordapp.com/widget?id=354493950804885504&theme=dark"></iframe>
+        src="//discordapp.com/widget?id=354493950804885504&theme=dark"></iframe>
 </body>
 </html>

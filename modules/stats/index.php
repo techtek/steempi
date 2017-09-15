@@ -45,7 +45,7 @@ $username = $Config->get('steemit', 'username');
             );
             ?>
             <iframe scrolling="no" height="330"
-                    src="http://www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
+                    src="//www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
         </div>
 
         <div class="container-box google-trends-box">
@@ -60,7 +60,7 @@ $username = $Config->get('steemit', 'username');
             );
             ?>
             <iframe scrolling="no" height="330"
-                    src="http://www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
+                    src="//www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
         </div>
 
 
@@ -76,7 +76,7 @@ $username = $Config->get('steemit', 'username');
             );
             ?>
             <iframe scrolling="no" height="330"
-                    src="http://www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
+                    src="//www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
         </div>
 
         <div class="container-box google-trends-box">
@@ -91,7 +91,7 @@ $username = $Config->get('steemit', 'username');
             );
             ?>
             <iframe scrolling="no" height="330"
-                    src="http://www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
+                    src="//www.google.com/trends/fetchComponent?<?php echo http_build_query($params) ?>"></iframe>
         </div>
     </div>
 </section>

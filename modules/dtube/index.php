@@ -30,6 +30,6 @@
 </head>
 <body>
 <iframe height="100%" width="100%" frameborder="0"
-        src="https://dtube.video/"></iframe>
+        src="//dtube.video/"></iframe>
 </body>
 </html>

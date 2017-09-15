@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-<iframe height="100%" width="100%" frameborder="0"
-        src="//www.ustream.tv/embed/17074538?html5ui=1&autoplay=true"></iframe>
+<iframe height="100%" width="100%" frameborder="0" src="//www.openhab.org/"></iframe>
 </body>
 </html>

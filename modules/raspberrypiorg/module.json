@@ -1,9 +1,9 @@
 {
-  "title": "Bitcoin Block Explorer",
+  "title": "raspberrypi.org",
   "icon": "images/icon.svg",
   "leftMenu": {
     "icon": "images/menu.svg",
-    "text": "Bitcoin Block Explorer",
+    "text": "raspberrypi.org",
     "color": "#BB4632"
   }
 }

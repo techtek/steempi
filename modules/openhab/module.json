@@ -1,0 +1,9 @@
+{
+  "title": "openHAB",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "openHAB",
+    "color": "#bd0d13"
+  }
+}

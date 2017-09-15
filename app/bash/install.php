@@ -72,12 +72,12 @@ username = ""
 
 [modules]
 feed = 1
-issLive = 1
+issLive = 0
 settings = 1
 stats = 1
 Steemitpond = 1
-WhaleSonar = 1
-discord = 1
+WhaleSonar = 0
+discord = 0
 
 ';
 

@@ -29,6 +29,6 @@
     </style>
 </head>
 <body>
-<iframe height="100%" width="100%" frameborder="0" src="http://steemitpond.com/"></iframe>
+<iframe height="100%" width="100%" frameborder="0" src="//steemitpond.com/"></iframe>
 </body>
 </html>
