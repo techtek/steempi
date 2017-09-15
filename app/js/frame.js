@@ -57,7 +57,14 @@
 // build articles
     var articles = document.getElementsByClassName('feed-tile');
 
+    var goToArticle = function () {
+        console.warn(this.getAttribute('data-link'));
+        window.parent.Router.navigate('#!feed');
+    };
+
     for (var i = 0, len = articles.length; i < len; i++) {
+        articles[i].addEventListener('click', goToArticle.bind(articles[i]));
+
         anime({
             targets: articles[i],
             opacity: 1,
