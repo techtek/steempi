@@ -20,7 +20,7 @@ class GPIO
         }
 
         shell_exec('gpio export '.$gpio.' out');
-        shell_exec('gpio -g write '.$gpio.' 1';);
+        shell_exec('gpio -g write '.$gpio.' 1');
     }
 
     /**
