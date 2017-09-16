@@ -19,7 +19,7 @@ class GPIO
             return;
         }
 
-        shell_exec('gpio mode '.$gpio.' out');
+        shell_exec('gpio export '.$gpio.' out');
         shell_exec('gpio write '.$gpio.' 1');
     }
 
@@ -32,7 +32,7 @@ class GPIO
             return;
         }
 
-        shell_exec('gpio mode '.$gpio.' out');
+        shell_exec('gpio export '.$gpio.' out');
         shell_exec('gpio write '.$gpio.' 0');
     }
 
