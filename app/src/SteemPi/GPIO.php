@@ -20,7 +20,7 @@ class GPIO
         }
 
         shell_exec('gpio export '.$gpio.' out');
-        shell_exec('gpio write '.$gpio.' 1');
+        shell_exec('gpio -g write '.$gpio.' 1');
     }
 
     /**
@@ -33,7 +33,7 @@ class GPIO
         }
 
         shell_exec('gpio export '.$gpio.' out');
-        shell_exec('gpio write '.$gpio.' 0');
+        shell_exec('gpio -g write '.$gpio.' 0');
     }
 
     /**
@@ -48,7 +48,7 @@ class GPIO
             return false;
         }
 
-        $status = shell_exec("gpio read ".$gpio);
+        $status = shell_exec("gpio -g read ".$gpio);
         $status = trim($status);
 
         return $status;
