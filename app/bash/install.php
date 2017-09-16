@@ -92,13 +92,15 @@ if (!class_exists('\Locale')) {
     }
 }
 
+system('php '.dirname(__FILE__).'/update.php');
+
 // language pack
-include 'locale.php';
-
+//include 'locale.php';
+//
 // set chown
-include 'chown.php';
-
-echo PHP_EOL;
-echo PHP_EOL;
-echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
-echo PHP_EOL;
+//include 'chown.php';
+//
+//echo PHP_EOL;
+//echo PHP_EOL;
+//echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
+//echo PHP_EOL;
