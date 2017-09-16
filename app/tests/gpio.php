@@ -12,7 +12,7 @@ if (isset($argv[1])) {
 
 // on
 echo 'Set GPIO '.$gpio.' on...';
-GPIO::on(1);
+GPIO::on($gpio);
 
 echo 'wait...';
 sleep(1);
