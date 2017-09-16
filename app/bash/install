@@ -15,12 +15,15 @@ command -v php >/dev/null 2>&1 || {
     echo "No PHP is installed. I will install php7 for you.";
     echo "";
 
-    command sudo echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list
-    command sudo apt-get update -y
-    command sudo apt-get install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y
+    command gpg --keyserver pgpkeys.mit.edu --recv-key  010908312D230C5F
+    command gpg -a --export 010908312D230C5F | sudo apt-key add -
 
-    command sudo rm /etc/apt/sources.list.d/debian-stretch.list
-    command sudo apt-get update -y
+    command echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list
+    command apt-get update -y
+    command apt-get install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y
+
+    command rm /etc/apt/sources.list.d/debian-stretch.list
+    command apt-get update -y
 }
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
