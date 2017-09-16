@@ -4,7 +4,7 @@ require dirname(dirname(__FILE__)).'/autoload.php';
 
 use \SteemPi\GPIO;
 
-for ($i = 0, $len = 20; $i < $len; $i++) {
+for ($i = 0, $len = 30; $i < $len; $i++) {
     echo "Start {$i} ...";
     GPIO::on($i);
 
