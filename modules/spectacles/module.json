@@ -1,0 +1,9 @@
+{
+  "title": "SPECTACLES",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "SPECTACLES",
+    "color": "#BB4632"
+  }
+}
