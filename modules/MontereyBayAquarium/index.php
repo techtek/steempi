@@ -29,6 +29,8 @@
     </style>
 </head>
 <body>
-<iframe height="100%" width="100%" frameborder="0" src="//www.ustream.tv/embed/9600798?html5ui"></iframe>
+<iframe height="100%" width="100%" frameborder="0"
+        allowfullscreen webkitallowfullscreen
+        src="//www.ustream.tv/embed/9600798?html5ui"></iframe>
 </body>
 </html>
