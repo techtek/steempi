@@ -17,56 +17,92 @@ class LEDS
     /**
      * Blue LED
      */
-    const BLUE = 17;
+    const BLUE = 17; // replay
 
     /**
      * Green LED
      */
-    const GREEN = 18;
+    const GREEN = 18; // comment
 
     /**
      * Purple LED
      */
-    const PURPLE = 27;
+    const PURPLE = 27; // unused
 
     /**
      * The LED's run one after the other
+     *
+     * @param int $delay - time to wait, default = 1 = 1 second
      */
-    public static function runAll()
+    public static function queue($delay = 1)
     {
+        if (!is_numeric($delay)) {
+            $delay = 1;
+        }
+
+        GPIO::on(self::BLUE);
+        sleep($delay);
+
+        GPIO::off(self::BLUE);
         GPIO::on(self::GREEN);
-        sleep(0.2);
+        sleep($delay);
 
         GPIO::off(self::GREEN);
         GPIO::on(self::PURPLE);
-        sleep(0.2);
+        sleep($delay);
 
         GPIO::off(self::PURPLE);
-        GPIO::on(self::BLUE);
-        sleep(0.2);
-
-        GPIO::off(self::BLUE);
     }
 
     /**
-     * @param int $number
+     * @param int $number - number to blink, default = 3
+     * @param int $delay - time to wait, default = 1 = 1 second
      */
-    public static function blink($number = 3)
+    public static function blink($number = 3, $delay = 1)
     {
         if (!is_numeric($number)) {
             $number = 3;
+        }
+
+        if (!is_numeric($delay)) {
+            $delay = 1;
         }
 
         for ($i = 0; $i < $number; $i++) {
             GPIO::on(self::GREEN);
             GPIO::on(self::PURPLE);
             GPIO::on(self::BLUE);
-            sleep(0.2);
+            sleep($delay);
 
             GPIO::off(self::GREEN);
             GPIO::off(self::PURPLE);
             GPIO::off(self::BLUE);
-            sleep(0.2);
+            sleep($delay);
         }
+    }
+
+    /**
+     * Parse led names to the specific GPIO Pin
+     *
+     * @param string $name - blue, green, purple
+     * @return int
+     */
+    public static function ledNameToGPIO($name)
+    {
+        $name = mb_strtolower($name);
+
+        if ($name === 'blue') {
+            return self::BLUE;
+        }
+
+        if ($name === 'green') {
+            return self::GREEN;
+        }
+
+        if ($name === 'purple') {
+            return self::PURPLE;
+        }
+
+        return 0;
     }
 }

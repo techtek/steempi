@@ -30,3 +30,8 @@ msgstr "Module status"
 
 msgid "module order"
 msgstr "Modul order"
+
+msgid "main ledtests"
+msgstr "LED test"
+
+

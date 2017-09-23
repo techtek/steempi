@@ -104,6 +104,34 @@ section.settings-container:first-child header {
     padding-top: 0;
 }
 
+/** led tests
+ ==================================================== */
+
+section.led-tests img {
+    cursor: pointer;
+    float: left;
+    width: calc(33% - 10px);
+}
+
+section.led-tests img:first-child {
+    margin-right: 10px;
+}
+
+section.led-tests img:last-child {
+    margin-left: 10px;
+}
+
+section.led-tests img.off {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+section.led-tests img.on,
+section.led-tests img:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
 /** save
  ==================================================== */
 

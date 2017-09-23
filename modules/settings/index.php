@@ -76,6 +76,15 @@ include "save.php";
             </label>
         </section>
 
+        <section class="settings-container led-tests">
+            <header><?php echo dgettext('settings', 'main ledtests'); ?></header>
+            <div class="led-tests-images">
+                <img src="/modules/settings/images/ledblue.svg" class="off" data-led="blue"/>
+                <img src="/modules/settings/images/ledgreen.svg" class="off" data-led="green"/>
+                <img src="/modules/settings/images/ledpurple.svg" class="off" data-led="purple"/>
+            </div>
+        </section>
+
         <section class="settings-container">
             <header><?php echo dgettext('settings', 'module activation status'); ?></header>
             <?php
@@ -164,6 +173,8 @@ include "save.php";
         </section>
     </form>
 </div>
+
+<script src="/modules/settings/javascript/settings.js"></script>
 
 </body>
 </html>

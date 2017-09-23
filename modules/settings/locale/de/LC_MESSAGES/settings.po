@@ -30,3 +30,7 @@ msgstr "Modul Status"
 
 msgid "module order"
 msgstr "Modul Sortierung"
+
+msgid "main ledtests"
+msgstr "LED Tests"
+
