@@ -5,6 +5,7 @@ if (!isset($_POST['save'])) {
 }
 
 use SteemPi\SteemPi;
+use SteemPi\LEDS;
 
 $Config  = SteemPi::getConfig();
 $Modules = SteemPi::getModuleHandler();
@@ -66,6 +67,7 @@ SteemPi::loadLanguage();
 
 $configSaved = true;
 
+LEDS::blink();
 
 /**
  * SteemPi modules configuration
