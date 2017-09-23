@@ -67,7 +67,7 @@ SteemPi::loadLanguage();
 
 $configSaved = true;
 
-LEDS::blink();
+LEDS::blink(3, 0.5);
 
 /**
  * SteemPi modules configuration
