@@ -22,12 +22,12 @@ class LEDS
     /**
      * Green LED
      */
-    const GREEN = 1;
+    const GREEN = 18;
 
     /**
      * Purple LED
      */
-    const PURPLE = 2;
+    const PURPLE = 27;
 
     /**
      * The LED's run one after the other
