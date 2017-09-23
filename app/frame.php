@@ -37,7 +37,8 @@ if (count($feed) > 4) {
 <body>
 
 <header>
-    <img src="images/logo-text.svg"/>
+    <img src="images/logo-text.svg" class="logo-text"/>
+    <img src="images/logo.svg" class="logo"/>
     <time>--:--</time>
 </header>
 
