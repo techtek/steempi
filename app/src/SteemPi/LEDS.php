@@ -77,7 +77,7 @@ class LEDS
             GPIO::off(self::GREEN);
             GPIO::off(self::PURPLE);
             GPIO::off(self::BLUE);
-            sleep($delay);
+            sleep(1);
         }
     }
 
