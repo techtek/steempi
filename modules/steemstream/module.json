@@ -1,0 +1,9 @@
+{
+  "title": "Steem Stream",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Steem Stream",
+    "color": "#BB4632"
+  }
+}
