@@ -7,6 +7,7 @@ require dirname(__FILE__).'/autoload.php';
 
 $ModuleHandler = new SteemPi\Modules\Handler();
 $modules       = $ModuleHandler->getModules();
+$background    = SteemPi\SteemPi::getBackground();
 
 ?>
 <!-- SteemPi webinterface V2.0 -->
@@ -25,8 +26,7 @@ $modules       = $ModuleHandler->getModules();
     <link rel="stylesheet" href="/app/css/style.css" type="text/css"/>
     <link rel="stylesheet" href="/app/css/font-awesome/css/font-awesome.min.css" type="text/css"/>
 </head>
-
-<body>
+<body style="background-image: url('<?php echo $background; ?>')">
 
 <div id="app">
     <nav>

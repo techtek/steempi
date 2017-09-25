@@ -132,6 +132,27 @@ section.led-tests img:hover {
     filter: none;
 }
 
+/** backgrounds
+ ==================================================== */
+
+.background-container-image {
+    cursor: pointer;
+    float: left;
+    max-width: 33%;
+    width: 300px;
+}
+
+.background-container-image img {
+    padding-right: 10px;
+    width: 100%;
+}
+
+.background-container-image span {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
 /** save
  ==================================================== */
 

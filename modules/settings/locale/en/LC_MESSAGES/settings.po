@@ -34,4 +34,6 @@ msgstr "Modul order"
 msgid "main ledtests"
 msgstr "LED test"
 
+msgid "backgrounds"
+msgstr "Backgrounds"
 

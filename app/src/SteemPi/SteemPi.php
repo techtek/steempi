@@ -66,6 +66,68 @@ class SteemPi
     }
 
     /**
+     * Return the path to the current background image
+     *
+     * @return string
+     */
+    public static function getBackground()
+    {
+        $background = self::getConfig()->get('steempi', 'background');
+
+        if (empty($background)) {
+            $background = '/app/images/backgrounds/default.jpg';
+        }
+
+        $realPath = self::getRootPath().$background;
+
+        if (!file_exists($realPath)) {
+            $background = '/app/images/backgrounds/default.jpg';
+        }
+
+        return $background;
+    }
+
+    /**
+     * Return a list of all available backgrounds
+     *
+     * @return array
+     */
+    public static function getBackgrounds()
+    {
+        $images = array();
+
+        // default folder
+        $dir    = self::getRootPath().'/app/images/backgrounds/';
+        $handle = opendir($dir);
+
+        while (false !== ($image = readdir($handle))) {
+            if ($image == '.' || $image == '..') {
+                continue;
+            }
+
+            $images[] = '/app/images/backgrounds/'.$image;
+        }
+
+        // custom folder
+        $dir = self::getRootPath().'/backgrounds/';
+
+        if (is_dir($dir)) {
+
+            $handle = opendir($dir);
+
+            while (false !== ($image = readdir($handle))) {
+                if ($image == '.' || $image == '..') {
+                    continue;
+                }
+
+                $images[] = '/backgrounds/'.$image;
+            }
+        }
+
+        return $images;
+    }
+
+    /**
      * Load the current localization
      */
     public static function loadLanguage()

@@ -85,6 +85,36 @@ include "save.php";
             </div>
         </section>
 
+        <section class="settings-container backgrounds">
+            <header><?php echo dgettext('settings', 'backgrounds'); ?></header>
+            <div class="background-container">
+                <?php
+                $backgrounds = SteemPi::getBackgrounds();
+                $currentBg   = SteemPi::getBackground();
+
+                foreach ($backgrounds as $background) {
+                    $checked = '';
+
+                    if ($background === $currentBg) {
+                        $checked = 'checked';
+                    }
+                    ?>
+                    <label class="background-container-image">
+                        <img src="<?php echo $background; ?>"/>
+                        <span>
+                            <input type="radio"
+                                   name="background"
+                                   value="<?php echo $background; ?>"
+                                <?php echo $checked; ?>
+                            />
+                        </span>
+                    </label>
+                    <?php
+                }
+                ?>
+            </div>
+        </section>
+
         <section class="settings-container">
             <header><?php echo dgettext('settings', 'module activation status'); ?></header>
             <?php

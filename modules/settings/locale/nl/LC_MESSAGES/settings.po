@@ -33,3 +33,5 @@ msgstr "Module sorteren"
 msgid "main ledtests"
 msgstr "LED tests"
 
+msgid "backgrounds"
+msgstr "Achtergronden"

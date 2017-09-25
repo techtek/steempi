@@ -60,6 +60,15 @@ if (isset($_POST['moduleOrder'])) {
     $modules = $Modules->getModules();
 }
 
+// backgrounds
+if (isset($_POST['background'])) {
+    $file = SteemPi::getRootPath().$_POST['background'];
+
+    if (file_exists($file)) {
+        $Config->set('steempi', 'background', $_POST['background']);
+    }
+}
+
 // save config
 $Config->save();
 

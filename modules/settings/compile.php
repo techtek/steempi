@@ -4,7 +4,6 @@
 $dir    = dirname(__FILE__).'/locale/';
 $handle = opendir($dir);
 
-
 while (false !== ($language = readdir($handle))) {
     if ($language == '.' || $language == '..') {
         continue;
