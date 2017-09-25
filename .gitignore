@@ -2,4 +2,4 @@ conf/
 vendor/
 .idea/
 etc/
-backgrounds/
+/backgrounds/
