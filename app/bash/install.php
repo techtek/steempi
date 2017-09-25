@@ -38,6 +38,10 @@ if (!command_exist('gpio')) {
 
 }
 
+if (!function_exists('mb_substr()')) {
+    system('apt-get php7.0-mbstring -y');
+}
+
 // SteemPi
 echo "Now i will install SteemPi for you.".PHP_EOL;
 
