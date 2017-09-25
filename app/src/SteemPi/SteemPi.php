@@ -75,13 +75,13 @@ class SteemPi
         $background = self::getConfig()->get('steempi', 'background');
 
         if (empty($background)) {
-            $background = '/app/images/backgrounds/default.jpg';
+            $background = '/app/images/backgrounds/default-06.jpg';
         }
 
         $realPath = self::getRootPath().$background;
 
         if (!file_exists($realPath)) {
-            $background = '/app/images/backgrounds/default.jpg';
+            $background = '/app/images/backgrounds/default-06.jpg';
         }
 
         return $background;
