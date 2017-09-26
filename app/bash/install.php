@@ -96,15 +96,6 @@ if (!class_exists('\Locale')) {
     }
 }
 
-system('php '.dirname(__FILE__).'/update.php');
+$dir = dirname(dirname(dirname(__FILE__)));
 
-// language pack
-//include 'locale.php';
-//
-// set chown
-//include 'chown.php';
-//
-//echo PHP_EOL;
-//echo PHP_EOL;
-//echo "I am done. We wish you a lot of fun with SteemPi @dehenne and @Techtek";
-//echo PHP_EOL;
+system($dir.'/steempi update');
