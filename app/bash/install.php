@@ -81,7 +81,7 @@ if (!is_dir($dir.'/etc/')) {
 
 [steempi]
 language = "en_EN"
-modulesOrder = "feed,WhaleSonar,settings,issLive,stats,Steemitpond,discord"
+modulesOrder = "feed,dtube,spectacles,steemstream,steemsupply,WhaleSonar,Steemitpond,stats,discord,issLive,bitcoinexplorer,duckduckgo,MontereyBayAquarium,openhab,raspberrypiorg,tedcom,settings"
 
 [steemit]
 username = ""
@@ -92,8 +92,18 @@ issLive = 0
 settings = 1
 stats = 1
 Steemitpond = 1
-WhaleSonar = 0
+WhaleSonar = 1
 discord = 0
+bitcoinexplorer = 0
+dtube = 1
+duckduckgo = 0
+MontereyBayAquarium = 0
+openhab = 0
+raspberrypiorg = 0
+spectacles = 1
+steemstream = 1
+steemsupply = 1
+tedcom = 0
 
 ';
 
