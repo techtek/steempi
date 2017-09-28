@@ -2,7 +2,9 @@ SteemPi
 ======
 
 <div style="text-align: center">
-!(SteemPi)[app/images/readme_header.png]
+
+![SteemPi Version 2.0](app/images/readme_header.png)
+
 </div>
 
 STEEMPI V2.0 | Steemit LED light notifications and web interface for Raspberry Pi 
@@ -40,9 +42,12 @@ Install the latest version of Raspbian on your SD card
 - `cd /var/www/html`
 - `git clone https://github.com/techtek/steempi.git .`
 
-*If you want to install dev*
+*If you want to install the dev version*
 
 - `git checkout dev`
+
+*You only have to start the installation :-)*
+
 - `./install`
 
 
@@ -79,9 +84,6 @@ and exit and save with, ctrl+x
 
 Everything is now ready to use!
 ------
-
-(When loading the interface local on the Pi it can be slow because of the auto-play of the 2 video feeds, 
-you can fix this by disabling the `autoplay` function in `index.php`)
 
 If you make changes to the SteemPi project, 
 please do share them back to the SteemPi project so others can use those functionalities as well.
