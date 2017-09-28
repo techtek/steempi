@@ -8,7 +8,7 @@
  *  \__/\__\___|\___|_| |_| |_\/    |_|
  *
  *
- * This script installs steempi
+ * This script installs SteemPi
  *
  */
 
@@ -29,6 +29,18 @@ if (!$apache && !$light) {
     echo PHP_EOL;
     echo "No Webserver is installed. I will install lighttpd for you.".PHP_EOL;
     system('apt-get install lighttpd -y');
+
+    // we must add fast-cgi to the lighttp
+    system(
+        'tee /etc/lighttpd/conf-enabled/php.conf > /dev/null <<EOF
+fastcgi.server += (".php" => ((
+    "socket" => "/var/run/php/php7.0-fpm.sock"
+)))
+EOF'
+    );
+
+    system('lighttpd-enable-mod fastcgi');
+    system('/etc/init.d/lighttpd force-reload');
 }
 
 if (!command_exist('gpio')) {
