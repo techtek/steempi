@@ -38,6 +38,7 @@ Install the latest version of Raspbian on your SD card
 
 - `sudo su`
 - `mkdir /var/www/html -p`
+- `apt-get update`
 - `apt-get install git -y`
 - `cd /var/www/html`
 - `git clone https://github.com/techtek/steempi.git .`

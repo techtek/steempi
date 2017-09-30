@@ -16,11 +16,12 @@ command -v php >/dev/null 2>&1 || {
     echo "";
 
     command echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list
-    command apt-get update -y
-    command apt-get install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y
+    command apt-key update
+    command apt-get update -y --allow-unauthenticated
+    command apt-get install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y --allow-unauthenticated
 
     command rm /etc/apt/sources.list.d/debian-stretch.list
-    command apt-get update -y
+    command apt-get update -y --allow-unauthenticated
 }
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
