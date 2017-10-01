@@ -29,7 +29,9 @@
     </style>
 </head>
 <body>
-<iframe height="100%" width="100%" frameborder="0"
-        src="//discordapp.com/widget?id=354493950804885504&theme=dark"></iframe>
+
+<iframe src="https://widgetbot.io/embed/354493950804885504/354493950804885505/0002/?bu=Join SteemPi&bl=people are here"
+        width="100%" height="100%"
+        allowtransparency="true" frameborder="0"></iframe>
 </body>
 </html>
