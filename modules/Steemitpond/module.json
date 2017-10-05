@@ -1,0 +1,9 @@
+{
+  "title": "Steemit Pond",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Steemit Pond",
+    "color": "#3A8199"
+  }
+}

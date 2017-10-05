@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    color: #18191b;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.body-container {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 200px;
+    position: relative;
+    width: 100%;
+}
+
+form {
+    padding: 30px 60px 20px 60px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+}
+
+form label {
+    float: left;
+    margin: 20px 0;
+    width: 100%;
+}
+
+form label input[type="text"],
+form label input[type="email"],
+form label input[type="tel"],
+form label input[type="date"],
+form label input[type="file"],
+form label input[type="search"],
+form label select {
+    float: left;
+    padding: 10px;
+    width: 60%
+}
+
+form label .label {
+    float: left;
+    font-size: 16px;
+    padding-top: 12px;
+    width: 40%;
+}
+
+button {
+    background: #fff;
+    border: 1px solid #DEDEDE;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button:hover {
+    background: #DEDEDE;
+}
+
+.message-save-successfully {
+    background: #D9E6C3;
+    border: 1px solid #77AB13;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/** settings container
+ ==================================================== */
+
+form section.settings-container {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+section.settings-container header {
+    border-top: 1px solid #DEDEDE;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #b7b7b7;
+    width: 100%;
+}
+
+section.settings-container:first-child header {
+    border-top: none;
+    padding-top: 0;
+}
+
+/** led tests
+ ==================================================== */
+
+section.led-tests img {
+    cursor: pointer;
+    float: left;
+    width: calc(33% - 10px);
+}
+
+section.led-tests img:first-child {
+    margin-right: 10px;
+}
+
+section.led-tests img:last-child {
+    margin-left: 10px;
+}
+
+section.led-tests img.off {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+section.led-tests img.on,
+section.led-tests img:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
+/** backgrounds
+ ==================================================== */
+
+.background-container-image {
+    cursor: pointer;
+    float: left;
+    max-width: 33%;
+    width: 300px;
+}
+
+.background-container-image img {
+    padding-right: 10px;
+    width: 100%;
+}
+
+.background-container-image span {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+/** save
+ ==================================================== */
+
+form section.settings-save {
+    background: #f5f5f5;
+    bottom: 0;
+    left: 20px;
+    padding: 20px;
+    position: fixed;
+    width: calc(100% - 40px);
+}
+
+form section.settings-save:after {
+    content: "";
+    height: 5px;
+    left: 0;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    /*background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0) 100%);*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0)));*/
+    /*background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0) 100%);*/
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0, rgba(0, 0, 0, 0) 100%);
+}
+
+form section.settings-save button {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 300px;
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Steem Supply",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Steem Supply",
+    "color": "#BB4632"
+  }
+}

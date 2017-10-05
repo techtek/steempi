@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#   __ _                        ___ _
+#  / _\ |_ ___  ___ _ __ ___   / _ (_)
+#  \ \| __/ _ \/ _ \ '_ ` _ \ / /_)/ |
+#  _\ \ ||  __/  __/ | | | | / ___/| |
+#  \__/\__\___|\___|_| |_| |_\/    |_|
+#
+#
+# This is the installation script for the SteemPi
+#
+
+command -v php >/dev/null 2>&1 || {
+    echo "";
+    echo "No PHP is installed. I will install php7 for you.";
+    echo "";
+
+    command echo "deb http://httpredir.debian.org/debian stretch main contrib non-free" | tee /etc/apt/sources.list.d/debian-stretch.list
+
+    command gpg --keyserver pgpkeys.mit.edu --recv-key  8B48AD6246925553
+    command gpg -a --export 8B48AD6246925553 | sudo apt-key add -
+
+    command apt-key update
+    command apt-get update -y --allow-unauthenticated
+    command apt-get install php7.0 php7.0-fpm php7.0-mbstring -t stretch -y --allow-unauthenticated
+
+    command rm /etc/apt/sources.list.d/debian-stretch.list
+    command apt-get update -y --allow-unauthenticated
+}
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+command php ${DIR}/install.php

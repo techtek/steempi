@@ -1,0 +1,49 @@
+article {
+    background: #fff;
+    box-shadow: rgba(32, 32, 32, 0.05) 0 2px 20px;
+    margin-bottom: 2em !important;
+    margin-top: 2em !important;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    position: relative;
+}
+
+article.loading {
+    background: transparent;
+    box-shadow: none;
+    color: #dedede;
+    font-size: 3em;
+    text-align: center;
+    padding: 2em;
+}
+
+article header h1 {
+    margin-top: 0;
+}
+
+.fa-close:before {
+    content: '\00d7';
+}
+
+.article-close {
+    font-size: 3em;
+    cursor: pointer;
+    height: 1em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 1em;
+}
+
+@media (max-width: 900px) {
+    article {
+        margin: 0 !important;
+        padding: 20px !important;
+        width: 100% !important;
+    }
+
+    article img {
+        margin-bottom: 20px;
+    }
+}

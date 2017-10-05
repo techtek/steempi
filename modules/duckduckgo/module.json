@@ -1,0 +1,9 @@
+{
+  "title": "DuckDuckGo",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "DuckDuckGo",
+    "color": "#BB4632"
+  }
+}

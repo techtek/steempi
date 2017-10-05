@@ -1,0 +1,25 @@
+{
+  "title": "Steemit Feed",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Feed",
+    "color": "#3498db"
+  },
+  "allowedSettings": [
+    "filter-tags",
+    "filter-usernames"
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "name": "filter-tags",
+      "text": "Tags (the result is filtered by these tags)"
+    },
+    {
+      "type": "text",
+      "name": "filter-usernames",
+      "text": "Usernames  (the result is filtered by these usernames)"
+    }
+  ]
+}

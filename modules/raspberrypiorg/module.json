@@ -1,0 +1,9 @@
+{
+  "title": "raspberrypi.org",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "raspberrypi.org",
+    "color": "#BB4632"
+  }
+}

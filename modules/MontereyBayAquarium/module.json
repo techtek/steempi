@@ -1,0 +1,9 @@
+{
+  "title": "Monterey Bay Aquarium",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Monterey Bay Aquarium",
+    "color": "#BB4632"
+  }
+}

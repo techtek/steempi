@@ -1,0 +1,9 @@
+{
+  "title": "Stats",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Stats",
+    "color": "#e67e22"
+  }
+}

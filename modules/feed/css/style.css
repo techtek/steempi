@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    color: #18191b;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}

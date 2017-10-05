@@ -1,0 +1,9 @@
+{
+  "title": "TED",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "TED",
+    "color": "#E62B1E"
+  }
+}

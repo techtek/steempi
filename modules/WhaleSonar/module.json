@@ -1,0 +1,9 @@
+{
+  "title": "Whale sonar",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Whale Sonar",
+    "color": "#9E7682"
+  }
+}

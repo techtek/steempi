@@ -1,0 +1,9 @@
+{
+  "title": "ISS Live",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "ISS Live",
+    "color": "#999999"
+  }
+}

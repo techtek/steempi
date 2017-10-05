@@ -1,0 +1,9 @@
+{
+  "title": "Bitcoin Block Explorer",
+  "icon": "images/icon.svg",
+  "leftMenu": {
+    "icon": "images/menu.svg",
+    "text": "Bitcoin Block Explorer",
+    "color": "#BB4632"
+  }
+}
