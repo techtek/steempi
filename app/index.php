@@ -22,6 +22,15 @@ $background    = SteemPi\SteemPi::getBackground();
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="initial-scale=1,minimum-scale=1,width=device-width">
 
+    <script>
+        paceOptions = {
+            ajax    : false,
+            document: false,
+            eventLag: false
+        };
+    </script>
+    <script src="/app/js/pace.min.js"></script>
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/app/css/style.css" type="text/css"/>
     <link rel="stylesheet" href="/app/css/font-awesome/css/font-awesome.min.css" type="text/css"/>
@@ -36,14 +45,15 @@ $background    = SteemPi\SteemPi::getBackground();
         </a>
 
         <ul class="navigation">
-            <?php foreach ($modules as $Module) { ?>
-                <li class="navigation-entry">
-                    <?php
-                    /* @var $Module \SteemPi\Modules\Module */
-                    if (!$Module->extendsLeftMenu() || !$Module->isActive()) {
-                        continue;
-                    }
+            <?php foreach ($modules as $Module) {
+                /* @var $Module \SteemPi\Modules\Module */
+                if (!$Module->extendsLeftMenu() || !$Module->isActive()) {
+                    continue;
+                }
 
+                ?>
+                <li class="navigation-entry" data-module="<?php echo $Module->getName() ?>">
+                    <?php
                     $MenuItem = $Module->getLeftMenu();
                     echo $MenuItem->create();
                     ?>
@@ -58,9 +68,13 @@ $background    = SteemPi\SteemPi::getBackground();
         </div>
 
         <section class="header-buttons">
-            <a href="" class="header-buttons-button">
-                <span class="fa fa-bell-o"></span>
-            </a>
+            <!--            <a href="" class="header-buttons-button">-->
+            <!--                <span class="fa fa-bell-o"></span>-->
+            <!--            </a>-->
+
+            <div class="header-buttons-button module-loop">
+                <span class="fa fa-repeat"></span>
+            </div>
 
             <?php foreach ($modules as $Module) {
                 /* @var $Module \SteemPi\Modules\Module */
@@ -84,6 +98,8 @@ $background    = SteemPi\SteemPi::getBackground();
 
 <script src="/app/js/anime.min.js"></script>
 <script src="/app/js/navigo.min.js"></script>
+
 <script src="/app/js/index.js"></script>
+<script src="/app/js/index.loop.js"></script>
 </body>
 </html>

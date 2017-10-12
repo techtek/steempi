@@ -1,4 +1,5 @@
-var Router = new Navigo(null, true, '#!');
+window.Router  = new Navigo(null, true, '#!');
+window.SteemPi = {};
 
 // history api
 (function () {
@@ -40,13 +41,6 @@ var Router = new Navigo(null, true, '#!');
     });
 
     var showMenu = function () {
-        // anime({
-        //     targets    : Main,
-        //     paddingLeft: 60,
-        //     easing     : 'easeInOutQuart',
-        //     duration   : 500
-        // });
-
         anime({
             targets : Nav,
             left    : 0,
@@ -59,13 +53,6 @@ var Router = new Navigo(null, true, '#!');
     };
 
     var hideMenu = function () {
-        // anime({
-        //     targets    : Main,
-        //     paddingLeft: 0,
-        //     easing     : 'easeInOutQuart',
-        //     duration   : 500
-        // });
-
         Nav.classList.remove('nav-opened');
 
         anime({
