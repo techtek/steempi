@@ -64,6 +64,11 @@ foreach ($needle as $locale) {
             $search  = '# id_ID.UTF-8 UTF-8';
             $replace = 'id_ID.UTF-8 UTF-8';
             break;
+
+        case 'es_ES':
+            $search  = '# es_ES.UTF-8 UTF-8';
+            $replace = 'es_ES.UTF-8 UTF-8';
+            break;
     }
 
     if (empty($search)) {

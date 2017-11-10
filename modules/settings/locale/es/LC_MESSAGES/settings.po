@@ -1,0 +1,37 @@
+msgid "usuario"
+msgstr "Usuario"
+
+msgid "lenguaje"
+msgstr "Lenguaje"
+
+msgid "configuración guardada correctamente"
+msgstr ""
+"Configuración guardada correctamente."
+"En unos segundo SteemPi volvera a cargar."
+
+msgid "guardar"
+msgstr "Guardar"
+
+msgid "lenguaje en"
+msgstr "Ingles"
+
+msgid "lenguaje de"
+msgstr "Alemán (deutsch)"
+
+msgid "lenguaje nl"
+msgstr "Holandés (nederlands)"
+
+msgid "ajustes principales"
+msgstr "Ajustes generales"
+
+msgid "estado de activación del módulo"
+msgstr "Estado del modulo"
+
+msgid "orden de módulo"
+msgstr "Orden de módulo"
+
+msgid "menú de ledtests"
+msgstr "Prueba de LED"
+
+msgid "segundo plano"
+msgstr "Segundo plano"

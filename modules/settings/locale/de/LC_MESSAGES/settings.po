@@ -45,3 +45,6 @@ msgstr "Malaiisch ()"
 
 msgid "language id"
 msgstr "Indonesisch ()"
+
+msgid "language es"
+msgstr "Spanisch ()"
