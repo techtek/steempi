@@ -49,6 +49,21 @@ foreach ($needle as $locale) {
             $search  = '# en_US.UTF-8 UTF-8';
             $replace = 'en_US.UTF-8 UTF-8';
             break;
+
+        case 'zh_CN':
+            $search  = '# zh_CN.UTF-8 UTF-8';
+            $replace = 'zh_CN.UTF-8 UTF-8';
+            break;
+
+        case 'ms_MY':
+            $search  = '# ms_MY.UTF-8 UTF-8';
+            $replace = 'ms_MY.UTF-8 UTF-8';
+            break;
+
+        case 'id_ID':
+            $search  = '# id_ID.UTF-8 UTF-8';
+            $replace = 'id_ID.UTF-8 UTF-8';
+            break;
     }
 
     if (empty($search)) {

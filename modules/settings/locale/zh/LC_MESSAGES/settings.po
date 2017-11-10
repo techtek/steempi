@@ -1,0 +1,40 @@
+msgid "username"
+msgstr "用戶名"
+
+msgid "language"
+msgstr "語言"
+
+msgid "settings saved successfully"
+msgstr ""
+"成功儲存設置."
+"SteemPi 快將重新啟動."
+
+msgid "save"
+msgstr "儲存"
+
+msgid "language en"
+msgstr "English"
+
+msgid "language de"
+msgstr "German (deutsch)"
+
+msgid "language nl"
+msgstr "Dutch (nederlands)"
+
+msgid "language zh"
+msgstr "中文"
+
+msgid "main settings"
+msgstr "一段設定"
+
+msgid "module activation status"
+msgstr "組件啟動狀態"
+
+msgid "module order"
+msgstr "組件次序"
+
+msgid "main ledtests"
+msgstr "發光二極管測試"
+
+msgid "backgrounds"
+msgstr "背景"

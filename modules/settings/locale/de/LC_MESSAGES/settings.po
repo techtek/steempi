@@ -37,3 +37,11 @@ msgstr "LED Tests"
 msgid "backgrounds"
 msgstr "Hintergründe"
 
+msgid "language zh"
+msgstr "Chinesisch ()"
+
+msgid "language ms"
+msgstr "Malaiisch ()"
+
+msgid "language id"
+msgstr "Indonesisch ()"

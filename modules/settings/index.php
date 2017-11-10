@@ -72,6 +72,21 @@ include "save.php";
                     >
                         <?php echo dgettext('settings', 'language nl'); ?>
                     </option>
+                    <option value="zh_CN"
+                        <?php echo $Config->get('steempi', 'language') == 'zh_CN' ? 'selected = "selected"' : ''; ?>
+                    >
+                        <?php echo dgettext('settings', 'language zh'); ?>
+                    </option>
+                    <option value="ms_MY"
+                        <?php echo $Config->get('steempi', 'language') == 'ms_MY' ? 'selected = "selected"' : ''; ?>
+                    >
+                        <?php echo dgettext('settings', 'language ms'); ?>
+                    </option>
+                    <option value="id_ID"
+                        <?php echo $Config->get('steempi', 'language') == 'id_ID' ? 'selected = "selected"' : ''; ?>
+                    >
+                        <?php echo dgettext('settings', 'language id'); ?>
+                    </option>
                 </select>
             </label>
         </section>

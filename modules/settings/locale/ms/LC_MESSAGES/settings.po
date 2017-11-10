@@ -1,0 +1,35 @@
+msgid "username"
+msgstr "Nama pengguna"
+
+msgid "language"
+msgstr "Bahasa'"
+
+msgid "settings saved successfully"
+msgstr "tetapan sudah saip kemas kini "
+
+msgid "save"
+msgstr "Simpan"
+
+msgid "language en"
+msgstr "Bahasa Inggeris"
+
+msgid "language de"
+msgstr "Bahasa Jerman"
+
+msgid "language nl"
+msgstr "Bahasa Belanda "
+
+msgid "main settings"
+msgstr "Tetapan Utama"
+
+msgid "module activation status"
+msgstr "status pengaktifan modul"
+
+msgid "module order"
+msgstr "perintah modul"
+
+msgid "main ledtests"
+msgstr "ujian utama terhadap LED "
+
+msgid "backgrounds"
+msgstr "Latar Belakang"
