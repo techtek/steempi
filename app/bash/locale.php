@@ -12,7 +12,15 @@
  *
  */
 
-$needle = array('de_DE.utf8', 'en_GB.utf8', 'nl_NL.utf8', 'en_US.utf8');
+$needle = array(
+    'zh_CN.utf8',
+    'de_DE.utf8',
+    'es_ES.utf8',
+    'en_GB.utf8',
+    'en_US.utf8',
+    'nl_NL.utf8',
+    'ms_MY.utf8'
+);
 
 $available = shell_exec('locale -a');
 $available = explode("\n", trim($available));
@@ -51,21 +59,25 @@ foreach ($needle as $locale) {
             break;
 
         case 'zh_CN':
+        case 'zh_CN.utf8':
             $search  = '# zh_CN.UTF-8 UTF-8';
             $replace = 'zh_CN.UTF-8 UTF-8';
             break;
 
         case 'ms_MY':
+        case 'ms_MY.utf8':
             $search  = '# ms_MY.UTF-8 UTF-8';
             $replace = 'ms_MY.UTF-8 UTF-8';
             break;
 
         case 'id_ID':
+        case 'id_ID.utf8':
             $search  = '# id_ID.UTF-8 UTF-8';
             $replace = 'id_ID.UTF-8 UTF-8';
             break;
 
         case 'es_ES':
+        case 'es_ES.utf8':
             $search  = '# es_ES.UTF-8 UTF-8';
             $replace = 'es_ES.UTF-8 UTF-8';
             break;
