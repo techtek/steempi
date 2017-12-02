@@ -1,0 +1,42 @@
+
+msgid "username"
+msgstr "Nom d'utilisateur"
+
+msgid "language"
+msgstr "Langage"
+
+msgid "settings saved successfully"
+msgstr ""
+"Les paramètres ont bien été enregistrés."
+"Dans quelques secondes, SteemPi sera redémarré."
+
+msgid "save"
+msgstr "Sauvegarder"
+
+msgid "language en"
+msgstr "Anglais (english)"
+
+msgid "language fr"
+msgstr "Français"
+
+msgid "language de"
+msgstr "Allemand (deutsch)"
+
+msgid "language nl"
+msgstr "Néerlandais (nederlands)"
+
+msgid "main settings"
+msgstr "Paramètre général"
+
+msgid "module activation status"
+msgstr "État du module d'activation"
+
+msgid "module order"
+msgstr "Ordre des modules"
+
+msgid "main ledtests"
+msgstr "test DEL"
+
+msgid "backgrounds"
+msgstr "Arrière-plans"
+

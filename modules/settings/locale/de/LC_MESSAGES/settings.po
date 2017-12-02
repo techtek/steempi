@@ -16,6 +16,9 @@ msgstr "Speichern"
 msgid "language en"
 msgstr "Englisch (english)"
 
+msgid "language fr"
+msgstr "Französisch (français)"
+
 msgid "language de"
 msgstr "Deutsch"
 
