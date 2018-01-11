@@ -15,6 +15,9 @@ msgstr "Opslaan"
 msgid "language en"
 msgstr "Engels (english)"
 
+msgid "language fr"
+msgstr "Frans (french)"
+
 msgid "language de"
 msgstr "Duits (deutsch)"
 

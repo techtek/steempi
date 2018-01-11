@@ -16,6 +16,9 @@ msgstr "Save"
 msgid "language en"
 msgstr "English"
 
+msgid "language fr"
+msgstr "French (français)"
+
 msgid "language de"
 msgstr "German (deutsch)"
 

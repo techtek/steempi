@@ -1,0 +1,3 @@
+
+msgid "Feed"
+msgstr "Flux"
